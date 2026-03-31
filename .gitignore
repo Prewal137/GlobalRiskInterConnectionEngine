@@ -1,0 +1,409 @@
+# ================================================================
+# 🐍 PYTHON
+# ================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ================================================================
+# 🤖 MACHINE LEARNING & MODELS
+# ================================================================
+
+# Trained models - KEEP SMALL MODELS, IGNORE LARGE CHECKPOINTS
+# For deployment, commit essential models (< 50MB)
+# models/trained/*.pkl
+# models/trained/*.joblib
+
+# Ignore large/deep learning models
+models/trained/*.h5
+models/trained/*.pth
+models/trained/*.pt
+models/trained/*.keras
+
+# Model checkpoints (always ignore)
+models/checkpoints/
+models/evaluation/*.csv
+
+# Model weights and parameters
+*.weights
+*.params
+
+# TensorBoard logs
+logs/
+events.out.tfevents*
+
+# MLflow
+mlruns/
+.mlflow/
+
+# ================================================================
+# 📊 DATA FILES
+# ================================================================
+
+# Raw data (should not be in version control)
+data/raw/
+data/raw/*
+!data/raw/.gitkeep
+
+# Processed data (regeneratable)
+data/processed/
+data/processed/*
+!data/processed/.gitkeep
+
+# Intermediate data
+data/intermediate/
+data/external/
+
+# Large datasets
+*.csv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+
+# Keep only small sample files if needed
+!data/sample_*.csv
+
+# ================================================================
+# 🚀 FASTAPI & WEB
+# ================================================================
+
+# Static files (if generated)
+static/
+
+# Media uploads
+media/
+uploads/
+
+# Database files (SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# Redis dump
+dump.rdb
+
+# ================================================================
+# 📝 LOGS
+# ================================================================
+
+# Application logs
+*.log
+logs/
+pipeline/logs/
+
+# System logs
+syslog
+SystemLog
+
+# ================================================================
+# 💻 IDE & EDITORS
+# ================================================================
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# JetBrains IDEs (PyCharm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# Atom
+.atom/
+
+# Eclipse
+.project
+.settings/
+.classpath
+
+# ================================================================
+# 🖥️ OS FILES
+# ================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+@eaDir/
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+# ================================================================
+# 🔧 CONFIGURATION & SECRETS
+# ================================================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Secrets and credentials
+credentials
+*.pem
+*.key
+secrets/
+config/secrets/
+
+# AWS
+.aws/credentials
+
+# Azure
+azure.json
+
+# GCP
+service-account.json
+*-service-account.json
+
+# ================================================================
+# 📦 PACKAGE MANAGER FILES
+# ================================================================
+
+# Node.js (if using frontend)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ruby
+Gemfile.lock
+
+# Java
+*.jar
+*.war
+*.nar
+*.ear
+
+# ================================================================
+# 🧪 TESTING
+# ================================================================
+
+# Test coverage
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Hypothesis
+.hypothesis/
+
+# ================================================================
+# 📄 DOCUMENTATION
+# ================================================================
+
+# Built documentation
+docs/_build/
+site/
+
+# Jupyter
+.ipynb_checkpoints
+
+# ================================================================
+# 🗑️ TEMPORARY FILES
+# ================================================================
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Cache files
+.cache/
+*.cache
+
+# ================================================================
+# ✅ WHAT TO KEEP (Explicit includes)
+# ================================================================
+
+# Keep these directories but ignore contents
+data/raw/.gitkeep
+data/processed/.gitkeep
+data/processed/climate/.gitkeep
+data/processed/economy/.gitkeep
+data/processed/geopolitics/.gitkeep
+data/processed/infrastructure/.gitkeep
+data/processed/migration/.gitkeep
+data/processed/social/.gitkeep
+data/processed/trade/.gitkeep
+
+models/trained/.gitkeep
+models/checkpoints/.gitkeep
+models/evaluation/.gitkeep
+
+pipeline/logs/.gitkeep
+
+# Keep README files in data folders
+!data/**/README.md
+
+# ================================================================
+# 🎯 SPECIAL EXCEPTIONS
+# ================================================================
+
+# Allow specific config files
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Allow sample data files
+!data/sample*.csv
+!data/example*.csv
+
+# Allow small lookup tables (< 1MB)
+!data/lookup*.csv
+!data/metadata*.csv
