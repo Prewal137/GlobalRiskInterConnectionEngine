@@ -132,8 +132,8 @@ dmypy.json
 
 # Trained models - KEEP SMALL MODELS, IGNORE LARGE CHECKPOINTS
 # For deployment, commit essential models (< 50MB)
-# models/trained/*.pkl
-# models/trained/*.joblib
+!models/trained/*.pkl
+!models/trained/*.joblib
 
 # Ignore large/deep learning models
 models/trained/*.h5
@@ -161,22 +161,36 @@ mlruns/
 # 📊 DATA FILES
 # ================================================================
 
-# Raw data (should not be in version control)
-data/raw/
+# Raw data (never commit - too large)
 data/raw/*
 !data/raw/.gitkeep
 
-# Processed data (regeneratable)
-data/processed/
-data/processed/*
-!data/processed/.gitkeep
+# Large processed files (regeneratable, don't commit)
+data/processed/climate/climate_features.csv
+data/processed/climate/final_climate.csv
+data/processed/trade/cleaned_trade.csv
+data/processed/trade/final_trade.csv
+data/processed/trade/trade_features.csv
 
-# Intermediate data
-data/intermediate/
+# Intermediate processing files
 data/external/
+data/intermediate/
+
+# Essential small processed/output files (COMMIT THESE - needed for API)
+!data/processed/climate/climate_risk_district.csv
+!data/processed/climate/climate_risk_state.csv
+!data/processed/climate/climate_risk_output.csv
+!data/processed/trade/trade_features_clean.csv
+!data/processed/trade/trade_risk_country.csv
+!data/processed/trade/trade_risk_output.csv
+!data/processed/trade/trade_risk_top.csv
+!data/processed/interconnection/global_risk.csv
+!data/processed/interconnection/interconnected_risk.csv
+
+# Keep dataset summary
+!data/processed/dataset_summary.csv
 
 # Large datasets
-*.csv
 *.parquet
 *.feather
 *.h5

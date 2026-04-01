@@ -1,0 +1,503 @@
+State,District,predicted_risk
+Andaman and Nicobar Islands,Nicobars,0.07663498
+Andaman and Nicobar Islands,North and Middle Andaman,0.07691796
+Andhra Pradesh,Ananthapuramu,0.057563327
+Andhra Pradesh,Chittoor,0.07437594
+Andhra Pradesh,East Godavari,0.10277884
+Andhra Pradesh,Guntur,0.10227314
+Andhra Pradesh,Krishna,0.08364756
+Andhra Pradesh,Kurnool,0.06948853
+Andhra Pradesh,Prakasam,0.11695149
+Andhra Pradesh,Sri Potti Sriramulu Nellore,0.11481763
+Andhra Pradesh,Srikakulam,0.08346227
+Andhra Pradesh,Visakhapatnam,0.097279795
+Andhra Pradesh,Vizianagaram,0.0760217
+Andhra Pradesh,West Godavari,0.07683491
+Andhra Pradesh,Y.S.R.,0.08436473
+Arunachal Pradesh,Changlang,0.055735726
+Arunachal Pradesh,Dibang Valley,0.11273443
+Arunachal Pradesh,East Kameng,0.06083619
+Arunachal Pradesh,East Siang,0.106345974
+Arunachal Pradesh,Lohit,0.051871847
+Arunachal Pradesh,Lower Subansiri,0.09319796
+Arunachal Pradesh,Papum Pare,0.05974242
+Arunachal Pradesh,Tawang,0.068105176
+Arunachal Pradesh,Tirap,0.062006503
+Arunachal Pradesh,Upper Siang,0.18434457
+Arunachal Pradesh,Upper Subansiri,0.1553011
+Arunachal Pradesh,West Kameng,0.061356902
+Arunachal Pradesh,West Siang,0.18407045
+Assam,Barpeta,0.042823896
+Assam,Bongaigaon,0.0410284
+Assam,Cachar,0.051767286
+Assam,Darrang,0.041090637
+Assam,Dhubri,0.05633396
+Assam,Dibrugarh,0.07698334
+Assam,Dima Hasao,0.047893524
+Assam,Goalpara,0.04818122
+Assam,Golaghat,0.04516397
+Assam,Hailakandi,0.06026486
+Assam,Jorhat,0.065860435
+Assam,Kamrup,0.03613094
+Assam,Karbi Anglong,0.04726777
+Assam,Karimganj,0.062212978
+Assam,Kokrajhar,0.047131374
+Assam,Lakhimpur,0.10015223
+Assam,Marigaon,0.039010562
+Assam,Nagaon,0.047000412
+Assam,Nalbari,0.036903586
+Assam,Sivasagar,0.08063131
+Assam,Sonitpur,0.060880866
+Assam,Tinsukia,0.054832827
+Bihar,Aurangabad,0.063607074
+Bihar,Begusarai,0.07272011
+Bihar,Bhagalpur,0.09722784
+Bihar,Bhojpur,0.09234553
+Bihar,Buxar,0.06370213
+Bihar,Darbhanga,0.07174231
+Bihar,Gaya,0.083666936
+Bihar,Gopalganj,0.07775451
+Bihar,Kaimur (Bhabua),0.054546583
+Bihar,Katihar,0.11997209
+Bihar,Khagaria,0.048039347
+Bihar,Kishanganj,0.083425954
+Bihar,Madhepura,0.08611892
+Bihar,Madhubani,0.07451898
+Bihar,Munger,0.05653184
+Bihar,Muzaffarpur,0.06309406
+Bihar,Nalanda,0.0963052
+Bihar,Pashchim Champaran,0.08300504
+Bihar,Patna,0.090804555
+Bihar,Purbi Champaran,0.08416221
+Bihar,Purnia,0.117244855
+Bihar,Rohtas,0.05394105
+Bihar,Saharsa,0.06356487
+Bihar,Samastipur,0.08028939
+Bihar,Saran,0.09403924
+Bihar,Sitamarhi,0.06870246
+Bihar,Siwan,0.08750508
+Bihar,Supaul,0.07682473
+Chandigarh,Chandigarh,0.058432925
+Chhattisgarh,Bastar,0.1666621
+Chhattisgarh,Bijapur,0.19393535
+Chhattisgarh,Bilaspur,0.14623027
+Chhattisgarh,Dakshin Bastar Dantewada,0.2136835
+Chhattisgarh,Dhamtari,0.15174474
+Chhattisgarh,Durg,0.093725756
+Chhattisgarh,Janjgir-Champa,0.21925414
+Chhattisgarh,Jashpur,0.2068037
+Chhattisgarh,Kabeerdham,0.10397242
+Chhattisgarh,Korba,0.19487762
+Chhattisgarh,Korea,0.08199951
+Chhattisgarh,Mahasamund,0.18687566
+Chhattisgarh,Raigarh,0.23571122
+Chhattisgarh,Raipur,0.1835607
+Chhattisgarh,Rajnandgaon,0.10286146
+Chhattisgarh,Surguja,0.13011591
+Chhattisgarh,Uttar Bastar Kanker,0.11416203
+Delhi,Central,0.056451328
+Goa,South Goa,0.051635243
+Gujarat,Ahmadabad,0.07600303
+Gujarat,Amreli,0.069811516
+Gujarat,Anand,0.06526137
+Gujarat,Banas Kantha,0.12862678
+Gujarat,Bharuch,0.08571195
+Gujarat,Bhavnagar,0.07479226
+Gujarat,Dang,0.095864914
+Gujarat,Dohad,0.15099005
+Gujarat,Gandhinagar,0.09265985
+Gujarat,Jamnagar,0.06458552
+Gujarat,Junagadh,0.07730955
+Gujarat,Kachchh,0.09739882
+Gujarat,Kheda,0.08997614
+Gujarat,Mahesana,0.1060119
+Gujarat,Narmada,0.12711117
+Gujarat,Navsari,0.080608875
+Gujarat,Panch Mahals,0.11936643
+Gujarat,Patan,0.11960788
+Gujarat,Porbandar,0.0653906
+Gujarat,Rajkot,0.064438775
+Gujarat,Sabar Kantha,0.11185256
+Gujarat,Surat,0.09803451
+Gujarat,Surendranagar,0.075128846
+Gujarat,Vadodara,0.079420775
+Gujarat,Valsad,0.08067845
+Haryana,Ambala,0.058760136
+Haryana,Bhiwani,0.058242507
+Haryana,Faridabad,0.054692578
+Haryana,Fatehabad,0.05641107
+Haryana,Gurugram,0.05333791
+Haryana,Hisar,0.057771534
+Haryana,Jhajjar,0.05868831
+Haryana,Jind,0.059223376
+Haryana,Kaithal,0.0577442
+Haryana,Karnal,0.06614747
+Haryana,Kurukshetra,0.058640685
+Haryana,Mahendragarh,0.05411612
+Haryana,Panchkula,0.057355564
+Haryana,Panipat,0.059492316
+Haryana,Rewari,0.05336535
+Haryana,Rohtak,0.06150773
+Haryana,Sirsa,0.050302584
+Haryana,Sonipat,0.0597417
+Haryana,Yamunanagar,0.07598812
+Himachal Pradesh,Bilaspur,0.032442782
+Himachal Pradesh,Chamba,0.03403339
+Himachal Pradesh,Hamirpur,0.040092148
+Himachal Pradesh,Kangra,0.031199543
+Himachal Pradesh,Kinnaur,0.054095354
+Himachal Pradesh,Kullu,0.045403786
+Himachal Pradesh,Lahul and Spiti,0.050618213
+Himachal Pradesh,Mandi,0.042384602
+Himachal Pradesh,Shimla,0.054809347
+Himachal Pradesh,Sirmaur,0.05891255
+Himachal Pradesh,Solan,0.04408647
+Himachal Pradesh,Una,0.031982567
+Jammu and Kashmir,Anantnag,0.035955947
+Jammu and Kashmir,Doda,0.029529968
+Jammu and Kashmir,Jammu,0.03536795
+Jammu and Kashmir,Kathua,0.021989219
+Jammu and Kashmir,Udhampur,0.030712657
+Jharkhand,Bokaro,0.06451815
+Jharkhand,Dhanbad,0.06450135
+Jharkhand,Dumka,0.07114439
+Jharkhand,East Singhbum,0.06459654
+Jharkhand,Giridih,0.06908769
+Jharkhand,Gumla,0.075288795
+Jharkhand,Hazaribagh,0.073210314
+Jharkhand,Koderma,0.079973824
+Jharkhand,Pakur,0.086018294
+Jharkhand,Palamu,0.070752025
+Jharkhand,Ranchi,0.08707321
+Jharkhand,Sahebganj,0.098611005
+Jharkhand,West Singhbhum,0.06917901
+Karnataka,Bagalkote,0.051402505
+Karnataka,Ballari,0.04509479
+Karnataka,Belagavi,0.04726321
+Karnataka,Bengaluru Rural,0.06236496
+Karnataka,Bengaluru Urban,0.060090788
+Karnataka,Bidar,0.06348763
+Karnataka,Chamarajanagara,0.12176637
+Karnataka,Chikkamagaluru,0.059781417
+Karnataka,Chitradurga,0.051758345
+Karnataka,Dakshina Kannada,0.060132567
+Karnataka,Davangere,0.04809805
+Karnataka,Dharwad,0.056813963
+Karnataka,Gadag,0.052042335
+Karnataka,Hassan,0.063542016
+Karnataka,Haveri,0.048012838
+Karnataka,Kalaburagi,0.049987227
+Karnataka,Kodagu,0.05393843
+Karnataka,Kolar,0.054573055
+Karnataka,Koppal,0.04543489
+Karnataka,Mandya,0.05946204
+Karnataka,Mysuru,0.058556605
+Karnataka,Raichur,0.04866397
+Karnataka,Shivamogga,0.06355229
+Karnataka,Tumakuru,0.05625678
+Karnataka,Udupi,0.06286082
+Karnataka,Uttara Kannada,0.0613735
+Kerala,Alappuzha,0.059359424
+Kerala,Ernakulam,0.10962925
+Kerala,Idukki,0.059079863
+Kerala,Kannur,0.044904437
+Kerala,Kasaragod,0.04531703
+Kerala,Kollam,0.048699625
+Kerala,Kottayam,0.05524965
+Kerala,Kozhikode,0.1288278
+Kerala,Malappuram,0.16529894
+Kerala,Palakkad,0.21826711
+Kerala,Pathanamthitta,0.056428123
+Kerala,Thiruvananthapuram,0.04903765
+Kerala,Thrissur,0.18766929
+Kerala,Wayanad,0.10462433
+Madhya Pradesh,Balaghat,0.10031485
+Madhya Pradesh,Barwani,0.0491551
+Madhya Pradesh,Betul,0.059951585
+Madhya Pradesh,Bhind,0.094118476
+Madhya Pradesh,Bhopal,0.056857467
+Madhya Pradesh,Chhatarpur,0.056882072
+Madhya Pradesh,Chhindwara,0.070988074
+Madhya Pradesh,Damoh,0.060618423
+Madhya Pradesh,Datia,0.09602839
+Madhya Pradesh,Dewas,0.05637012
+Madhya Pradesh,Dhar,0.06710317
+Madhya Pradesh,Dindori,0.069359794
+Madhya Pradesh,Guna,0.05857208
+Madhya Pradesh,Gwalior,0.08643705
+Madhya Pradesh,Harda,0.05788346
+Madhya Pradesh,Indore,0.050419208
+Madhya Pradesh,Jabalpur,0.06678969
+Madhya Pradesh,Jhabua,0.07630712
+Madhya Pradesh,Katni,0.059732303
+Madhya Pradesh,Khargone (West Nimar),0.052675877
+Madhya Pradesh,Mandla,0.06641657
+Madhya Pradesh,Mandsaur,0.06511064
+Madhya Pradesh,Morena,0.09181951
+Madhya Pradesh,Narmadapuram,0.06145882
+Madhya Pradesh,Narsimhapur,0.0701326
+Madhya Pradesh,Neemuch,0.05433461
+Madhya Pradesh,Panna,0.05599397
+Madhya Pradesh,Raisen,0.060084056
+Madhya Pradesh,Rajgarh,0.055408694
+Madhya Pradesh,Ratlam,0.06399988
+Madhya Pradesh,Rewa,0.050667103
+Madhya Pradesh,Sagar,0.060636576
+Madhya Pradesh,Satna,0.055693537
+Madhya Pradesh,Sehore,0.055900626
+Madhya Pradesh,Seoni,0.087299794
+Madhya Pradesh,Shahdol,0.07016529
+Madhya Pradesh,Shajapur,0.05535495
+Madhya Pradesh,Sheopur,0.055054072
+Madhya Pradesh,Shivpuri,0.052336026
+Madhya Pradesh,Sidhi,0.06442318
+Madhya Pradesh,Tikamgarh,0.05625112
+Madhya Pradesh,Ujjain,0.054932807
+Madhya Pradesh,Umaria,0.06822405
+Madhya Pradesh,Vidisha,0.057081908
+Maharashtra,Ahmednagar,0.06662652
+Maharashtra,Akola,0.066029064
+Maharashtra,Amravati,0.06984646
+Maharashtra,Beed,0.10389343
+Maharashtra,Bhandara,0.07490563
+Maharashtra,Buldhana,0.078512646
+Maharashtra,Chandrapur,0.065879285
+Maharashtra,Chhatrapati Sambhajinagar,0.07913193
+Maharashtra,Dharashiv,0.08332108
+Maharashtra,Dhule,0.043511957
+Maharashtra,Gadchiroli,0.07357087
+Maharashtra,Gondia,0.09437572
+Maharashtra,Jalgaon,0.07236947
+Maharashtra,Jalna,0.09808587
+Maharashtra,Kolhapur,0.04479832
+Maharashtra,Latur,0.120458394
+Maharashtra,Mumbai,0.04850267
+Maharashtra,Nagpur,0.066446885
+Maharashtra,Nanded,0.112362444
+Maharashtra,Nandurbar,0.042404264
+Maharashtra,Nashik,0.047089417
+Maharashtra,Parbhani,0.10898686
+Maharashtra,Pune,0.07148346
+Maharashtra,Raigad,0.047576882
+Maharashtra,Ratnagiri,0.051490463
+Maharashtra,Sangli,0.04477447
+Maharashtra,Satara,0.044284366
+Maharashtra,Sindhudurg,0.04964183
+Maharashtra,Solapur,0.05762685
+Maharashtra,Thane,0.04347356
+Maharashtra,Wardha,0.07287349
+Maharashtra,Washim,0.071074516
+Maharashtra,Yavatmal,0.06553278
+Meghalaya,East Garo Hills,0.051619355
+Meghalaya,West Jaintia Hills,0.06575832
+Odisha,Anugul,0.06571191
+Odisha,Balangir,0.080011986
+Odisha,Baleshwar,0.053529654
+Odisha,Bargarh,0.07928618
+Odisha,Bhadrak,0.058563285
+Odisha,Boudh,0.059101384
+Odisha,Cuttack,0.08879037
+Odisha,Deogarh,0.073910125
+Odisha,Dhenkanal,0.07184229
+Odisha,Gajapati,0.056646496
+Odisha,Ganjam,0.06357071
+Odisha,Jagatsinghapur,0.23860137
+Odisha,Jajapur,0.070545256
+Odisha,Jharsuguda,0.064496025
+Odisha,Kalahandi,0.05069218
+Odisha,Kendujhar,0.057471022
+Odisha,Khordha,0.09765162
+Odisha,Koraput,0.0649553
+Odisha,Malkangiri,0.22410439
+Odisha,Mayurbhanj,0.053678315
+Odisha,Nayagarh,0.076136686
+Odisha,Nuapada,0.06750176
+Odisha,Puri,0.2441119
+Odisha,Rayagada,0.04647003
+Odisha,Sambalpur,0.06343193
+Odisha,Sonepur,0.07243926
+Odisha,Sundargarh,0.061752852
+Puducherry,Pondicherry,0.07435144
+Punjab,Amritsar,0.03831149
+Punjab,Bathinda,0.04213905
+Punjab,Faridkot,0.038398895
+Punjab,Fatehgarh Sahib,0.058940116
+Punjab,Ferozepur,0.038462877
+Punjab,Gurdaspur,0.03737369
+Punjab,Hoshiarpur,0.039736345
+Punjab,Jalandhar,0.038055457
+Punjab,Kapurthala,0.03816116
+Punjab,Ludhiana,0.03955018
+Punjab,Moga,0.03834017
+Punjab,Patiala,0.058794525
+Punjab,Rupnagar,0.04166377
+Punjab,Sangrur,0.056433853
+Punjab,Shahid Bhagat Singh Nagar,0.039629508
+Punjab,Sri Muktsar Sahib,0.038351357
+Rajasthan,Ajmer,0.058547407
+Rajasthan,Alwar,0.07026678
+Rajasthan,Banswara,0.07521685
+Rajasthan,Baran,0.06092746
+Rajasthan,Barmer,0.05344647
+Rajasthan,Bharatpur,0.074226804
+Rajasthan,Bhilwara,0.054871384
+Rajasthan,Bikaner,0.063161604
+Rajasthan,Bundi,0.050182704
+Rajasthan,Chittorgarh,0.054058455
+Rajasthan,Churu,0.06757196
+Rajasthan,Dausa,0.056516793
+Rajasthan,Dholpur,0.12042016
+Rajasthan,Dungarpur,0.05111584
+Rajasthan,Ganganagar,0.059128966
+Rajasthan,Hanumangarh,0.066348396
+Rajasthan,Jaipur,0.06200073
+Rajasthan,Jaisalmer,0.04329007
+Rajasthan,Jalore,0.050748743
+Rajasthan,Jhalawar,0.05068335
+Rajasthan,Jhunjhunu,0.06915148
+Rajasthan,Jodhpur,0.04749599
+Rajasthan,Karauli,0.058272835
+Rajasthan,Kota,0.05009784
+Rajasthan,Nagaur,0.05439695
+Rajasthan,Pali,0.048021108
+Rajasthan,Pratapgarh,0.06304531
+Rajasthan,Rajsamand,0.050830856
+Rajasthan,Sawai Madhopur,0.06824232
+Rajasthan,Sikar,0.06257576
+Rajasthan,Sirohi,0.04005681
+Rajasthan,Tonk,0.05786452
+Rajasthan,Udaipur,0.04534271
+Tamil Nadu,Chennai,0.0886876
+Tamil Nadu,Coimbatore,0.1835727
+Tamil Nadu,Cuddalore,0.07552911
+Tamil Nadu,Dharmapuri,0.0466325
+Tamil Nadu,Dindigul,0.049273565
+Tamil Nadu,Erode,0.12746112
+Tamil Nadu,Kanchipuram,0.08565761
+Tamil Nadu,Kanniyakumari,0.047066353
+Tamil Nadu,Karur,0.06842906
+Tamil Nadu,Madurai,0.056886937
+Tamil Nadu,Nagapattinam,0.06347083
+Tamil Nadu,Namakkal,0.06597993
+Tamil Nadu,Perambalur,0.0745706
+Tamil Nadu,Pudukkottai,0.055822868
+Tamil Nadu,Ramanathapuram,0.052797575
+Tamil Nadu,Salem,0.058625277
+Tamil Nadu,Sivaganga,0.05316357
+Tamil Nadu,Thanjavur,0.06287244
+Tamil Nadu,The Nilgiris,0.21334644
+Tamil Nadu,Theni,0.043352302
+Tamil Nadu,Thiruvallur,0.08313936
+Tamil Nadu,Thiruvarur,0.057109803
+Tamil Nadu,Tiruchirappalli,0.0650124
+Tamil Nadu,Tirunelveli,0.050201807
+Tamil Nadu,Tiruvannamalai,0.070660405
+Tamil Nadu,Tuticorin,0.056286328
+Tamil Nadu,Vellore,0.06491204
+Tamil Nadu,Villupuram,0.073792174
+Tamil Nadu,Virudhunagar,0.05411403
+Telangana,Adilabad,0.052159898
+Telangana,Hyderabad,0.0656512
+Telangana,Karimnagar,0.052088317
+Telangana,Khammam,0.09183353
+Telangana,Mahabubnagar,0.067546524
+Telangana,Medak,0.054962274
+Telangana,Nalgonda,0.08950299
+Telangana,Nizamabad,0.06793555
+Telangana,Ranga Reddy,0.063547455
+Telangana,Warangal,0.07435273
+The Dadra and Nagar Haveli and Daman and Diu,Diu,0.033509336
+Tripura,North Tripura,0.06482894
+Tripura,South Tripura,0.051707342
+Tripura,West Tripura,0.057228293
+Uttar Pradesh,Agra,0.08954455
+Uttar Pradesh,Aligarh,0.064214766
+Uttar Pradesh,Ambedkar Nagar,0.06738732
+Uttar Pradesh,Amroha,0.06313175
+Uttar Pradesh,Auraiya,0.04667541
+Uttar Pradesh,Ayodhya,0.065257326
+Uttar Pradesh,Azamgarh,0.059158716
+Uttar Pradesh,Baghpat,0.07106778
+Uttar Pradesh,Bahraich,0.060640294
+Uttar Pradesh,Ballia,0.06034309
+Uttar Pradesh,Balrampur,0.07902811
+Uttar Pradesh,Banda,0.042183746
+Uttar Pradesh,Barabanki,0.059085265
+Uttar Pradesh,Bareilly,0.05375384
+Uttar Pradesh,Basti,0.07024964
+Uttar Pradesh,Bhadohi,0.04398212
+Uttar Pradesh,Bijnor,0.07235249
+Uttar Pradesh,Budaun,0.05295642
+Uttar Pradesh,Bulandshahr,0.058727577
+Uttar Pradesh,Deoria,0.056153666
+Uttar Pradesh,Etah,0.08389628
+Uttar Pradesh,Etawah,0.04899095
+Uttar Pradesh,Farrukhabad,0.05492093
+Uttar Pradesh,Fatehpur,0.041210867
+Uttar Pradesh,Firozabad,0.083057195
+Uttar Pradesh,Ghaziabad,0.06668621
+Uttar Pradesh,Ghazipur,0.05008105
+Uttar Pradesh,Gonda,0.080462165
+Uttar Pradesh,Gorakhpur,0.055999152
+Uttar Pradesh,Hamirpur,0.047783107
+Uttar Pradesh,Hardoi,0.04876438
+Uttar Pradesh,Hathras,0.08737341
+Uttar Pradesh,Jalaun,0.046425536
+Uttar Pradesh,Jaunpur,0.04885664
+Uttar Pradesh,Jhansi,0.04706505
+Uttar Pradesh,Kanpur Dehat,0.047502495
+Uttar Pradesh,Kanpur Nagar,0.048175298
+Uttar Pradesh,Kheri,0.051072516
+Uttar Pradesh,Kushi Nagar,0.061386894
+Uttar Pradesh,Lalitpur,0.04723455
+Uttar Pradesh,Lucknow,0.05436826
+Uttar Pradesh,Mahrajganj,0.05657286
+Uttar Pradesh,Mainpuri,0.05259724
+Uttar Pradesh,Mathura,0.064061135
+Uttar Pradesh,Mau,0.05398112
+Uttar Pradesh,Meerut,0.0681947
+Uttar Pradesh,Mirzapur,0.04872876
+Uttar Pradesh,Moradabad,0.05940208
+Uttar Pradesh,Muzaffarnagar,0.07337869
+Uttar Pradesh,Pilibhit,0.054862034
+Uttar Pradesh,Prayagraj,0.039147966
+Uttar Pradesh,Rae Bareli,0.048063044
+Uttar Pradesh,Rampur,0.055279013
+Uttar Pradesh,Saharanpur,0.07393646
+Uttar Pradesh,Shahjahanpur,0.048979156
+Uttar Pradesh,Shrawasti,0.0682717
+Uttar Pradesh,Siddharth Nagar,0.06929922
+Uttar Pradesh,Sitapur,0.060593255
+Uttar Pradesh,Sonbhadra,0.057814445
+Uttar Pradesh,Sultanpur,0.057487004
+Uttar Pradesh,Unnao,0.049268145
+Uttar Pradesh,Varanasi,0.047480844
+Uttarakhand,Almora,0.069244795
+Uttarakhand,Chamoli,0.07945101
+Uttarakhand,Champawat,0.05176742
+Uttarakhand,Dehradun,0.061643157
+Uttarakhand,Haridwar,0.059284084
+Uttarakhand,Nainital,0.060293373
+Uttarakhand,Pauri Garhwal,0.07272854
+Uttarakhand,Pithoragarh,0.06391155
+Uttarakhand,Rudra Prayag,0.08315116
+Uttarakhand,Tehri Garhwal,0.079401284
+Uttarakhand,Udam Singh Nagar,0.052149374
+Uttarakhand,Uttar Kashi,0.0691431
+West Bengal,Bankura,0.06898196
+West Bengal,Birbhum,0.08198643
+West Bengal,Coochbehar,0.083414465
+West Bengal,Dakshin Dinajpur,0.07225942
+West Bengal,Darjeeling,0.07799404
+West Bengal,Hooghly,0.10365715
+West Bengal,Howrah,0.116490304
+West Bengal,Jalpaiguri,0.06616028
+West Bengal,Malda,0.0842139
+West Bengal,Murshidabad,0.07696442
+West Bengal,Nadia,0.08276204
+West Bengal,North 24 Parganas,0.10496187
+West Bengal,Paschim Medinipur,0.09170047
+West Bengal,Purba Bardhaman,0.0884828
+West Bengal,Purulia,0.05416461
+West Bengal,South 24 Parganas,0.08089924
+West Bengal,Uttar Dinajpur,0.07343379
