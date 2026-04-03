@@ -1,0 +1,10 @@
+# Geopolitics Selected Files (Phase 2)
+# Generated automatically based on validation criteria
+# Total files: 5
+======================================================================
+
+1. ACLED Data_2026-04-02.csv
+2. GEDEvent_v25_1.csv
+3. India_Policy_Uncertainty_Data.xlsx
+4. UcdpPrioConflict_v25_1.csv
+5. WUI_Data.xlsx
