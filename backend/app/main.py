@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import climate, trade, interconnection, geopolitics
+from app.routes import climate, trade, interconnection, geopolitics, economy
 
 app = FastAPI(
     title="Global Risk Interconnection Platform API",
@@ -12,6 +12,7 @@ app.include_router(climate.router)
 app.include_router(trade.router)
 app.include_router(interconnection.router)
 app.include_router(geopolitics.router)
+app.include_router(economy.router)
 
 @app.get("/")
 def root():
@@ -25,8 +26,24 @@ def root():
             "climate_risk": "/climate-risk/",
             "trade_risk": "/trade-risk/",
             "geopolitics_risk": "/geopolitics-risk/",
+            "economy_risk": "/economy/",  # NEW!
             "global_risk": "/global-risk/",
             "docs": "/docs"
+        },
+        "economy_endpoints": {  # NEW!
+            "risk_by_date": "/economy/risk/{country}/{year}/{month}",
+            "latest_risk": "/economy/latest/{country}",
+            "risk_trend": "/economy/trend/{country}",
+            "high_risk_months": "/economy/high-risk/{country}",
+            "available_countries": "/economy/countries",
+            "country_summary": "/economy/summary/{country}"
+        },
+        "interconnection_endpoints": {  # 🔗 MULTI-SECTOR CASCADING RISK
+            "risk_by_date": "/interconnection/risk/{country}/{year}/{month}",
+            "latest_risk": "/interconnection/latest/{country}",
+            "trend_analysis": "/interconnection/trend/{country}",
+            "high_risk_months": "/interconnection/high-risk/{country}",
+            "country_summary": "/interconnection/summary/{country}"
         },
         "geopolitics_endpoints": {
             "country_risk": "/geopolitics-risk/country/{country}",
