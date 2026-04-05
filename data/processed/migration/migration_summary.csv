@@ -1,0 +1,5 @@
+file_name,file_type,row_count,num_columns,columns,time_column,min_year,max_year
+API_SL.UEM.TOTL.ZS_DS2_en_csv_v2_213507.csv,csv,100,71,"Country Name, Country Code, Indicator Name, Indicator Code, 1960, 1961, 1962, 1963, 1964, 1965...",NOT DETECTED,1960,2025
+API_SM.POP.NETM_DS2_en_csv_v2_174.csv,csv,100,71,"Country Name, Country Code, Indicator Name, Indicator Code, 1960, 1961, 1962, 1963, 1964, 1965...",NOT DETECTED,1960,2025
+API_SP.POP.GROW_DS2_en_csv_v2_214944.csv,csv,100,71,"Country Name, Country Code, Indicator Name, Indicator Code, 1960, 1961, 1962, 1963, 1964, 1965...",NOT DETECTED,1960,2025
+API_SP.URB.GROW_DS2_EN_csv_v2_8318.csv,csv,100,71,"Country Name, Country Code, Indicator Name, Indicator Code, 1960, 1961, 1962, 1963, 1964, 1965...",NOT DETECTED,1960,2025
