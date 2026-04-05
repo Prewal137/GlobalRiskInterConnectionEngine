@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import climate, trade, interconnection, geopolitics, economy, migration, social
+from app.routes import climate, trade, interconnection, geopolitics, economy, migration, social, infrastructure
 
 app = FastAPI(
     title="Global Risk Interconnection Platform API",
@@ -15,6 +15,7 @@ app.include_router(geopolitics.router)
 app.include_router(economy.router)
 app.include_router(migration.router)
 app.include_router(social.router)
+app.include_router(infrastructure.router)
 
 @app.get("/")
 def root():
@@ -29,7 +30,8 @@ def root():
             "trade_risk": "/trade-risk/",
             "geopolitics_risk": "/geopolitics-risk/",
             "economy_risk": "/economy/",
-            "social_risk": "/social/",  # NEW!
+            "social_risk": "/social/",
+            "infrastructure_risk": "/infrastructure-risk/",  # NEW!
             "global_risk": "/global-risk/",
             "docs": "/docs"
         },
@@ -49,13 +51,21 @@ def root():
             "available_states": "/social/states",
             "state_summary": "/social/summary/{state}"
         },
-        "interconnection_endpoints": {  # 🔗 MULTI-SECTOR CASCADING RISK (5 Sectors)
+        "infrastructure_endpoints": {  # 🏗️ INFRASTRUCTURE RISK
+            "risk_by_year": "/infrastructure-risk/state/{state}/{year}",
+            "latest_risk": "/infrastructure-risk/latest/{state}",
+            "risk_trend": "/infrastructure-risk/trend/{state}",
+            "top_risky_states": "/infrastructure-risk/top-states",
+            "available_states": "/infrastructure-risk/states",
+            "summary_stats": "/infrastructure-risk/summary"
+        },
+        "interconnection_endpoints": {  # 🔗 MULTI-SECTOR CASCADING RISK (7 Sectors)
             "risk_by_date": "/interconnection/risk/{country}/{year}/{month}",
             "latest_risk": "/interconnection/latest/{country}",
             "trend_analysis": "/interconnection/trend/{country}",
             "high_risk_months": "/interconnection/high-risk/{country}",
             "country_summary": "/interconnection/summary/{country}",
-            "sectors": ["climate", "economy", "trade", "geopolitics", "migration"]
+            "sectors": ["climate", "economy", "trade", "geopolitics", "migration", "social", "infrastructure"]
         },
         "migration_endpoints": {  # 🌍 MIGRATION RISK
             "risk_by_year": "/migration/risk/{country}/{year}",
