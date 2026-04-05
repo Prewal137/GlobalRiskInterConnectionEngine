@@ -2,7 +2,7 @@
 🔗 Interconnected Risk API Routes
 
 Serves multi-sector cascading risk data combining climate, economy, trade,
-geopolitics, and migration risks with calculated impact metrics.
+geopolitics, migration, social, and infrastructure risks with calculated impact metrics.
 
 Endpoints:
 1. GET /interconnection/risk/{country}/{year}/{month} - Risk by date
@@ -94,7 +94,7 @@ def get_risk_by_date_cached(country: str, year: int, month: int):
     
     df = reconstruct_dataframe(records, [
         'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk', 
+        'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk', 'infrastructure_risk',
         'economic_impact', 'trade_impact', 'global_risk'
     ])
     
@@ -116,6 +116,8 @@ def get_risk_by_date_cached(country: str, year: int, month: int):
         "trade_risk": float(row['trade_risk']),
         "geopolitical_risk": float(row['geopolitical_risk']),
         "migration_risk": float(row['migration_risk']),
+        "social_risk": float(row['social_risk']),
+        "infrastructure_risk": float(row['infrastructure_risk']),
         "economic_impact": float(row['economic_impact']),
         "trade_impact": float(row['trade_impact']),
         "global_risk": float(row['global_risk'])
@@ -132,7 +134,7 @@ def get_latest_risk_cached(country: str):
     
     df = reconstruct_dataframe(records, [
         'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
+        'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk', 'infrastructure_risk',
         'economic_impact', 'trade_impact', 'global_risk'
     ])
     
@@ -152,6 +154,8 @@ def get_latest_risk_cached(country: str):
         "trade_risk": float(row['trade_risk']),
         "geopolitical_risk": float(row['geopolitical_risk']),
         "migration_risk": float(row['migration_risk']),
+        "social_risk": float(row['social_risk']),
+        "infrastructure_risk": float(row['infrastructure_risk']),
         "economic_impact": float(row['economic_impact']),
         "trade_impact": float(row['trade_impact']),
         "global_risk": float(row['global_risk'])
@@ -168,7 +172,7 @@ def get_trend_data_cached(country: str) -> tuple:
     
     df = reconstruct_dataframe(records, [
         'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
+        'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk', 'infrastructure_risk',
         'economic_impact', 'trade_impact', 'global_risk'
     ])
     
@@ -185,6 +189,8 @@ def get_trend_data_cached(country: str) -> tuple:
             "year": int(row['Year']),
             "month": int(row['Month']),
             "global_risk": round(float(row['global_risk']), 4),
+            "social_risk": round(float(row['social_risk']), 4),
+            "infrastructure_risk": round(float(row['infrastructure_risk']), 4),
             "migration_risk": round(float(row['migration_risk']), 4),
             "economic_risk": round(float(row['economic_risk']), 4)
         })
@@ -202,7 +208,7 @@ def get_high_risk_months_cached(country: str) -> tuple:
     
     df = reconstruct_dataframe(records, [
         'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
+        'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk', 'infrastructure_risk',
         'economic_impact', 'trade_impact', 'global_risk'
     ])
     
@@ -226,7 +232,9 @@ def get_high_risk_months_cached(country: str) -> tuple:
             "economic_risk": round(float(row['economic_risk']), 4),
             "trade_risk": round(float(row['trade_risk']), 4),
             "geopolitical_risk": round(float(row['geopolitical_risk']), 4),
-            "migration_risk": round(float(row['migration_risk']), 4)
+            "migration_risk": round(float(row['migration_risk']), 4),
+            "social_risk": round(float(row['social_risk']), 4),
+            "infrastructure_risk": round(float(row['infrastructure_risk']), 4)
         })
     
     return tuple(result)
@@ -242,7 +250,7 @@ def get_summary_cached(country: str):
     
     df = reconstruct_dataframe(records, [
         'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
+        'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk', 'infrastructure_risk',
         'economic_impact', 'trade_impact', 'global_risk'
     ])
     
@@ -283,7 +291,9 @@ def get_summary_cached(country: str):
             "economic_risk": round(float(df['economic_risk'].mean()), 4),
             "trade_risk": round(float(df['trade_risk'].mean()), 4),
             "geopolitical_risk": round(float(df['geopolitical_risk'].mean()), 4),
-            "migration_risk": round(float(df['migration_risk'].mean()), 4)
+            "migration_risk": round(float(df['migration_risk'].mean()), 4),
+            "social_risk": round(float(df['social_risk'].mean()), 4),
+            "infrastructure_risk": round(float(df['infrastructure_risk'].mean()), 4)
         }
     }
 

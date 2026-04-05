@@ -1,0 +1,73 @@
+Country,State,Year,"Water Closet  (UOM:%(Percentage)), Scaling Factor:1","Pit Latrine (UOM:%(Percentage)), Scaling Factor:1","Other Latrine (UOM:%(Percentage)), Scaling Factor:1","Total House Holds With Latrines (UOM:%(Percentage)), Scaling Factor:1","No Latrine  (UOM:%(Percentage)), Scaling Factor:1"
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2011",86.80,0.20,0.10,87.10,12.90
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2011",79.40,4.10,2.60,86.10,13.90
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2011",74.90,13.90,0.70,89.50,10.50
+India,Assam,"Calendar Year (Jan - Dec), 2011",71.00,21.00,1.70,93.70,6.30
+India,Bihar,"Calendar Year (Jan - Dec), 2011",63.40,4.60,1.00,69.00,31.00
+India,Chandigarh,"Calendar Year (Jan - Dec), 2011",87.00,0.50,0.10,87.60,12.40
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2011",58.70,1.10,0.40,60.20,39.80
+India,Delhi,"Calendar Year (Jan - Dec), 2011",86.00,1.70,2.10,89.80,10.20
+India,Goa,"Calendar Year (Jan - Dec), 2011",80.60,3.50,1.10,85.20,14.70
+India,Gujarat,"Calendar Year (Jan - Dec), 2011",85.20,2.10,0.40,87.70,12.30
+India,Haryana,"Calendar Year (Jan - Dec), 2011",80.50,7.70,1.70,89.90,10.10
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2011",87.00,0.80,1.30,89.10,10.90
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2011",68.50,4.30,14.70,87.50,12.50
+India,Jharkhand,"Calendar Year (Jan - Dec), 2011",64.70,1.80,0.60,67.10,32.80
+India,Karnataka,"Calendar Year (Jan - Dec), 2011",71.60,12.00,1.40,85.00,15.10
+India,Kerala,"Calendar Year (Jan - Dec), 2011",75.30,21.90,0.30,97.50,2.60
+India,Ladakh,"Calendar Year (Jan - Dec), 2011",68.50,4.30,14.70,87.50,12.50
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2011",97.20,0.50,0.00,97.70,2.30
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2011",71.50,1.70,1.00,74.20,25.80
+India,Maharashtra,"Calendar Year (Jan - Dec), 2011",67.30,2.40,1.60,71.30,28.70
+India,Manipur,"Calendar Year (Jan - Dec), 2011",63.70,23.30,8.80,95.80,4.20
+India,Meghalaya,"Calendar Year (Jan - Dec), 2011",82.90,12.30,0.60,95.80,4.30
+India,Mizoram,"Calendar Year (Jan - Dec), 2011",80.90,17.20,0.50,98.60,1.50
+India,Nagaland,"Calendar Year (Jan - Dec), 2011",79.10,15.00,0.50,94.60,5.40
+India,Odisha,"Calendar Year (Jan - Dec), 2011",58.80,4.20,1.80,64.80,35.20
+India,Puducherry,"Calendar Year (Jan - Dec), 2011",81.10,0.60,0.30,82.00,18.00
+India,Punjab,"Calendar Year (Jan - Dec), 2011",85.60,6.80,1.00,93.40,6.60
+India,Rajasthan,"Calendar Year (Jan - Dec), 2011",73.70,5.40,2.90,82.00,18.00
+India,Sikkim,"Calendar Year (Jan - Dec), 2011",91.80,3.30,0.10,95.20,4.80
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2011",66.50,6.80,1.80,75.10,24.90
+India,Telangana,"Calendar Year (Jan - Dec), 2011",79.40,4.10,2.60,86.10,13.90
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2011",82.8057726116555696865470,0.9570023191441609934920,0.1714988404279195032540,83.9342737712276501832930,16.0657262287723498167070
+India,Tripura,"Calendar Year (Jan - Dec), 2011",50.00,47.00,0.90,97.90,2.10
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2011",77.20,2.90,3.00,83.10,16.90
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2011",85.90,6.50,1.10,93.50,6.40
+India,West Bengal,"Calendar Year (Jan - Dec), 2011",61.60,22.50,0.90,85.00,15.00
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2001",58.69,6.74,11.06,76.49,23.51
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2001",46.97,15.1,16,78.07,21.93
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2001",28.06,32.08,26.82,86.95,13.05
+India,Assam,"Calendar Year (Jan - Dec), 2001",58.88,26.39,9.33,94.6,5.4
+India,Bihar,"Calendar Year (Jan - Dec), 2001",43.45,11.37,14.88,69.69,30.31
+India,Chandigarh,"Calendar Year (Jan - Dec), 2001",70.77,1.02,8.28,80.07,19.93
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2001",38.82,5.15,8.62,52.59,47.41
+India,Delhi,"Calendar Year (Jan - Dec), 2001",47.36,15.18,16.49,79.03,20.97
+India,Goa,"Calendar Year (Jan - Dec), 2001",38.88,18.74,11.61,69.23,30.77
+India,Gujarat,"Calendar Year (Jan - Dec), 2001",62.11,9.75,8.69,80.55,19.45
+India,Haryana,"Calendar Year (Jan - Dec), 2001",30.99,26.48,23.19,80.66,19.34
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2001",49.72,11.99,15.51,77.22,22.78
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2001",26.54,20.17,40.17,86.87,13.13
+India,Jharkhand,"Calendar Year (Jan - Dec), 2001",41.24,7.41,18.03,66.68,33.32
+India,Karnataka,"Calendar Year (Jan - Dec), 2001",44.86,20.7,9.67,75.23,24.77
+India,Kerala,"Calendar Year (Jan - Dec), 2001",74.76,11.11,6.16,92.02,7.98
+India,Ladakh,"Calendar Year (Jan - Dec), 2001",26.54,20.17,40.17,86.87,13.13
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2001",70.17,0.77,12.83,83.77,16.23
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2001",41.1,11.89,14.74,67.74,3.26
+India,Maharashtra,"Calendar Year (Jan - Dec), 2001",44.37,7.08,6.63,58.08,41.92
+India,Manipur,"Calendar Year (Jan - Dec), 2001",20.55,66.96,7.8,95.31,4.69
+India,Meghalaya,"Calendar Year (Jan - Dec), 2001",43.54,33.13,14.91,91.58,8.42
+India,Mizoram,"Calendar Year (Jan - Dec), 2001",34.52,54.5,9.01,98.03,1.97
+India,Nagaland,"Calendar Year (Jan - Dec), 2001",19.87,40.47,33.78,94.12,5.88
+India,Odisha,"Calendar Year (Jan - Dec), 2001",43.05,9.48,7.15,59.69,40.31
+India,Puducherry,"Calendar Year (Jan - Dec), 2001",59.4,2.19,3.44,65.03,34.97
+India,Punjab,"Calendar Year (Jan - Dec), 2001",46.52,20.53,19.48,86.52,13.48
+India,Rajasthan,"Calendar Year (Jan - Dec), 2001",40.58,18.21,17.33,76.11,23.89
+India,Sikkim,"Calendar Year (Jan - Dec), 2001",86.99,1.93,2.87,91.79,8.21
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2001",45.47,11.16,7.71,64.33,35.67
+India,Telangana,"Calendar Year (Jan - Dec), 2001",46.97,15.1,16,78.07,21.93
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2001",64.4931610495997606044581,3.4378747101069798758135,1.7066709994763222862263,69.6377067591830627664979,30.3622932408169372335021
+India,Tripura,"Calendar Year (Jan - Dec), 2001",43.13,44.8,9.03,96.96,3.04
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2001",31.98,18.07,29.96,80.01,19.99
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2001",40.82,26.72,19.35,86.88,13.12
+India,West Bengal,"Calendar Year (Jan - Dec), 2001",55.2,22.89,6.76,84.85,15.15
