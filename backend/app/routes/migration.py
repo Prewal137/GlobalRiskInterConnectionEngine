@@ -1,15 +1,14 @@
 """
-🔗 Interconnected Risk API Routes
+🌍 Migration Risk API Routes
 
-Serves multi-sector cascading risk data combining climate, economy, trade,
-geopolitics, and migration risks with calculated impact metrics.
+Serves migration risk data calculated from demographic and migration dynamics.
 
 Endpoints:
-1. GET /interconnection/risk/{country}/{year}/{month} - Risk by date
-2. GET /interconnection/latest/{country} - Latest risk snapshot
-3. GET /interconnection/trend/{country} - 12-month trend analysis
-4. GET /interconnection/high-risk/{country} - High-risk months (global_risk > 0.7)
-5. GET /interconnection/summary/{country} - Country risk summary
+1. GET /migration/risk/{country}/{year} - Risk by year
+2. GET /migration/latest/{country} - Latest risk snapshot
+3. GET /migration/trend/{country} - 10-year trend analysis
+4. GET /migration/high-risk/{country} - High-risk years (risk > 0.7)
+5. GET /migration/summary/{country} - Country risk summary
 """
 
 from fastapi import APIRouter, HTTPException
@@ -20,27 +19,27 @@ from datetime import datetime
 from typing import List, Dict, Any
 
 # Create router
-router = APIRouter(prefix="/interconnection", tags=["interconnection"])
+router = APIRouter(prefix="/migration", tags=["migration"])
 
 # ================================================================
 # 📂 DATA LOADING
 # ================================================================
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-INTERCONNECTED_RISK_FILE = os.path.join(BASE_DIR, "data", "processed", "interconnection", "interconnected_risk.csv")
+MIGRATION_RISK_FILE = os.path.join(BASE_DIR, "data", "processed", "migration", "migration_risk_output.csv")
 
 
-def load_interconnection_data() -> pd.DataFrame:
+def load_migration_data() -> pd.DataFrame:
     """
-    Load interconnected risk data from CSV.
+    Load migration risk data from CSV.
     
     Returns:
-        pd.DataFrame: Interconnected risk dataset
+        pd.DataFrame: Migration risk dataset
     """
-    if not os.path.exists(INTERCONNECTED_RISK_FILE):
-        raise FileNotFoundError(f"Interconnected risk file not found: {INTERCONNECTED_RISK_FILE}")
+    if not os.path.exists(MIGRATION_RISK_FILE):
+        raise FileNotFoundError(f"Migration risk file not found: {MIGRATION_RISK_FILE}")
     
-    df = pd.read_csv(INTERCONNECTED_RISK_FILE)
+    df = pd.read_csv(MIGRATION_RISK_FILE)
     return df
 
 
@@ -59,7 +58,7 @@ def get_country_data_cached(country: str) -> tuple:
     Returns:
         tuple: DataFrame records as tuples (for cache compatibility) or None
     """
-    df = load_interconnection_data()
+    df = load_migration_data()
     
     # Filter by country (case-insensitive)
     country_data = df[df['Country'].str.upper() == country.upper()]
@@ -85,23 +84,16 @@ def reconstruct_dataframe(records: tuple, columns: List[str]) -> pd.DataFrame:
 
 
 @lru_cache(maxsize=256)
-def get_risk_by_date_cached(country: str, year: int, month: int):
-    """Get risk data for specific country and date (CACHED)."""
+def get_risk_by_year_cached(country: str, year: int):
+    """Get risk data for specific country and year (CACHED)."""
     records = get_country_data_cached(country.upper())
     
     if records is None:
         return None
     
-    df = reconstruct_dataframe(records, [
-        'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk', 
-        'economic_impact', 'trade_impact', 'global_risk'
-    ])
+    df = reconstruct_dataframe(records, ['Country', 'Year', 'migration_risk'])
     
-    matching_rows = df[
-        (df['Year'] == year) & 
-        (df['Month'] == month)
-    ]
+    matching_rows = df[df['Year'] == year]
     
     if matching_rows.empty:
         return None
@@ -110,15 +102,7 @@ def get_risk_by_date_cached(country: str, year: int, month: int):
     return {
         "country": row['Country'],
         "year": int(row['Year']),
-        "month": int(row['Month']),
-        "climate_risk": float(row['climate_risk']),
-        "economic_risk": float(row['economic_risk']),
-        "trade_risk": float(row['trade_risk']),
-        "geopolitical_risk": float(row['geopolitical_risk']),
-        "migration_risk": float(row['migration_risk']),
-        "economic_impact": float(row['economic_impact']),
-        "trade_impact": float(row['trade_impact']),
-        "global_risk": float(row['global_risk'])
+        "migration_risk": float(row['migration_risk'])
     }
 
 
@@ -130,14 +114,10 @@ def get_latest_risk_cached(country: str):
     if records is None:
         return None
     
-    df = reconstruct_dataframe(records, [
-        'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
-        'economic_impact', 'trade_impact', 'global_risk'
-    ])
+    df = reconstruct_dataframe(records, ['Country', 'Year', 'migration_risk'])
     
-    # Sort by Year and Month descending, take first
-    df_sorted = df.sort_values(['Year', 'Month'], ascending=[False, False])
+    # Sort by Year descending, take first
+    df_sorted = df.sort_values('Year', ascending=False)
     
     if df_sorted.empty:
         return None
@@ -146,86 +126,61 @@ def get_latest_risk_cached(country: str):
     return {
         "country": row['Country'],
         "year": int(row['Year']),
-        "month": int(row['Month']),
-        "climate_risk": float(row['climate_risk']),
-        "economic_risk": float(row['economic_risk']),
-        "trade_risk": float(row['trade_risk']),
-        "geopolitical_risk": float(row['geopolitical_risk']),
-        "migration_risk": float(row['migration_risk']),
-        "economic_impact": float(row['economic_impact']),
-        "trade_impact": float(row['trade_impact']),
-        "global_risk": float(row['global_risk'])
+        "migration_risk": float(row['migration_risk'])
     }
 
 
 @lru_cache(maxsize=64)
 def get_trend_data_cached(country: str) -> tuple:
-    """Get trend data (last 12 months) for a country (CACHED)."""
+    """Get trend data (last 10 years) for a country (CACHED)."""
     records = get_country_data_cached(country.upper())
     
     if records is None:
         return None
     
-    df = reconstruct_dataframe(records, [
-        'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
-        'economic_impact', 'trade_impact', 'global_risk'
-    ])
+    df = reconstruct_dataframe(records, ['Country', 'Year', 'migration_risk'])
     
-    # Sort by Year and Month
-    df_sorted = df.sort_values(['Year', 'Month'], ascending=[True, True])
+    # Sort by Year
+    df_sorted = df.sort_values('Year', ascending=True)
     
-    # Take last 12 months
-    df_last_12 = df_sorted.tail(12)
+    # Take last 10 years
+    df_last_10 = df_sorted.tail(10)
     
     # Convert to list of dicts
     trend_data = []
-    for _, row in df_last_12.iterrows():
+    for _, row in df_last_10.iterrows():
         trend_data.append({
             "year": int(row['Year']),
-            "month": int(row['Month']),
-            "global_risk": round(float(row['global_risk']), 4),
-            "migration_risk": round(float(row['migration_risk']), 4),
-            "economic_risk": round(float(row['economic_risk']), 4)
+            "migration_risk": round(float(row['migration_risk']), 4)
         })
     
     return tuple(trend_data)
 
 
 @lru_cache(maxsize=64)
-def get_high_risk_months_cached(country: str) -> tuple:
-    """Get high-risk months (global_risk > 0.7) for a country (CACHED)."""
+def get_high_risk_years_cached(country: str) -> tuple:
+    """Get high-risk years (migration_risk > 0.7) for a country (CACHED)."""
     records = get_country_data_cached(country.upper())
     
     if records is None:
         return None
     
-    df = reconstruct_dataframe(records, [
-        'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
-        'economic_impact', 'trade_impact', 'global_risk'
-    ])
+    df = reconstruct_dataframe(records, ['Country', 'Year', 'migration_risk'])
     
-    # Filter high-risk months
-    high_risk = df[df['global_risk'] > 0.7].copy()
+    # Filter high-risk years
+    high_risk = df[df['migration_risk'] > 0.7].copy()
     
     if high_risk.empty:
         return tuple()
     
-    # Sort by global_risk descending
-    high_risk = high_risk.sort_values('global_risk', ascending=False)
+    # Sort by migration_risk descending
+    high_risk = high_risk.sort_values('migration_risk', ascending=False)
     
     # Convert to list of dicts
     result = []
     for _, row in high_risk.iterrows():
         result.append({
             "year": int(row['Year']),
-            "month": int(row['Month']),
-            "global_risk": round(float(row['global_risk']), 4),
-            "climate_risk": round(float(row['climate_risk']), 4),
-            "economic_risk": round(float(row['economic_risk']), 4),
-            "trade_risk": round(float(row['trade_risk']), 4),
-            "geopolitical_risk": round(float(row['geopolitical_risk']), 4),
             "migration_risk": round(float(row['migration_risk']), 4)
         })
     
@@ -240,23 +195,19 @@ def get_summary_cached(country: str):
     if records is None:
         return None
     
-    df = reconstruct_dataframe(records, [
-        'Country', 'Year', 'Month', 'climate_risk', 'economic_risk',
-        'trade_risk', 'geopolitical_risk', 'migration_risk',
-        'economic_impact', 'trade_impact', 'global_risk'
-    ])
+    df = reconstruct_dataframe(records, ['Country', 'Year', 'migration_risk'])
     
     # Calculate statistics
-    avg_global_risk = float(df['global_risk'].mean())
-    max_global_risk = float(df['global_risk'].max())
-    min_global_risk = float(df['global_risk'].min())
+    avg_risk = float(df['migration_risk'].mean())
+    max_risk = float(df['migration_risk'].max())
+    min_risk = float(df['migration_risk'].min())
     
     # Determine trend direction
-    df_sorted = df.sort_values(['Year', 'Month'], ascending=[True, True])
+    df_sorted = df.sort_values('Year', ascending=True)
     
     if len(df_sorted) >= 2:
-        first_half = df_sorted.head(len(df_sorted) // 2)['global_risk'].mean()
-        second_half = df_sorted.tail(len(df_sorted) // 2)['global_risk'].mean()
+        first_half = df_sorted.head(len(df_sorted) // 2)['migration_risk'].mean()
+        second_half = df_sorted.tail(len(df_sorted) // 2)['migration_risk'].mean()
         
         if second_half > first_half * 1.1:
             trend_direction = "INCREASING"
@@ -270,21 +221,14 @@ def get_summary_cached(country: str):
     return {
         "country": country.upper(),
         "total_records": len(df),
-        "date_range": {
-            "start": f"{int(df_sorted.iloc[0]['Year'])}/{int(df_sorted.iloc[0]['Month'])}",
-            "end": f"{int(df_sorted.iloc[-1]['Year'])}/{int(df_sorted.iloc[-1]['Month'])}"
+        "year_range": {
+            "start": int(df_sorted.iloc[0]['Year']),
+            "end": int(df_sorted.iloc[-1]['Year'])
         },
-        "avg_global_risk": round(avg_global_risk, 4),
-        "max_global_risk": round(max_global_risk, 4),
-        "min_global_risk": round(min_global_risk, 4),
-        "trend_direction": trend_direction,
-        "sector_averages": {
-            "climate_risk": round(float(df['climate_risk'].mean()), 4),
-            "economic_risk": round(float(df['economic_risk'].mean()), 4),
-            "trade_risk": round(float(df['trade_risk'].mean()), 4),
-            "geopolitical_risk": round(float(df['geopolitical_risk'].mean()), 4),
-            "migration_risk": round(float(df['migration_risk'].mean()), 4)
-        }
+        "avg_migration_risk": round(avg_risk, 4),
+        "max_migration_risk": round(max_risk, 4),
+        "min_migration_risk": round(min_risk, 4),
+        "trend_direction": trend_direction
     }
 
 
@@ -292,27 +236,26 @@ def get_summary_cached(country: str):
 # 🎯 API ENDPOINTS
 # ================================================================
 
-@router.get("/risk/{country}/{year}/{month}")
-async def get_risk_by_date(country: str, year: int, month: int):
+@router.get("/risk/{country}/{year}")
+async def get_risk_by_year(country: str, year: int):
     """
-    Get interconnected risk data for a specific country and date.
+    Get migration risk for a specific country and year.
     
     Args:
         country: Country code (e.g., 'IND')
         year: Year (e.g., 2020)
-        month: Month (1-12)
         
     Returns:
-        All sector risks and cascading impacts for the specified date
+        Migration risk for the specified year
     """
     try:
         # Use CACHED function for instant response! ⚡
-        result = get_risk_by_date_cached(country.upper(), year, month)
+        result = get_risk_by_year_cached(country.upper(), year)
         
         if result is None:
             raise HTTPException(
                 status_code=404,
-                detail=f"No data found for {country.upper()} in {year}/{month}"
+                detail=f"No data found for {country.upper()} in year {year}"
             )
         
         result["timestamp"] = datetime.utcnow().isoformat()
@@ -331,13 +274,13 @@ async def get_risk_by_date(country: str, year: int, month: int):
 @router.get("/latest/{country}")
 async def get_latest_risk(country: str):
     """
-    Get latest available risk data for a country.
+    Get latest available migration risk for a country.
     
     Args:
         country: Country code (e.g., 'IND')
         
     Returns:
-        Most recent risk snapshot with all sectors and impacts
+        Most recent migration risk snapshot
     """
     try:
         # Use CACHED function for instant response! ⚡
@@ -365,13 +308,13 @@ async def get_latest_risk(country: str):
 @router.get("/trend/{country}")
 async def get_trend(country: str):
     """
-    Get risk trend for the last 12 months.
+    Get migration risk trend for the last 10 years.
     
     Args:
         country: Country code (e.g., 'IND')
         
     Returns:
-        Time series of global_risk, economic_impact, and trade_impact
+        Time series of migration risk for last 10 years
     """
     try:
         # Use CACHED function for instant response! ⚡
@@ -405,19 +348,19 @@ async def get_trend(country: str):
 
 
 @router.get("/high-risk/{country}")
-async def get_high_risk_months(country: str):
+async def get_high_risk_years(country: str):
     """
-    Get months where global_risk exceeds 0.7 threshold.
+    Get years where migration risk exceeds 0.7 threshold.
     
     Args:
         country: Country code (e.g., 'IND')
         
     Returns:
-        List of high-risk months sorted by severity
+        List of high-risk years sorted by severity
     """
     try:
         # Use CACHED function for instant response! ⚡
-        high_risk_data = get_high_risk_months_cached(country.upper())
+        high_risk_data = get_high_risk_years_cached(country.upper())
         
         if high_risk_data is None:
             raise HTTPException(
@@ -432,7 +375,7 @@ async def get_high_risk_months(country: str):
             "country": country.upper(),
             "threshold": 0.7,
             "high_risk_count": len(high_risk_list),
-            "high_risk_months": high_risk_list
+            "high_risk_years": high_risk_list
         }
         
     except HTTPException:
@@ -444,7 +387,7 @@ async def get_high_risk_months(country: str):
 @router.get("/summary/{country}")
 async def get_summary(country: str):
     """
-    Get comprehensive risk summary for a country.
+    Get comprehensive migration risk summary for a country.
     
     Args:
         country: Country code (e.g., 'IND')
