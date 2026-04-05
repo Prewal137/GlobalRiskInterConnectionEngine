@@ -1,0 +1,289 @@
+Country,State,Year,Comments,"Number Of Cases Registered On Scheduled Caste (Sc) During The Year (UOM:Number), Scaling Factor:1","Number Of Cases Registered On Scheduled Tribe (St) During The Year (UOM:Number), Scaling Factor:1","Total Number Of Cases Registered During The Year (Sc+St) (UOM:Number), Scaling Factor:1","Scheduled Caste (Sc) Population As Per 2011 Census  (UOM:Number), Scaling Factor:100000","Scheduled Caste (Sc) Population Percentage To Total Population As Per 2011 Census  (UOM:%(Percentage)), Scaling Factor:1","Scheduled Tribe (St) Population As Per 2011 Census (UOM:Number), Scaling Factor:100000","Scheduled Tribe (St) Population Percentage To Total Population As Per 2011 Census  (UOM:%(Percentage)), Scaling Factor:1","Number Of Cases Registered On Scheduled Caste (Sc) Per Lakh Population As Per 2011 Census (UOM:Number), Scaling Factor:1","Number Of Cases Registered On Scheduled Tribe (St) Per Lakh Population As Per 2011 Census (UOM:Number), Scaling Factor:1"
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2020",,0,2,2,,,0.28,7.5,0,7.14
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2020",,1769,300,2069,84.5,17.2,26.3,5.4,20.93,11.41
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2020",,0,0,0,,,9.5,68.8,0,0
+India,Assam,"Calendar Year (Jan - Dec), 2020",,17,6,23,22.3,7.2,38.8,12.4,0.76,0.15
+India,Bihar,"Calendar Year (Jan - Dec), 2020",,7367,94,7461,165.6,15.9,13.3,1.3,44.49,7.07
+India,Chandigarh,"Calendar Year (Jan - Dec), 2020",,0,0,0,1.9,18.9,,,0.53,0
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2020",,316,501,817,32.7,12.8,78.2,30.6,9.66,6.41
+India,Delhi,"Calendar Year (Jan - Dec), 2020",,31,0,31,28.1,16.8,,,1.1,0
+India,Goa,"Calendar Year (Jan - Dec), 2020",,0,1,1,0.25,1.7,1.4,10.2,0,0.71
+India,Gujarat,"Calendar Year (Jan - Dec), 2020",,1258,289,1547,40.7,6.7,89.1,14.8,30.91,3.24
+India,Haryana,"Calendar Year (Jan - Dec), 2020",,1132,0,1132,51.1,20.2,,,22.15,0
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2020",,40,1,41,17.2,25.2,3.9,5.7,2.33,0.26
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2020",,3.91250744019613409640,0.00000000000000000000,3.91250744019613409640,8.998767112451108421720,7.4,14.574090214730599509090,11.9,0.43,0
+India,Jharkhand,"Calendar Year (Jan - Dec), 2020",,367,167,534,39.8,12.1,86.4,26.2,9.22,1.93
+India,Karnataka,"Calendar Year (Jan - Dec), 2020",,1263,269,1532,104.7,17.1,42.4,7,12.06,6.34
+India,Kerala,"Calendar Year (Jan - Dec), 2020",,776,119,895,30.4,9.1,4.8,1.5,25.53,24.79
+India,Ladakh,"Calendar Year (Jan - Dec), 2020",,0.08749255980386590360,0.00000000000000000000,0.08749255980386590360,0.201232887548891578280,7.4,0.325909785269400490910,11.9,0.43,0
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2020",,0,1,1,,,0.61,94.8,0,1.64
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2020",,6899,2399,9298,113.4,15.6,153.2,21.1,60.84,15.66
+India,Maharashtra,"Calendar Year (Jan - Dec), 2020",,2359,639,2998,132.7,11.8,105.1,9.4,17.78,6.08
+India,Manipur,"Calendar Year (Jan - Dec), 2020",,0,2,2,0.97,3.8,9,35.1,0,0.22
+India,Meghalaya,"Calendar Year (Jan - Dec), 2020",,0,0,0,0.17,0.6,25.5,86.1,0,0
+India,Mizoram,"Calendar Year (Jan - Dec), 2020",,0,0,0,0.1,0.1,10.3,94.4,0,0
+India,Nagaland,"Calendar Year (Jan - Dec), 2020",,0,0,0,,,17.1,86.5,0,0
+India,Odisha,"Calendar Year (Jan - Dec), 2020",,2046,605,2651,71.8,17.1,95.9,22.8,28.5,6.31
+India,Puducherry,"Calendar Year (Jan - Dec), 2020",,0,0,0,1.9,15.7,,,0,0
+India,Punjab,"Calendar Year (Jan - Dec), 2020",,119,2,121,88.6,31.9,,,1.34,0
+India,Rajasthan,"Calendar Year (Jan - Dec), 2020",,6895,1849,8744,122.2,17.8,92.3,13.5,56.42,20.03
+India,Sikkim,"Calendar Year (Jan - Dec), 2020",,0,0,0,0.28,4.6,2,33.8,0,0
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2020",,1237,18,1255,144.3,20,7.9,1.1,8.57,2.28
+India,Telangana,"Calendar Year (Jan - Dec), 2020",,1842,545,2387,54.3,15.4,32.9,9.3,33.92,16.57
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2020",,1,0,1,0.06,1.8,1.7,52,16.67,0
+India,Tripura,"Calendar Year (Jan - Dec), 2020",,0,1,1,6.5,17.8,11.6,31.8,0,0.09
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2020",,10138,1,10139,413.5,20.7,11.3,0.6,24.52,0.09
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2020",,33,13,46,18.9,18.8,2.9,2.9,1.75,4.48
+India,West Bengal,"Calendar Year (Jan - Dec), 2020",,86,67,153,214.6,23.5,52.9,5.8,0.4,1.27
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2019",,0,1,1,,,0.28,7.5,0,3.57
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2019",,1892,312,2204,84.5,17.2,26.3,5.4,22.39,11.86
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2019",,0,0,0,,,9.5,68.8,0,0
+India,Assam,"Calendar Year (Jan - Dec), 2019",,17,1,18,22.3,7.2,38.8,12.4,0.76,0.02
+India,Bihar,"Calendar Year (Jan - Dec), 2019",,6540,97,6637,165.6,15.9,13.3,1.3,39.49,7.29
+India,Chandigarh,"Calendar Year (Jan - Dec), 2019",,1,0,1,1.9,18.9,,,0.52,0
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2019",,339,427,766,32.7,12.8,78.2,30.6,10.36,5.46
+India,Delhi,"Calendar Year (Jan - Dec), 2019",,43,0,43,28.1,16.8,,,1.53,0
+India,Goa,"Calendar Year (Jan - Dec), 2019",,3,1,4,0.25,1.7,1.4,10.2,12,0.71
+India,Gujarat,"Calendar Year (Jan - Dec), 2019",,1295,310,1605,40.7,6.7,89.1,14.8,31.81,3.47
+India,Haryana,"Calendar Year (Jan - Dec), 2019",,1034,1,1035,51.1,20.2,,,20.23,0
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2019",,30,0,30,17.2,25.2,3.9,5.7,1.741,0
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2019",,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,8.998767112451108421720,7.4,14.574090214730599509090,11.9,0,0
+India,Jharkhand,"Calendar Year (Jan - Dec), 2019",,324,136,460,39.8,12.1,86.4,26.2,8.14,1.57
+India,Karnataka,"Calendar Year (Jan - Dec), 2019",,1417,316,1733,104.7,17.1,42.4,7,13.53,7.45
+India,Kerala,"Calendar Year (Jan - Dec), 2019",,776,128,904,30.4,9.1,4.8,1.5,25.52,26.6
+India,Ladakh,"Calendar Year (Jan - Dec), 2019",,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.201232887548891578280,7.4,0.325909785269400490910,11.9,0,0
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2019",,0,0,0,,,0.61,94.8,0,0
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2019",,5299,1920,7219,113.4,15.6,153.2,21.1,46.72,12.53
+India,Maharashtra,"Calendar Year (Jan - Dec), 2019",,1932,506,2438,132.7,11.8,105.1,9.4,14.55,4.81
+India,Manipur,"Calendar Year (Jan - Dec), 2019",,0,2,2,0.97,3.8,9,35.1,0,0.22
+India,Meghalaya,"Calendar Year (Jan - Dec), 2019",,0,0,0,0.17,0.6,25.5,86.1,0,0
+India,Mizoram,"Calendar Year (Jan - Dec), 2019",,0,8,8,0.1,0.1,10.3,94.4,0,0.77
+India,Nagaland,"Calendar Year (Jan - Dec), 2019",,0,0,0,,,17.1,86.5,0,0
+India,Odisha,"Calendar Year (Jan - Dec), 2019",,1845,576,2421,71.8,17.1,95.9,22.8,25.69,6
+India,Puducherry,"Calendar Year (Jan - Dec), 2019",,0,0,0,1.9,15.7,,,0,0
+India,Punjab,"Calendar Year (Jan - Dec), 2019",,130,1,131,88.6,31.9,,,1.46,0
+India,Rajasthan,"Calendar Year (Jan - Dec), 2019",,6659,1759,8418,122.2,17.8,92.3,13.5,54.49,19.05
+India,Sikkim,"Calendar Year (Jan - Dec), 2019",,2,2,4,0.28,4.6,2,33.8,7.14,1
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2019",,1060,28,1088,144.3,20,7.9,1.1,7.34,3.54
+India,Telangana,"Calendar Year (Jan - Dec), 2019",,1545,494,2039,54.3,15.4,32.9,9.3,28.45,15.01
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2019",,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.1200000000000000000000,2.241479157376714499847,1.8500000000000000000000,23.177717868405924795703,0.00000000000000000000,0.00000000000000000000
+India,Tripura,"Calendar Year (Jan - Dec), 2019",,0,0,0,6.5,17.8,11.6,31.8,0,0
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2019",,9451,705,10156,413.5,20.7,11.3,0.6,22.85,62.38
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2019",,59,8,67,18.9,18.8,2.9,2.9,3.12,2.75
+India,West Bengal,"Calendar Year (Jan - Dec), 2019",,100,76,176,214.6,23.5,52.9,5.8,0.46,1.43
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2017",,0,2,2,,,0.28,7.5,,7.1
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2017",,1969,341,2310,84.5,17.2,26.3,5.4,23.3,13
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2017",,2,0,2,,,9.5,68.8,,
+India,Assam,"Calendar Year (Jan - Dec), 2017",,10,65,75,22.3,7.2,38.8,12.4,0.4,1.7
+India,Bihar,"Calendar Year (Jan - Dec), 2017",,6747,80,6827,165.6,15.9,13.3,1.3,40.7,6
+India,Chandigarh,"Calendar Year (Jan - Dec), 2017",,1,0,1,1.9,18.9,,,0.5,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2017",,283,399,682,32.7,12.8,78.2,30.6,8.6,5.1
+India,Delhi,"Calendar Year (Jan - Dec), 2017",,48,4,52,28.1,16.8,,,1.7,
+India,Goa,"Calendar Year (Jan - Dec), 2017",,10,2,12,0.25,1.7,1.4,10.2,40,1.4
+India,Gujarat,"Calendar Year (Jan - Dec), 2017",,1477,319,1796,40.7,6.7,89.1,14.8,36.3,3.6
+India,Haryana,"Calendar Year (Jan - Dec), 2017",,760,0,760,51.1,20.2,,,14.9,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2017",,108,3,111,17.2,25.2,3.9,5.7,6.3,0.8
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2017","PoA Act, 1989 does not extend in the State",,,,8.998767112451108421720,7.4,14.574090214730599509090,11.9,,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2017",,541,237,778,39.8,12.1,86.4,26.2,13.6,2.7
+India,Karnataka,"Calendar Year (Jan - Dec), 2017",,1869,401,2270,104.7,17.1,42.4,7,17.8,9.4
+India,Kerala,"Calendar Year (Jan - Dec), 2017",,915,144,1059,30.4,9.1,4.8,1.5,30.1,30
+India,Ladakh,"Calendar Year (Jan - Dec), 2017","PoA Act, 1989 does not extend in the State",,,,0.201232887548891578280,7.4,0.325909785269400490910,11.9,,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2017",,0,0,0,,,0.61,94.8,,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2017",,5892,2289,8181,113.4,15.6,153.2,21.1,52,14.9
+India,Maharashtra,"Calendar Year (Jan - Dec), 2017",,1688,464,2152,132.7,11.8,105.1,9.4,12.7,4.4
+India,Manipur,"Calendar Year (Jan - Dec), 2017",,0,1,1,0.97,3.8,9,35.1,,0.1
+India,Meghalaya,"Calendar Year (Jan - Dec), 2017",,0,0,0,0.17,0.6,25.5,86.1,,
+India,Mizoram,"Calendar Year (Jan - Dec), 2017",,0,0,0,0.1,0.1,10.3,94.4,,
+India,Nagaland,"Calendar Year (Jan - Dec), 2017",,0,0,0,,,17.1,86.5,,
+India,Odisha,"Calendar Year (Jan - Dec), 2017",,1969,700,2669,71.8,17.1,95.9,22.8,27.4,7.3
+India,Puducherry,"Calendar Year (Jan - Dec), 2017",,26,0,26,1.9,15.7,,,13.7,
+India,Punjab,"Calendar Year (Jan - Dec), 2017",,118,0,118,88.6,31.9,,,1.3,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2017",,4238,984,5222,122.2,17.8,92.3,13.5,34.7,10.7
+India,Sikkim,"Calendar Year (Jan - Dec), 2017",,5,6,11,0.28,4.6,2,33.8,17.8,3
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2017",,1361,22,1383,144.3,20,7.9,1.1,9.4,2.8
+India,Telangana,"Calendar Year (Jan - Dec), 2017",,1465,435,1900,54.3,15.4,32.9,9.3,27,13.2
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2017",,0.00000000000000000000,5.00000000000000000000,5.00000000000000000000,0.1200000000000000000000,2.241479157376714499847,1.8500000000000000000000,23.177717868405924795703,,1.071014919439325643491
+India,Tripura,"Calendar Year (Jan - Dec), 2017",,1,1,2,6.5,17.8,11.6,31.8,0.2,0.1
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2017",,11232,88,11320,413.5,20.7,11.3,0.6,21.9,7.8
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2017",,96,11,107,18.9,18.8,2.9,2.9,5.1,3.8
+India,West Bengal,"Calendar Year (Jan - Dec), 2017",,138,122,260,214.6,23.5,52.9,5.8,0.6,2.3
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2016",,0,6,6,,,0.28,7.5,,21.4
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2016",,2335,405,2740,84.5,17.2,26.3,5.4,27.6,15.4
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2016",,0,0,0,,,9.5,68.8,,
+India,Assam,"Calendar Year (Jan - Dec), 2016",,4,1,5,22.3,7.2,38.8,12.4,0.2,
+India,Bihar,"Calendar Year (Jan - Dec), 2016",,5701,25,5726,165.6,15.9,13.3,1.3,34.4,1.9
+India,Chandigarh,"Calendar Year (Jan - Dec), 2016",,1,0,1,1.9,18.9,,,0.5,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2016",,243,402,645,32.7,12.8,78.2,30.6,7.4,5.1
+India,Delhi,"Calendar Year (Jan - Dec), 2016",,53,2,55,28.1,16.8,,,1.9,
+India,Goa,"Calendar Year (Jan - Dec), 2016",,10,11,21,0.25,1.7,1.4,10.2,40,7.8
+India,Gujarat,"Calendar Year (Jan - Dec), 2016",,1321,281,1602,40.7,6.7,89.1,14.8,32.4,3.1
+India,Haryana,"Calendar Year (Jan - Dec), 2016",,639,0,639,51.1,20.2,,,12.5,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2016",,115,2,117,17.2,25.2,3.9,5.7,6.7,0.5
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2016","PoA Act, 1989 does not extend in the State",,,,8.998767112451108421720,7.4,14.574090214730599509090,11.9,,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2016",,525,280,805,39.8,12.1,86.4,26.2,13.2,3.2
+India,Karnataka,"Calendar Year (Jan - Dec), 2016",,1866,371,2237,104.7,17.1,42.4,7,17.8,8.7
+India,Kerala,"Calendar Year (Jan - Dec), 2016",,810,182,992,30.3,9.1,4.8,1.5,26.7,37.1
+India,Ladakh,"Calendar Year (Jan - Dec), 2016","PoA Act, 1989 does not extend in the State",,,,0.201232887548891578280,7.4,0.325909785269400490910,11.9,,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2016",,0,0,0,,,0.61,94.8,,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2016",,4922,1823,6745,113.4,15.6,153.2,21.1,43.4,11.9
+India,Maharashtra,"Calendar Year (Jan - Dec), 2016",,1736,403,2139,132.7,11.8,105.1,9.4,13.1,3.8
+India,Manipur,"Calendar Year (Jan - Dec), 2016",,2,1,3,0.97,3.8,9,35.1,2.1,0.1
+India,Meghalaya,"Calendar Year (Jan - Dec), 2016",,0,0,0,0.17,0.6,25.5,86.1,,
+India,Mizoram,"Calendar Year (Jan - Dec), 2016",,0,0,0,0.1,0.1,10.3,94.4,,
+India,Nagaland,"Calendar Year (Jan - Dec), 2016",,0,0,0,,,17.1,86.5,,
+India,Odisha,"Calendar Year (Jan - Dec), 2016",,1796,681,2477,71.8,17.1,95.9,22.8,25,7.1
+India,Puducherry,"Calendar Year (Jan - Dec), 2016",,2,1,3,1.9,15.7,,,1.1,
+India,Punjab,"Calendar Year (Jan - Dec), 2016",,132,2,134,88.6,31.9,,,1.5,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2016",,5134,1195,6329,122.2,17.8,92.3,13.5,42,12.9
+India,Sikkim,"Calendar Year (Jan - Dec), 2016",,1,0,1,0.28,4.6,2,33.8,3.6,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2016",,1287,19,1306,144.3,20,7.9,1.1,8.9,2.4
+India,Telangana,"Calendar Year (Jan - Dec), 2016",,1529,375,1904,54.3,15.4,32.9,9.3,28.1,11.3
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2016",,0.00000000000000000000,2.00000000000000000000,2.00000000000000000000,0.1200000000000000000000,2.241479157376714499847,1.8500000000000000000000,23.177717868405924795703,,0.443178587354203714548
+India,Tripura,"Calendar Year (Jan - Dec), 2016",,0,3,3,6.5,17.8,11.6,31.8,,0.2
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2016",,10426,4,10430,413.5,20.7,11.3,0.6,25.2,0.4
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2016",,65,3,68,18.9,18.8,2.9,2.9,3.4,1
+India,West Bengal,"Calendar Year (Jan - Dec), 2016",,119,83,202,214.6,23.5,52.9,5.8,0.6,1.6
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2015",,0,3,3,,,0.28,7.5,,10.7
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2015",,2263,362,2625,84.5,17.2,26.3,5.4,26.8,13.8
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2015",,0,1,1,,,9.5,68.8,,0.1
+India,Assam,"Calendar Year (Jan - Dec), 2015",,5,0,5,22.3,7.2,38.8,12.4,0.2,
+India,Bihar,"Calendar Year (Jan - Dec), 2015",,6293,5,6298,165.6,15.9,13.3,1.3,38,0.3
+India,Chandigarh,"Calendar Year (Jan - Dec), 2015",,1,0,1,1.9,18.9,,,0.5,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2015",,216,373,589,32.7,12.8,78.2,30.6,6.6,4.8
+India,Delhi,"Calendar Year (Jan - Dec), 2015",,49,0,49,28.1,16.8,,,1.7,
+India,Goa,"Calendar Year (Jan - Dec), 2015",,13,8,21,0.25,1.7,1.4,10.2,52,5.7
+India,Gujarat,"Calendar Year (Jan - Dec), 2015",,1009,248,1257,40.7,6.7,89.1,14.8,24.8,2.8
+India,Haryana,"Calendar Year (Jan - Dec), 2015",,510,0,510,51.1,20.2,,,10,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2015",,91,6,97,17.2,25.2,3.9,5.7,5.3,1.5
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2015","PoA Act, 1989 does not extend in the State",,,,8.998767112451108421720,7.4,14.574090214730599509090,11.9,,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2015",,736,266,1002,39.8,12.1,86.4,26.2,18.5,3.1
+India,Karnataka,"Calendar Year (Jan - Dec), 2015",,1841,386,2227,104.7,17.1,42.4,7,17.6,9.1
+India,Kerala,"Calendar Year (Jan - Dec), 2015",,695,165,860,30.3,9.1,4.8,1.5,22.9,34.4
+India,Ladakh,"Calendar Year (Jan - Dec), 2015","PoA Act, 1989 does not extend in the State",,,,0.201232887548891578280,7.4,0.325909785269400490910,11.9,,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2015",,0,0,0,,,0.61,94.8,,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2015",,3546,1358,4904,113.4,15.6,153.2,21.1,31.3,8.9
+India,Maharashtra,"Calendar Year (Jan - Dec), 2015",,1795,481,2276,132.7,11.8,105.1,9.4,13.5,4.6
+India,Manipur,"Calendar Year (Jan - Dec), 2015",,0,0,0,0.97,3.8,9,35.1,1,0.1
+India,Meghalaya,"Calendar Year (Jan - Dec), 2015",,0,0,0,0.17,0.6,25.5,86.1,,
+India,Mizoram,"Calendar Year (Jan - Dec), 2015",,0,0,0,0.1,0.1,10.3,94.4,,
+India,Nagaland,"Calendar Year (Jan - Dec), 2015",,0,0,0,,,17.1,86.5,,
+India,Odisha,"Calendar Year (Jan - Dec), 2015",,1821,691,2512,71.8,17.1,95.9,22.8,25.4,7.2
+India,Puducherry,"Calendar Year (Jan - Dec), 2015",,2,0,2,1.9,15.7,,,1.1,
+India,Punjab,"Calendar Year (Jan - Dec), 2015",,147,0,147,88.6,31.9,,,1.7,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2015",,5911,1409,7320,122.2,17.8,92.3,13.5,38,15.3
+India,Sikkim,"Calendar Year (Jan - Dec), 2015",,3,0,3,0.28,4.6,2,33.8,10.7,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2015",,1735,25,1760,144.3,20,7.9,1.1,12,3.2
+India,Telangana,"Calendar Year (Jan - Dec), 2015",,1292,386,1678,54.3,15.4,32.9,9.3,23.8,11.7
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2015",,2.00000000000000000000,3.00000000000000000000,5.00000000000000000000,0.1200000000000000000000,2.241479157376714499847,1.8500000000000000000000,23.177717868405924795703,21.001794200920846921293,0.664767881031305571822
+India,Tripura,"Calendar Year (Jan - Dec), 2015",,1,3,4,6.5,17.8,11.6,31.8,0.1,0.2
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2015",,8357,6,8363,413.5,20.7,11.3,0.6,20.2,0.5
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2015",,80,6,86,18.9,18.8,2.9,2.9,4.2,2.1
+India,West Bengal,"Calendar Year (Jan - Dec), 2015",,150,84,234,214.6,23.5,52.9,5.8,0.7,1.6
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2014",,0,6,6,,,0.28,7.5,,21.4
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2014",,2104,389,2493,84.5,17.2,26.3,5.4,24.9,14.8
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2014",,0,0,0,,,9.5,68.8,,
+India,Assam,"Calendar Year (Jan - Dec), 2014",,2,1,3,22.3,7.2,38.8,12.4,0.08,0.02
+India,Bihar,"Calendar Year (Jan - Dec), 2014",,7874,77,7951,165.6,15.9,13.3,1.3,47.5,5.9
+India,Chandigarh,"Calendar Year (Jan - Dec), 2014",,1,0,1,1.9,18.9,,,0.5,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2014",,359,475,834,32.7,12.8,78.2,30.6,11,6.1
+India,Delhi,"Calendar Year (Jan - Dec), 2014",,86,0,86,28.1,16.8,,,3.1,
+India,Goa,"Calendar Year (Jan - Dec), 2014",,12,6,18,0.25,1.7,1.4,10.2,48,4.3
+India,Gujarat,"Calendar Year (Jan - Dec), 2014",,1075,223,1298,40.7,6.7,89.1,14.8,26.4,2.5
+India,Haryana,"Calendar Year (Jan - Dec), 2014",,444,0,444,51.1,20.2,,,8.7,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2014",,113,3,116,17.2,25.2,3.9,5.7,6.6,0.8
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2014","PoA Act, 1989 does not extend in the State",,,,8.998767112451108421720,7.4,14.574090214730599509090,11.9,,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2014",,903,402,1305,39.8,12.1,86.4,26.2,22.7,4.6
+India,Karnataka,"Calendar Year (Jan - Dec), 2014",,1865,397,2262,104.7,17.1,42.4,7,17.8,9.4
+India,Kerala,"Calendar Year (Jan - Dec), 2014",,712,120,832,30.3,9.1,4.8,1.5,23.5,25
+India,Ladakh,"Calendar Year (Jan - Dec), 2014","PoA Act, 1989 does not extend in the State",,,,0.201232887548891578280,7.4,0.325909785269400490910,11.9,,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2014",,0,0,0,,,0.61,94.8,,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2014",,3294,1577,4871,113.4,15.6,153.2,21.1,29,10.3
+India,Maharashtra,"Calendar Year (Jan - Dec), 2014",,1763,443,2206,132.7,11.8,105.1,9.4,13.9,4.2
+India,Manipur,"Calendar Year (Jan - Dec), 2014",,1,1,2,0.97,3.8,9,35.1,1,0.1
+India,Meghalaya,"Calendar Year (Jan - Dec), 2014",,0,0,0,0.17,0.6,25.5,86.1,,
+India,Mizoram,"Calendar Year (Jan - Dec), 2014",,0,0,0,0.1,0.1,10.3,94.4,,
+India,Nagaland,"Calendar Year (Jan - Dec), 2014",,0,0,0,,,17.1,86.5,,
+India,Odisha,"Calendar Year (Jan - Dec), 2014",,1657,533,2190,71.8,17.1,95.9,22.8,23.1,5.6
+India,Puducherry,"Calendar Year (Jan - Dec), 2014",,5,1,6,1.9,15.7,,,2.6,1
+India,Punjab,"Calendar Year (Jan - Dec), 2014",,123,0,123,88.6,31.9,,,1.4,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2014",,6734,1681,8415,122.2,17.8,92.3,13.5,55.1,18.2
+India,Sikkim,"Calendar Year (Jan - Dec), 2014",,3,1,4,0.28,4.6,2,33.8,10.7,0.5
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2014",,1486,18,1504,144.3,20,7.9,1.1,10.3,2.3
+India,Telangana,"Calendar Year (Jan - Dec), 2014",,1427,333,1760,54.3,15.4,32.9,9.3,26.3,10.1
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2014",,0.00000000000000000000,3.00000000000000000000,3.00000000000000000000,0.1200000000000000000000,2.241479157376714499847,1.8500000000000000000000,23.177717868405924795703,,0.664767881031305571822
+India,Tripura,"Calendar Year (Jan - Dec), 2014",,1,0,1,6.5,17.8,11.6,31.8,7.4,2.1
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2014",,8066,24,8090,413.5,20.7,11.3,0.6,19.5,2.1
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2014",,60,1,61,18.9,18.8,2.9,2.9,3.2,0.3
+India,West Bengal,"Calendar Year (Jan - Dec), 2014",,130,107,237,214.6,23.5,52.9,5.8,0.6,2
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2013",,0,1,1,,,0.28,7.5,,3.6
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2013",,1913.19670889284925817984,393.89344006617484727232,2307.09014895902410545216,81.299137108896504935522,16.4,34.700136386782069878752,7,23.5,11.4
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2013",,0,1,1,,,9.5,68.8,,0.1
+India,Assam,"Calendar Year (Jan - Dec), 2013",,8,0,8,22.3,7.2,38.8,12.4,0.4,
+India,Bihar,"Calendar Year (Jan - Dec), 2013",,6721,91,6812,165.6,15.9,13.3,1.3,40.6,6.8
+India,Chandigarh,"Calendar Year (Jan - Dec), 2013",,4,0,4,1.9,18.9,,,2.1,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2013",,242,331,573,32.7,12.8,78.2,30.6,7.4,4.2
+India,Delhi,"Calendar Year (Jan - Dec), 2013",,52,0,52,28.1,16.8,,,1.9,
+India,Goa,"Calendar Year (Jan - Dec), 2013",,11,9,20,0.25,1.7,1.4,10.2,44,6.4
+India,Gujarat,"Calendar Year (Jan - Dec), 2013",,1190,224,1414,40.7,6.7,89.1,14.8,29.2,2.5
+India,Haryana,"Calendar Year (Jan - Dec), 2013",,493,0,493,51.1,20.2,,,9.6,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2013",,144,2,146,17.2,25.2,3.9,5.7,8.4,0.5
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2013","PoA Act, 1989 does not extend in the State",,,,8.998767112451108421720,7.4,14.574090214730599509090,11.9,,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2013",,978,396,1378,39.8,12.1,86.4,26.2,24.6,4.6
+India,Karnataka,"Calendar Year (Jan - Dec), 2013",,2555,521,3076,1047,17.1,42.4,7,24.4,12.3
+India,Kerala,"Calendar Year (Jan - Dec), 2013",,756,135,891,30.3,9.1,4.8,1.5,25,28.1
+India,Ladakh,"Calendar Year (Jan - Dec), 2013","PoA Act, 1989 does not extend in the State",,,,0.201232887548891578280,7.4,0.325909785269400490910,11.9,,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2013",,0,0,0,,,0.61,94.8,,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2013",,2945,1296,4241,113.4,15.6,153.2,21.1,26,8.4
+India,Maharashtra,"Calendar Year (Jan - Dec), 2013",,1657,407,2064,132.7,11.8,105.1,9.4,12.5,3.9
+India,Manipur,"Calendar Year (Jan - Dec), 2013",,1,2,3,0.97,3.8,9,35.1,1,0.2
+India,Meghalaya,"Calendar Year (Jan - Dec), 2013",,0,0,0,0.17,0.6,25.5,86.1,,
+India,Mizoram,"Calendar Year (Jan - Dec), 2013",,0,0,0,0.1,0.1,10.3,94.4,,
+India,Nagaland,"Calendar Year (Jan - Dec), 2013",,0,18,18,,,17.1,86.5,,1.1
+India,Odisha,"Calendar Year (Jan - Dec), 2013",,2592,790,3382,71.8,17.1,95.9,22.8,36.1,8.2
+India,Puducherry,"Calendar Year (Jan - Dec), 2013",,6,0,6,1.9,15.7,,,3.2,
+India,Punjab,"Calendar Year (Jan - Dec), 2013",,126,0,126,88.6,31.9,,,1.4,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2013",,6475,1651,8126,122.2,17.8,92.3,13.5,53,17.9
+India,Sikkim,"Calendar Year (Jan - Dec), 2013",,6,17,23,0.28,4.6,2,33.8,21.4,8.5
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2013",,1844,23,1867,144.3,20,7.9,1.1,12.8,2.9
+India,Telangana,"Calendar Year (Jan - Dec), 2013",,1350.80329110715074182016,278.10655993382515272768,1628.90985104097589454784,57.400862891103495064478,16.4,24.499863613217930121248,7,23.5,11.4
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2013",,1.00000000000000000000,8.00000000000000000000,9.00000000000000000000,0.1200000000000000000000,2.241479157376714499847,1.8500000000000000000000,23.177717868405924795703,12.046624832780860997246,4.225586220605695927107
+India,Tripura,"Calendar Year (Jan - Dec), 2013",,48,24,72,6.5,17.8,11.6,31.8,7.4,2.1
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2013",,7078,25,7103,413.5,20.7,11.3,0.6,17.1,2.2
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2013",,34,2,36,18.9,18.8,2.9,2.9,1.8,0.7
+India,West Bengal,"Calendar Year (Jan - Dec), 2013",,115,122,237,214.6,23.5,52.9,5.8,0.5,2.3
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2012",,0,4,4,,,0.28,7.5,,14.2
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2012",,1786.58810315729305727088,390.37653435129828613596,2176.96463750859134340684,81.299137108896504935522,16.4,34.700136386782069878752,7,22,11.3
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2012",,0,10,10,,,9.5,68.8,,1.1
+India,Assam,"Calendar Year (Jan - Dec), 2012",,4,0,4,22.3,7.2,38.8,12.4,0.2,
+India,Bihar,"Calendar Year (Jan - Dec), 2012",,4821,119,4940,165.6,15.9,13.3,1.3,29.1,8.9
+India,Chandigarh,"Calendar Year (Jan - Dec), 2012",,2,0,2,1.9,18.9,,,1.1,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2012",,262,344,606,32.7,12.8,78.2,30.6,8,4.4
+India,Delhi,"Calendar Year (Jan - Dec), 2012",,44,0,44,28.1,16.8,,,1.6,
+India,Goa,"Calendar Year (Jan - Dec), 2012",,9,1,10,0.25,1.7,1.4,10.2,36,0.7
+India,Gujarat,"Calendar Year (Jan - Dec), 2012",,1026,221,1247,40.7,6.7,89.1,14.8,25.2,2.5
+India,Haryana,"Calendar Year (Jan - Dec), 2012",,252,0,252,,51.1,20.2,,4.9,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2012",,126,3,129,17.2,25.2,3.9,5.7,7.3,0.8
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2012","PoA Act, 1989 does not extend in the State",,,,8.998767112451108421720,7.4,14.574090214730599509090,11.9,,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2012",,696,287,983,39.8,12.1,86.4,26.2,17.4,3.3
+India,Karnataka,"Calendar Year (Jan - Dec), 2012",,2594,373,2967,104.7,17.1,42.4,7,24.8,8.8
+India,Kerala,"Calendar Year (Jan - Dec), 2012",,810,124,934,30.3,9.1,4.8,1.5,26.7,25.8
+India,Ladakh,"Calendar Year (Jan - Dec), 2012","PoA Act, 1989 does not extend in the State",,,,0.201232887548891578280,7.4,0.325909785269400490910,11.9,,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2012",,0,0,0,,,0.61,94.8,,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2012",,2875,1218,4093,113.4,15.6,153.2,21.1,25.4,8
+India,Maharashtra,"Calendar Year (Jan - Dec), 2012",,1086,307,1393,132.7,11.8,105.1,9.4,8.2,2.9
+India,Manipur,"Calendar Year (Jan - Dec), 2012",,0,2,2,0.97,3.8,9,35.1,,0.2
+India,Meghalaya,"Calendar Year (Jan - Dec), 2012",,0,0,0,0.17,0.6,25.5,86.1,,
+India,Mizoram,"Calendar Year (Jan - Dec), 2012",,0,0,0,0.1,0.1,10.3,94.4,,
+India,Nagaland,"Calendar Year (Jan - Dec), 2012",,0,0,0,,,17.1,86.5,,
+India,Odisha,"Calendar Year (Jan - Dec), 2012",,2265,688,2953,71.8,17.1,95.9,22.8,31.5,7.2
+India,Puducherry,"Calendar Year (Jan - Dec), 2012",,4,0,4,1.9,15.7,,,2.1,
+India,Punjab,"Calendar Year (Jan - Dec), 2012",,71,0,71,88.6,31.9,,,0.8,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2012",,5559,1351,6910,122.2,17.8,92.3,13.5,45.5,14.6
+India,Sikkim,"Calendar Year (Jan - Dec), 2012",,5,4,9,0.28,4.6,2,33.8,17.9,2
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2012",,1638,27,1665,144.3,20,7.9,1.1,11.4,3.4
+India,Telangana,"Calendar Year (Jan - Dec), 2012",,1261.41189684270694272912,275.62346564870171386404,1537.03536249140865659316,57.400862891103495064478,16.4,24.499863613217930121248,7,22,11.3
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2012",,0.00000000000000000000,4.00000000000000000000,4.00000000000000000000,0.1200000000000000000000,2.241479157376714499847,1.8500000000000000000000,23.177717868405924795703,0.886357174708407429096,
+India,Tripura,"Calendar Year (Jan - Dec), 2012",,76,29,105,6.5,17.8,11.6,31.8,11.7,2.5
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2012",,6201,44,6245,413.5,20.7,11.3,0.6,15,3.9
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2012",,33,3,36,18.9,18.8,2.9,2.9,1.7,1
+India,West Bengal,"Calendar Year (Jan - Dec), 2012",,85,91,176,214.6,23.5,52.9,5.8,0.4,1.7

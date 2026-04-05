@@ -1,0 +1,419 @@
+Country,State,Year,Month,protest_count,violence_count,conflict_events,fatalities
+India,Andaman And Nicobar Islands,2011,1,0.0,0.0,0.0,0.0
+India,Andaman And Nicobar Islands,2012,1,22.2,0.0,0.0,0.0
+India,Andaman And Nicobar Islands,2013,1,5.6,0.0,0.0,0.0
+India,Andaman And Nicobar Islands,2014,1,33.4,6.0,0.0,0.0
+India,Andaman And Nicobar Islands,2015,1,16.7,3.0,0.0,0.0
+India,Andaman And Nicobar Islands,2016,1,33.4,6.0,0.0,0.0
+India,Andaman And Nicobar Islands,2017,1,11.1,2.0,0.0,0.0
+India,Andaman And Nicobar Islands,2018,1,0.0,1.0,0.0,0.0
+India,Andaman And Nicobar Islands,2019,1,5.57,3.0,0.0,0.0
+India,Andaman And Nicobar Islands,2020,1,11.14,2.0,0.0,0.0
+India,Andaman And Nicobar Islands,2021,1,0.0,3.0,0.0,0.0
+India,Andaman And Nicobar Islands,2022,1,0.0,3.0,0.0,0.0
+India,Andhra Pradesh,2011,1,0.0,0.0,0.0,0.0
+India,Andhra Pradesh,2012,1,2600.64117185989,0.0,0.0,0.0
+India,Andhra Pradesh,2013,1,2735.8835890251994,0.0,0.0,0.0
+India,Andhra Pradesh,2014,1,2921.7000000000003,390.0,0.0,0.0
+India,Andhra Pradesh,2015,1,3027.6000000000004,362.0,0.0,0.0
+India,Andhra Pradesh,2016,1,3188.0,405.0,0.0,0.0
+India,Andhra Pradesh,2017,1,2687.3,341.0,0.0,0.0
+India,Andhra Pradesh,2018,1,0.0,330.0,0.0,0.0
+India,Andhra Pradesh,2019,1,2550.25,330.0,0.0,0.0
+India,Andhra Pradesh,2020,1,2401.3399999999997,320.0,0.0,0.0
+India,Andhra Pradesh,2021,1,0.0,361.0,0.0,0.0
+India,Andhra Pradesh,2022,1,0.0,396.0,0.0,0.0
+India,Arunachal Pradesh,2012,1,21.1,0.0,0.0,0.0
+India,Arunachal Pradesh,2013,1,2.1,0.0,0.0,0.0
+India,Arunachal Pradesh,2014,1,0.0,0.0,0.0,0.0
+India,Arunachal Pradesh,2015,1,2.1,1.0,0.0,0.0
+India,Arunachal Pradesh,2016,1,0.0,1.0,0.0,0.0
+India,Arunachal Pradesh,2017,1,2.0,0.0,0.0,0.0
+India,Arunachal Pradesh,2018,1,0.0,0.0,0.0,0.0
+India,Arunachal Pradesh,2019,1,0.0,0.0,0.0,0.0
+India,Arunachal Pradesh,2020,1,0.0,0.0,0.0,0.0
+India,Arunachal Pradesh,2021,1,0.0,1.0,0.0,0.0
+India,Arunachal Pradesh,2022,1,0.0,0.0,0.0,0.0
+India,Assam,2012,1,4.2,0.0,0.0,0.0
+India,Assam,2013,1,8.4,0.0,0.0,0.0
+India,Assam,2014,1,4.1,1.0,0.0,0.0
+India,Assam,2015,1,10.2,0.0,0.0,0.0
+India,Assam,2016,1,6.2,1.0,0.0,0.0
+India,Assam,2017,1,142.10000000000002,65.0,0.0,0.0
+India,Assam,2018,1,0.0,6.0,0.0,0.0
+India,Assam,2019,1,19.78,4.0,0.0,0.0
+India,Assam,2020,1,29.91,10.0,0.0,0.0
+India,Assam,2021,1,0.0,16.0,0.0,0.0
+India,Assam,2022,1,0.0,9.0,0.0,0.0
+India,Bihar,2011,1,0.0,0.0,0.0,0.0
+India,Bihar,2012,1,5097.0,0.0,0.0,0.0
+India,Bihar,2013,1,6950.400000000001,0.0,0.0,0.0
+India,Bihar,2014,1,8081.4,77.0,0.0,0.0
+India,Bihar,2015,1,6341.3,5.0,0.0,0.0
+India,Bihar,2016,1,5787.299999999999,25.0,0.0,0.0
+India,Bihar,2017,1,6953.7,80.0,0.0,0.0
+India,Bihar,2018,1,0.0,64.0,0.0,0.0
+India,Bihar,2019,1,6780.78,97.0,0.0,0.0
+India,Bihar,2020,1,7606.5599999999995,94.0,0.0,0.0
+India,Bihar,2021,1,0.0,103.0,0.0,0.0
+India,Bihar,2022,1,0.0,146.0,0.0,0.0
+India,Chandigarh,2012,1,5.1,0.0,0.0,0.0
+India,Chandigarh,2013,1,10.1,0.0,0.0,0.0
+India,Chandigarh,2014,1,2.5,0.0,0.0,0.0
+India,Chandigarh,2015,1,2.5,0.0,0.0,0.0
+India,Chandigarh,2016,1,2.5,0.0,0.0,0.0
+India,Chandigarh,2017,1,1.5,0.0,0.0,0.0
+India,Chandigarh,2018,1,0.0,0.0,0.0,0.0
+India,Chandigarh,2019,1,1.52,0.0,0.0,0.0
+India,Chandigarh,2020,1,0.53,0.0,0.0,0.0
+India,Chandigarh,2021,1,0.0,0.0,0.0,0.0
+India,Chandigarh,2022,1,0.0,0.0,0.0,0.0
+India,Chhattisgarh,2011,1,0.0,0.0,0.0,0.0
+India,Chhattisgarh,2012,1,962.4,0.0,0.0,0.0
+India,Chhattisgarh,2013,1,917.6,0.0,0.0,0.0
+India,Chhattisgarh,2014,1,1326.1,475.0,0.0,0.0
+India,Chhattisgarh,2015,1,973.4,373.0,0.0,0.0
+India,Chhattisgarh,2016,1,1059.5,402.0,0.0,0.0
+India,Chhattisgarh,2017,1,1094.7,399.0,0.0,0.0
+India,Chhattisgarh,2018,1,0.0,388.0,0.0,0.0
+India,Chhattisgarh,2019,1,1208.8200000000002,427.0,0.0,0.0
+India,Chhattisgarh,2020,1,1334.07,502.0,0.0,0.0
+India,Chhattisgarh,2021,1,0.0,506.0,0.0,0.0
+India,Chhattisgarh,2022,1,0.0,516.0,0.0,0.0
+India,Delhi,2012,1,89.6,0.0,0.0,0.0
+India,Delhi,2013,1,105.9,0.0,0.0,0.0
+India,Delhi,2014,1,175.1,2.0,0.0,0.0
+India,Delhi,2015,1,50.7,0.0,0.0,0.0
+India,Delhi,2016,1,58.9,2.0,0.0,0.0
+India,Delhi,2017,1,57.7,4.0,0.0,0.0
+India,Delhi,2018,1,0.0,0.0,0.0,0.0
+India,Delhi,2019,1,44.53,2.0,0.0,0.0
+India,Delhi,2020,1,32.1,1.0,0.0,0.0
+India,Delhi,2021,1,0.0,5.0,0.0,0.0
+India,Delhi,2022,1,0.0,0.0,0.0,0.0
+India,Goa,2012,1,47.7,0.0,0.0,0.0
+India,Goa,2013,1,79.4,0.0,0.0,0.0
+India,Goa,2014,1,76.3,6.0,0.0,0.0
+India,Goa,2015,1,86.7,8.0,0.0,0.0
+India,Goa,2016,1,79.8,11.0,0.0,0.0
+India,Goa,2017,1,55.4,2.0,0.0,0.0
+India,Goa,2018,1,0.0,5.0,0.0,0.0
+India,Goa,2019,1,17.71,2.0,0.0,0.0
+India,Goa,2020,1,2.71,2.0,0.0,0.0
+India,Goa,2021,1,0.0,5.0,0.0,0.0
+India,Goa,2022,1,0.0,1.0,0.0,0.0
+India,Gujarat,2011,1,0.0,0.0,0.0,0.0
+India,Gujarat,2012,1,1495.7,0.0,0.0,0.0
+India,Gujarat,2013,1,1669.7,0.0,0.0,0.0
+India,Gujarat,2014,1,1549.9,223.0,0.0,0.0
+India,Gujarat,2015,1,1532.6,248.0,0.0,0.0
+India,Gujarat,2016,1,1918.5,281.0,0.0,0.0
+India,Gujarat,2017,1,2154.8999999999996,319.0,0.0,0.0
+India,Gujarat,2018,1,0.0,311.0,0.0,0.0
+India,Gujarat,2019,1,1950.28,321.0,0.0,0.0
+India,Gujarat,2020,1,1870.15,291.0,0.0,0.0
+India,Gujarat,2021,1,0.0,341.0,0.0,0.0
+India,Gujarat,2022,1,0.0,330.0,0.0,0.0
+India,Haryana,2011,1,0.0,0.0,0.0,0.0
+India,Haryana,2012,1,508.9,0.0,0.0,0.0
+India,Haryana,2013,1,995.6,0.0,0.0,0.0
+India,Haryana,2014,1,896.7,0.0,0.0,0.0
+India,Haryana,2015,1,1030.0,0.0,0.0,0.0
+India,Haryana,2016,1,1290.5,0.0,0.0,0.0
+India,Haryana,2017,1,774.9,0.0,0.0,0.0
+India,Haryana,2018,1,0.0,0.0,0.0,0.0
+India,Haryana,2019,1,1056.23,1.0,0.0,0.0
+India,Haryana,2020,1,1154.15,0.0,0.0,0.0
+India,Haryana,2021,1,0.0,0.0,0.0,0.0
+India,Haryana,2022,1,0.0,0.0,0.0,0.0
+India,Himachal Pradesh,2011,1,0.0,0.0,0.0,0.0
+India,Himachal Pradesh,2012,1,140.10000000000002,0.0,0.0,0.0
+India,Himachal Pradesh,2013,1,156.9,0.0,0.0,0.0
+India,Himachal Pradesh,2014,1,126.39999999999999,3.0,0.0,0.0
+India,Himachal Pradesh,2015,1,109.8,6.0,0.0,0.0
+India,Himachal Pradesh,2016,1,126.2,2.0,0.0,0.0
+India,Himachal Pradesh,2017,1,121.1,3.0,0.0,0.0
+India,Himachal Pradesh,2018,1,0.0,1.0,0.0,0.0
+India,Himachal Pradesh,2019,1,31.741,1.0,0.0,0.0
+India,Himachal Pradesh,2020,1,44.589999999999996,3.0,0.0,0.0
+India,Himachal Pradesh,2021,1,0.0,7.0,0.0,0.0
+India,Himachal Pradesh,2022,1,0.0,4.0,0.0,0.0
+India,Jammu And Kashmir,2012,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2013,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2014,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2015,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2016,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2017,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2018,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2019,1,0.0,0.0,0.0,0.0
+India,Jammu And Kashmir,2020,1,4.342507440196134,0.0,0.0,0.0
+India,Jammu And Kashmir,2021,1,0.0,1.0,0.0,0.0
+India,Jammu And Kashmir,2022,1,0.0,1.0,0.0,0.0
+India,Jharkhand,2011,1,0.0,0.0,0.0,0.0
+India,Jharkhand,2012,1,1290.6999999999998,0.0,0.0,0.0
+India,Jharkhand,2013,1,1803.1999999999998,0.0,0.0,0.0
+India,Jharkhand,2014,1,1734.3,402.0,0.0,0.0
+India,Jharkhand,2015,1,1289.6,266.0,0.0,0.0
+India,Jharkhand,2016,1,1101.4,280.0,0.0,0.0
+India,Jharkhand,2017,1,1031.3000000000002,237.0,0.0,0.0
+India,Jharkhand,2018,1,0.0,224.0,0.0,0.0
+India,Jharkhand,2019,1,605.71,342.0,0.0,0.0
+India,Jharkhand,2020,1,712.15,347.0,0.0,0.0
+India,Jharkhand,2021,1,0.0,250.0,0.0,0.0
+India,Jharkhand,2022,1,0.0,283.0,0.0,0.0
+India,Karnataka,2011,1,0.0,0.0,0.0,0.0
+India,Karnataka,2012,1,3373.6000000000004,0.0,0.0,0.0
+India,Karnataka,2013,1,3635.7000000000003,0.0,0.0,0.0
+India,Karnataka,2014,1,2686.2000000000003,397.0,0.0,0.0
+India,Karnataka,2015,1,2639.7,386.0,0.0,0.0
+India,Karnataka,2016,1,2634.5,374.0,0.0,0.0
+India,Karnataka,2017,1,2698.2000000000003,401.0,0.0,0.0
+India,Karnataka,2018,1,0.0,322.0,0.0,0.0
+India,Karnataka,2019,1,2069.98,327.0,0.0,0.0
+India,Karnataka,2020,1,1819.3999999999999,293.0,0.0,0.0
+India,Karnataka,2021,1,0.0,361.0,0.0,0.0
+India,Karnataka,2022,1,0.0,438.0,0.0,0.0
+India,Kerala,2011,1,0.0,0.0,0.0,0.0
+India,Kerala,2012,1,1110.5,0.0,0.0,0.0
+India,Kerala,2013,1,1079.1,0.0,0.0,0.0
+India,Kerala,2014,1,1000.5,120.0,0.0,0.0
+India,Kerala,2015,1,1082.3,165.0,0.0,0.0
+India,Kerala,2016,1,1237.8,182.0,0.0,0.0
+India,Kerala,2017,1,1263.1,144.0,0.0,0.0
+India,Kerala,2018,1,0.0,138.0,0.0,0.0
+India,Kerala,2019,1,1084.12,140.0,0.0,0.0
+India,Kerala,2020,1,1064.32,130.0,0.0,0.0
+India,Kerala,2021,1,0.0,133.0,0.0,0.0
+India,Kerala,2022,1,0.0,172.0,0.0,0.0
+India,Ladakh,2012,1,0.0,0.0,0.0,0.0
+India,Ladakh,2013,1,0.0,0.0,0.0,0.0
+India,Ladakh,2014,1,0.0,0.0,0.0,0.0
+India,Ladakh,2015,1,0.0,0.0,0.0,0.0
+India,Ladakh,2016,1,0.0,0.0,0.0,0.0
+India,Ladakh,2017,1,0.0,0.0,0.0,0.0
+India,Ladakh,2018,1,0.0,0.0,0.0,0.0
+India,Ladakh,2019,1,0.0,0.0,0.0,0.0
+India,Ladakh,2020,1,0.5174925598038659,0.0,0.0,0.0
+India,Ladakh,2021,1,0.0,0.0,0.0,0.0
+India,Ladakh,2022,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2012,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2013,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2014,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2015,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2016,1,1.0,1.0,0.0,0.0
+India,Lakshadweep,2017,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2018,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2019,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2020,1,3.6399999999999997,1.0,0.0,0.0
+India,Lakshadweep,2021,1,0.0,0.0,0.0,0.0
+India,Lakshadweep,2022,1,0.0,0.0,0.0,0.0
+India,Madhya Pradesh,2011,1,0.0,0.0,0.0,0.0
+India,Madhya Pradesh,2012,1,5344.4,0.0,0.0,0.0
+India,Madhya Pradesh,2013,1,5571.4,0.0,0.0,0.0
+India,Madhya Pradesh,2014,1,6487.3,1577.0,0.0,0.0
+India,Madhya Pradesh,2015,1,6302.2,1358.0,0.0,0.0
+India,Madhya Pradesh,2016,1,8623.3,1823.0,0.0,0.0
+India,Madhya Pradesh,2017,1,10536.9,2289.0,0.0,0.0
+India,Madhya Pradesh,2018,1,0.0,1868.0,0.0,0.0
+India,Madhya Pradesh,2019,1,9198.25,1922.0,0.0,0.0
+India,Madhya Pradesh,2020,1,11773.5,2401.0,0.0,0.0
+India,Madhya Pradesh,2021,1,0.0,2627.0,0.0,0.0
+India,Madhya Pradesh,2022,1,0.0,2979.0,0.0,0.0
+India,Maharashtra,2011,1,0.0,0.0,0.0,0.0
+India,Maharashtra,2012,1,1711.1000000000001,0.0,0.0,0.0
+India,Maharashtra,2013,1,2487.4,0.0,0.0,0.0
+India,Maharashtra,2014,1,2667.1,443.0,0.0,0.0
+India,Maharashtra,2015,1,2775.1,482.0,0.0,0.0
+India,Maharashtra,2016,1,2558.9,403.0,0.0,0.0
+India,Maharashtra,2017,1,2633.1,464.0,0.0,0.0
+India,Maharashtra,2018,1,0.0,526.0,0.0,0.0
+India,Maharashtra,2019,1,2963.36,559.0,0.0,0.0
+India,Maharashtra,2020,1,3660.86,663.0,0.0,0.0
+India,Maharashtra,2021,1,0.0,628.0,0.0,0.0
+India,Maharashtra,2022,1,0.0,742.0,0.0,0.0
+India,Manipur,2012,1,4.2,0.0,0.0,0.0
+India,Manipur,2013,1,6.2,0.0,0.0,0.0
+India,Manipur,2014,1,4.1,1.0,0.0,0.0
+India,Manipur,2015,1,1.1,0.0,0.0,0.0
+India,Manipur,2016,1,6.199999999999999,1.0,0.0,0.0
+India,Manipur,2017,1,2.1,1.0,0.0,0.0
+India,Manipur,2018,1,0.0,1.0,0.0,0.0
+India,Manipur,2019,1,4.220000000000001,2.0,0.0,0.0
+India,Manipur,2020,1,4.220000000000001,2.0,0.0,0.0
+India,Manipur,2021,1,0.0,0.0,0.0,0.0
+India,Manipur,2022,1,0.0,1.0,0.0,0.0
+India,Meghalaya,2012,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2013,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2014,1,1.0,1.0,0.0,0.0
+India,Meghalaya,2015,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2016,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2017,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2018,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2019,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2020,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2021,1,0.0,0.0,0.0,0.0
+India,Meghalaya,2022,1,0.0,0.0,0.0,0.0
+India,Mizoram,2012,1,0.0,0.0,0.0,0.0
+India,Mizoram,2013,1,0.0,0.0,0.0,0.0
+India,Mizoram,2014,1,1.0,1.0,0.0,0.0
+India,Mizoram,2015,1,0.0,0.0,0.0,0.0
+India,Mizoram,2016,1,0.0,0.0,0.0,0.0
+India,Mizoram,2017,1,0.0,0.0,0.0,0.0
+India,Mizoram,2018,1,0.0,0.0,0.0,0.0
+India,Mizoram,2019,1,16.77,8.0,0.0,0.0
+India,Mizoram,2020,1,0.0,0.0,0.0,0.0
+India,Mizoram,2021,1,0.0,0.0,0.0,0.0
+India,Mizoram,2022,1,0.0,29.0,0.0,0.0
+India,Nagaland,2012,1,0.0,0.0,0.0,0.0
+India,Nagaland,2013,1,37.1,0.0,0.0,0.0
+India,Nagaland,2014,1,0.0,0.0,0.0,0.0
+India,Nagaland,2015,1,0.0,0.0,0.0,0.0
+India,Nagaland,2016,1,0.0,0.0,0.0,0.0
+India,Nagaland,2017,1,0.0,0.0,0.0,0.0
+India,Nagaland,2018,1,0.0,0.0,0.0,0.0
+India,Nagaland,2019,1,0.0,0.0,0.0,0.0
+India,Nagaland,2020,1,0.0,0.0,0.0,0.0
+India,Nagaland,2021,1,0.0,0.0,0.0,0.0
+India,Nagaland,2022,1,0.0,0.0,0.0,0.0
+India,Odisha,2011,1,0.0,0.0,0.0,0.0
+India,Odisha,2012,1,3679.7,0.0,0.0,0.0
+India,Odisha,2013,1,4216.299999999999,0.0,0.0,0.0
+India,Odisha,2014,1,2751.7,533.0,0.0,0.0
+India,Odisha,2015,1,3235.6,691.0,0.0,0.0
+India,Odisha,2016,1,3190.1,681.0,0.0,0.0
+India,Odisha,2017,1,3403.7000000000003,700.0,0.0,0.0
+India,Odisha,2018,1,0.0,557.0,0.0,0.0
+India,Odisha,2019,1,3028.69,576.0,0.0,0.0
+India,Odisha,2020,1,3290.81,624.0,0.0,0.0
+India,Odisha,2021,1,0.0,676.0,0.0,0.0
+India,Odisha,2022,1,0.0,773.0,0.0,0.0
+India,Puducherry,2012,1,10.1,0.0,0.0,0.0
+India,Puducherry,2013,1,15.2,0.0,0.0,0.0
+India,Puducherry,2014,1,10.6,1.0,0.0,0.0
+India,Puducherry,2015,1,5.1,0.0,0.0,0.0
+India,Puducherry,2016,1,5.1,1.0,0.0,0.0
+India,Puducherry,2017,1,39.7,0.0,0.0,0.0
+India,Puducherry,2018,1,0.0,0.0,0.0,0.0
+India,Puducherry,2019,1,0.0,0.0,0.0,0.0
+India,Puducherry,2020,1,0.0,0.0,0.0,0.0
+India,Puducherry,2021,1,0.0,0.0,0.0,0.0
+India,Puducherry,2022,1,0.0,0.0,0.0,0.0
+India,Punjab,2011,1,0.0,0.0,0.0,0.0
+India,Punjab,2012,1,142.8,0.0,0.0,0.0
+India,Punjab,2013,1,253.4,0.0,0.0,0.0
+India,Punjab,2014,1,247.4,0.0,0.0,0.0
+India,Punjab,2015,1,295.7,0.0,0.0,0.0
+India,Punjab,2016,1,137.5,2.0,0.0,0.0
+India,Punjab,2017,1,119.3,0.0,0.0,0.0
+India,Punjab,2018,1,0.0,0.0,0.0,0.0
+India,Punjab,2019,1,133.46,1.0,0.0,0.0
+India,Punjab,2020,1,124.34,4.0,0.0,0.0
+India,Punjab,2021,1,0.0,0.0,0.0,0.0
+India,Punjab,2022,1,0.0,0.0,0.0,0.0
+India,Rajasthan,2011,1,0.0,0.0,0.0,0.0
+India,Rajasthan,2012,1,8321.1,0.0,0.0,0.0
+India,Rajasthan,2013,1,9847.9,0.0,0.0,0.0
+India,Rajasthan,2014,1,10169.300000000001,1681.0,0.0,0.0
+India,Rajasthan,2015,1,8782.3,1409.0,0.0,0.0
+India,Rajasthan,2016,1,7578.9,1195.0,0.0,0.0
+India,Rajasthan,2017,1,6251.4,984.0,0.0,0.0
+India,Rajasthan,2018,1,0.0,1095.0,0.0,0.0
+India,Rajasthan,2019,1,10250.539999999999,1797.0,0.0,0.0
+India,Rajasthan,2020,1,10669.45,1878.0,0.0,0.0
+India,Rajasthan,2021,1,0.0,2121.0,0.0,0.0
+India,Rajasthan,2022,1,0.0,2521.0,0.0,0.0
+India,Sikkim,2012,1,32.9,0.0,0.0,0.0
+India,Sikkim,2013,1,69.9,0.0,0.0,0.0
+India,Sikkim,2014,1,16.2,1.0,0.0,0.0
+India,Sikkim,2015,1,16.7,0.0,0.0,0.0
+India,Sikkim,2016,1,5.6,0.0,0.0,0.0
+India,Sikkim,2017,1,37.8,6.0,0.0,0.0
+India,Sikkim,2018,1,0.0,1.0,0.0,0.0
+India,Sikkim,2019,1,14.14,2.0,0.0,0.0
+India,Sikkim,2020,1,0.0,0.0,0.0,0.0
+India,Sikkim,2021,1,0.0,1.0,0.0,0.0
+India,Sikkim,2022,1,0.0,4.0,0.0,0.0
+India,Tamil Nadu,2011,1,0.0,0.0,0.0,0.0
+India,Tamil Nadu,2012,1,1706.8000000000002,0.0,0.0,0.0
+India,Tamil Nadu,2013,1,1905.7,0.0,0.0,0.0
+India,Tamil Nadu,2014,1,1531.6,18.0,0.0,0.0
+India,Tamil Nadu,2015,1,1800.2,25.0,0.0,0.0
+India,Tamil Nadu,2016,1,1336.3000000000002,19.0,0.0,0.0
+India,Tamil Nadu,2017,1,1417.2,22.0,0.0,0.0
+India,Tamil Nadu,2018,1,0.0,15.0,0.0,0.0
+India,Tamil Nadu,2019,1,1126.8799999999999,31.0,0.0,0.0
+India,Tamil Nadu,2020,1,1283.85,23.0,0.0,0.0
+India,Tamil Nadu,2021,1,0.0,39.0,0.0,0.0
+India,Tamil Nadu,2022,1,0.0,67.0,0.0,0.0
+India,Telangana,2011,1,0.0,0.0,0.0,0.0
+India,Telangana,2012,1,1845.9588281401102,0.0,0.0,0.0
+India,Telangana,2013,1,1941.916410974801,0.0,0.0,0.0
+India,Telangana,2014,1,2129.3999999999996,333.0,0.0,0.0
+India,Telangana,2015,1,2099.5,386.0,0.0,0.0
+India,Telangana,2016,1,2318.3999999999996,375.0,0.0,0.0
+India,Telangana,2017,1,2375.2,435.0,0.0,0.0
+India,Telangana,2018,1,0.0,419.0,0.0,0.0
+India,Telangana,2019,1,2576.46,530.0,0.0,0.0
+India,Telangana,2020,1,2982.4900000000002,573.0,0.0,0.0
+India,Telangana,2021,1,0.0,512.0,0.0,0.0
+India,Telangana,2022,1,0.0,545.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2011,1,0.0,0.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2012,1,8.886357174708408,0.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2013,1,33.272211053386556,0.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2014,1,6.664767881031306,3.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2015,1,29.666562081952154,3.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2016,1,4.443178587354204,2.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2017,1,11.071014919439325,50.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2018,1,0.0,3.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2019,1,0.0,0.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2020,1,17.67,0.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2021,1,0.0,3.0,0.0,0.0
+India,The Dadra And Nagar Haveli And Daman And Diu,2022,1,0.0,5.0,0.0,0.0
+India,Tripura,2011,1,0.0,0.0,0.0,0.0
+India,Tripura,2012,1,148.2,0.0,0.0,0.0
+India,Tripura,2013,1,105.5,0.0,0.0,0.0
+India,Tripura,2014,1,11.5,0.0,0.0,0.0
+India,Tripura,2015,1,7.3,3.0,0.0,0.0
+India,Tripura,2016,1,6.2,3.0,0.0,0.0
+India,Tripura,2017,1,3.3000000000000003,1.0,0.0,0.0
+India,Tripura,2018,1,0.0,0.0,0.0,0.0
+India,Tripura,2019,1,0.0,2.0,0.0,0.0
+India,Tripura,2020,1,2.09,2.0,0.0,0.0
+India,Tripura,2021,1,0.0,0.0,0.0,0.0
+India,Tripura,2022,1,0.0,3.0,0.0,0.0
+India,Uttar Pradesh,2011,1,0.0,0.0,0.0,0.0
+India,Uttar Pradesh,2012,1,6307.9,0.0,0.0,0.0
+India,Uttar Pradesh,2013,1,7147.3,0.0,0.0,0.0
+India,Uttar Pradesh,2014,1,8135.6,24.0,0.0,0.0
+India,Uttar Pradesh,2015,1,8389.7,6.0,0.0,0.0
+India,Uttar Pradesh,2016,1,10459.6,4.0,0.0,0.0
+India,Uttar Pradesh,2017,1,11437.699999999999,88.0,0.0,0.0
+India,Uttar Pradesh,2018,1,0.0,145.0,0.0,0.0
+India,Uttar Pradesh,2019,1,10946.23,36.0,0.0,0.0
+India,Uttar Pradesh,2020,1,10164.61,3.0,0.0,0.0
+India,Uttar Pradesh,2021,1,0.0,4.0,0.0,0.0
+India,Uttar Pradesh,2022,1,0.0,5.0,0.0,0.0
+India,Uttarakhand,2011,1,0.0,0.0,0.0,0.0
+India,Uttarakhand,2012,1,41.7,0.0,0.0,0.0
+India,Uttarakhand,2013,1,40.5,0.0,0.0,0.0
+India,Uttarakhand,2014,1,65.5,1.0,0.0,0.0
+India,Uttarakhand,2015,1,98.3,6.0,0.0,0.0
+India,Uttarakhand,2016,1,75.4,3.0,0.0,0.0
+India,Uttarakhand,2017,1,126.89999999999999,11.0,0.0,0.0
+India,Uttarakhand,2018,1,0.0,7.0,0.0,0.0
+India,Uttarakhand,2019,1,80.87,8.0,0.0,0.0
+India,Uttarakhand,2020,1,65.23,13.0,0.0,0.0
+India,Uttarakhand,2021,1,0.0,6.0,0.0,0.0
+India,Uttarakhand,2022,1,0.0,1.0,0.0,0.0
+India,West Bengal,2011,1,0.0,0.0,0.0,0.0
+India,West Bengal,2012,1,269.1,0.0,0.0,0.0
+India,West Bengal,2013,1,361.8,0.0,0.0,0.0
+India,West Bengal,2014,1,346.6,107.0,0.0,0.0
+India,West Bengal,2015,1,320.29999999999995,84.0,0.0,0.0
+India,West Bengal,2016,1,287.2,83.0,0.0,0.0
+India,West Bengal,2017,1,384.90000000000003,122.0,0.0,0.0
+India,West Bengal,2018,1,0.0,101.0,0.0,0.0
+India,West Bengal,2019,1,253.89000000000001,99.0,0.0,0.0
+India,West Bengal,2020,1,221.67000000000002,90.0,0.0,0.0
+India,West Bengal,2021,1,0.0,92.0,0.0,0.0
+India,West Bengal,2022,1,0.0,90.0,0.0,0.0
