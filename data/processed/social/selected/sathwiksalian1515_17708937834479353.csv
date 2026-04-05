@@ -1,0 +1,481 @@
+Country,State,Year,Social Category,"Number Of Cases Pending From Previous Year (UOM:Number), Scaling Factor:1","Number Of Cases Registered During The Year (UOM:Number), Scaling Factor:1","Number Of Cases Reopened For Investigation (UOM:Number), Scaling Factor:1","Number Of Cases With Police During The Year Including Brought Forward Cases (Bf) (UOM:Number), Scaling Factor:1","Number Of Cases Withdrawn By The Government During Investigation (UOM:Number), Scaling Factor:1","Number Of Cases Not Investigated Or In Which Investigation Was Refused (UOM:Number), Scaling Factor:1","Number Of Cases Transferred To Other State Or Agency (UOM:Number), Scaling Factor:1","Number Of Cases In Which Charge Sheets Were Not Laid But Final Report As True Submitted During The Year (UOM:Number), Scaling Factor:1","Number Of Cases Charge Sheeted  (UOM:Number), Scaling Factor:1","Number Of Cases Quashed By The Court At Investigation (UOM:Number), Scaling Factor:1","Number Of Cases Pending With Police At The End Of The Year (UOM:Number), Scaling Factor:1","Number Of Cases Closed By Police After Investigation (UOM:Number), Scaling Factor:1"
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,2,0,1,0,0,0,0,2,0,0,
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,435,300,0,735,0,0,0,90,221,1,423,
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,2319,1769,0,4088,0,0,2,627,1509,1,1949,
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,1,0,0,1,0,0,0,0,1,0,0,
+India,Assam,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,8,6,0,14,0,0,0,0,0,0,14,
+India,Assam,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,12,17,0,29,0,0,0,1,2,0,26,
+India,Bihar,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,32,94,0,126,0,0,0,3,75,0,48,
+India,Bihar,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,4604,7367,0,11971,0,0,0,913,5413,0,5645,
+India,Chandigarh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Chandigarh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,1,0,0,1,0,0,0,0,0,0,1,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,91,501,0,592,0,0,0,6,460,0,126,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,87,316,0,403,0,0,0,3,279,0,121,
+India,Delhi,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Delhi,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,65,31,0,96,0,0,0,0,24,0,72,
+India,Goa,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,1,0,1,0,0,0,0,1,0,0,
+India,Goa,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,2,0,0,2,3,0,0,0,1,0,1,
+India,Gujarat,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,78,289,1,368,0,0,0,16,252,4,96,
+India,Gujarat,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,266,1258,0,1524,0,0,0,34,1135,36,316,
+India,Haryana,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Haryana,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,156,1132,0,1288,0,0,0,468,614,0,206,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,1,0,1,0,0,0,0,0,0,1,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,8,40,0,48,0,0,0,4,38,0,6,
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,4,0,4,0,0,0,1,0,0,3,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,150,167,0,317,0,0,0,39,69,0,209,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,365,367,0,732,0,0,0,100,174,0,458,
+India,Karnataka,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,124,269,0,393,0,0,12,27,234,0,120,
+India,Karnataka,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,592,1263,0,1855,0,0,35,154,1027,1,638,
+India,Kerala,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,89,119,0,208,0,0,0,21,105,0,82,
+India,Kerala,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,781,776,24,1581,0,0,0,177,601,3,800,
+India,Ladakh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Ladakh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,1,0,0,0,0,0,0,0,0,1,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,127,2399,0,2526,0,0,1,8,2361,0,156,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,416,6899,0,7315,0,0,0,48,6716,0,551,
+India,Maharashtra,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,309,639,0,948,0,0,0,57,598,1,292,
+India,Maharashtra,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,1003,2359,1,3363,1,0,2,250,1954,10,1146,
+India,Manipur,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,5,2,0,7,0,0,0,0,0,0,7,
+India,Manipur,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,1,0,0,1,0,0,0,0,0,0,1,
+India,Meghalaya,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Meghalaya,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Mizoram,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Mizoram,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Nagaland,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Nagaland,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Odisha,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,99,605,0,704,0,0,0,22,556,0,126,
+India,Odisha,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,505,2046,0,2551,0,0,0,117,2088,0,346,
+India,Puducherry,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Puducherry,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Punjab,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,1,2,0,3,0,0,0,0,0,0,3,
+India,Punjab,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,123,119,0,242,0,0,0,30,73,1,138,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,249,1849,0,2098,0,0,0,820,908,0,370,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,845,6895,0,7740,0,0,0,3222,3293,0,1225,
+India,Sikkim,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,1,0,0,1,0,0,0,0,0,0,1,
+India,Sikkim,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,5,18,0,23,0,0,0,2,11,0,10,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,511,1237,1,1749,0,0,0,176,954,7,612,
+India,Telangana,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,464,545,1,1010,0,0,0,111,381,0,518,
+India,Telangana,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,1493,1842,2,3337,0,0,1,333,1410,3,1590,
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,1,0,1,0,0,0,0,1,0,0,
+India,Tripura,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,0,1,0,1,0,0,0,0,0,0,1,
+India,Tripura,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,3,1,0,4,0,0,0,3,1,0,0,
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,1178,10138,0,11316,0,0,0,1455,8736,0,1125,
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,2,13,0,15,0,0,0,1,11,0,3,
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,29,33,0,62,0,0,0,1,31,0,30,
+India,West Bengal,"Calendar Year (Jan - Dec), 2020",Scheduled Tribes,98,67,0,165,0,0,0,5,57,0,103,
+India,West Bengal,"Calendar Year (Jan - Dec), 2020",Scheduled Castes,131,86,0,217,0,0,0,6,104,0,107,
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,1,0,1,0,0,0,1,0,0,0,
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,376,312,2,690,0,0,0,67,188,0,435,
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,1696,1892,0,3588,0,0,1,419,846,3,2319,
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,2,0,0,2,0,0,0,0,1,0,1,
+India,Assam,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,7,1,0,8,0,0,0,0,0,0,8,
+India,Assam,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,2,17,0,19,0,0,0,2,5,0,12,
+India,Bihar,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,29,97,0,126,0,0,0,9,85,0,32,
+India,Bihar,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,3638,6540,0,10178,0,0,0,1027,4759,0,4392,
+India,Chandigarh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Chandigarh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,1,0,1,0,0,0,0,0,0,1,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,51,427,0,478,0,0,0,1,387,0,90,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,63,339,0,402,0,0,0,3,312,0,87,
+India,Delhi,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Delhi,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,53,43,0,96,0,0,0,2,29,0,65,
+India,Goa,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,1,1,0,2,0,0,0,1,1,0,0,
+India,Goa,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,3,3,0,6,0,0,0,1,3,0,2,
+India,Gujarat,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,64,310,1,375,0,0,0,9,279,9,78,
+India,Gujarat,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,179,1295,1,1475,1,0,0,33,1124,51,266,
+India,Haryana,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,1,0,1,0,0,0,0,1,0,0,
+India,Haryana,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,156,1034,0,1190,0,0,0,378,656,0,156,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,3,30,0,33,0,0,0,5,20,0,8,
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,
+India,Jammu and Kashmir,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,103,136,0,239,0,0,0,40,49,0,150,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,289,324,0,613,0,0,0,130,118,0,365,
+India,Karnataka,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,72,316,0,388,0,0,8,26,230,0,124,
+India,Karnataka,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,275,1417,0,1692,0,1,17,153,929,0,592,
+India,Kerala,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,69,128,0,197,0,0,2,17,89,0,89,
+India,Kerala,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,686,776,1,1463,0,0,0,97,581,4,781,
+India,Ladakh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,
+India,Ladakh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,70,1920,0,1990,0,0,0,20,1843,0,127,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,223,5299,0,5522,0,0,0,34,5072,0,416,
+India,Maharashtra,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,275,506,0,781,0,0,0,39,429,4,309,
+India,Maharashtra,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,976,1932,0,2908,0,0,0,242,1649,14,1003,
+India,Manipur,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,4,2,0,6,0,0,0,1,0,0,5,
+India,Manipur,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,1,0,0,1,0,0,0,0,0,0,1,
+India,Meghalaya,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Meghalaya,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Mizoram,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,8,0,8,0,0,0,0,8,0,0,
+India,Mizoram,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Nagaland,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Nagaland,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Odisha,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,234,576,0,810,0,0,0,29,682,0,99,
+India,Odisha,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,1021,1845,0,2866,0,0,0,39,2322,0,505,
+India,Puducherry,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Puducherry,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Punjab,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,1,1,2,0,0,0,1,0,0,1,
+India,Punjab,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,107,130,0,237,0,0,0,45,65,4,123,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,133,1759,0,1892,0,1,1,822,819,0,249,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,565,6659,0,7224,0,0,1,3220,3158,0,845,
+India,Sikkim,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,1,2,0,3,0,0,0,0,2,0,1,
+India,Sikkim,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,2,0,2,0,0,0,1,1,0,0,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,5,28,0,33,0,0,0,2,26,0,5,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,521,1060,5,1586,0,0,0,161,909,5,511,
+India,Telangana,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,416,494,4,914,0,0,0,52,398,0,464,
+India,Telangana,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,1199,1545,1,2745,0,0,1,245,1004,2,1493,
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,
+India,Tripura,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Tripura,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,19,705,0,724,0,0,0,90,609,0,25,
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,1382,9451,0,10833,0,0,0,1750,7905,0,1178,
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,1,8,0,9,0,0,0,0,7,0,2,
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,28,59,0,87,0,0,0,12,46,0,29,
+India,West Bengal,"Calendar Year (Jan - Dec), 2019",Scheduled Tribes,46,76,0,122,0,0,0,4,49,0,69,
+India,West Bengal,"Calendar Year (Jan - Dec), 2019",Scheduled Castes,87,100,0,187,0,0,2,17,68,0,100,
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,2,2,0,4,0,0,0,0,3,0,1,
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,405,341,0,746,0,0,0,75,196,1,474,
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,2445,1969,3,4417,0,0,3,735,1243,0,2436,
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0,2,0,2,0,0,0,0,0,0,2,
+India,Assam,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,6,65,0,71,0,0,0,16,45,0,10,
+India,Assam,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,3,10,0,13,0,0,0,4,5,0,4,
+India,Bihar,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,17,80,0,97,0,0,0,3,52,0,42,
+India,Bihar,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,4322,6747,0,11069,0,0,0,598,6575,0,3896,
+India,Chandigarh,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Chandigarh,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,3,1,0,4,0,0,0,1,2,0,1,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,44,399,0,443,0,0,0,2,399,0,42,
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,44,283,0,327,0,0,0,5,285,0,37,
+India,Delhi,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,2,4,0,6,0,0,0,0,4,0,2,
+India,Delhi,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,71,48,0,119,0,0,1,0,38,1,77,
+India,Goa,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,8,2,0,10,0,0,0,3,4,0,3,
+India,Goa,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,9,10,0,19,0,0,0,10,5,0,4,
+India,Gujarat,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,64,319,0,383,2,0,0,12,294,12,63,
+India,Gujarat,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,153,1477,0,1630,2,1,0,58,1349,51,169,
+India,Haryana,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Haryana,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,103,760,0,863,0,0,0,301,448,0,114,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,4,3,0,7,0,0,0,1,5,0,1,
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,31,108,0,139,0,0,0,27,70,0,42,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,363,237,0,600,0,0,0,52,109,0,439,
+India,Jharkhand,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,946,541,0,1487,0,0,0,127,247,0,1113,
+India,Karnataka,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,186,401,0,587,0,0,7,67,352,1,160,
+India,Karnataka,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,842,1869,0,2711,0,0,13,339,1488,1,870,
+India,Kerala,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,144,144,0,288,0,0,0,29,115,1,143,
+India,Kerala,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,550,915,1,1466,0,0,0,199,603,5,659,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,137,2289,0,2426,0,0,0,17,2335,0,74,
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,488,5892,0,6380,0,0,0,58,6070,0,252,
+India,Maharashtra,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,186,464,0,650,0,0,0,43,374,0,233,
+India,Maharashtra,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,806,1688,0,2494,0,0,0,176,1343,6,969,
+India,Manipur,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,3,1,0,4,0,0,0,0,1,0,3,
+India,Manipur,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,1,0,0,1,0,0,0,0,0,0,1,
+India,Meghalaya,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Meghalaya,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Mizoram,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Mizoram,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Nagaland,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Nagaland,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0,0,0,0,0,0,0,0,0,0,0,
+India,Odisha,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,391,700,0,1091,0,0,0,53,612,0,426,
+India,Odisha,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,1282,1969,0,3251,0,0,0,214,1909,0,1128,
+India,Puducherry,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Puducherry,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,1,26,0,27,0,0,0,0,26,0,1,
+India,Punjab,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,0,0,0,0,0,0,0,0,0,0,
+India,Punjab,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,75,118,3,196,1,0,0,34,63,1,97,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,159,984,0,1143,0,1,0,563,443,0,136,
+India,Rajasthan,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,521,4238,0,4759,0,0,0,1908,2357,0,494,
+India,Sikkim,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,0,6,0,6,0,0,0,1,4,0,1,
+India,Sikkim,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,1,5,0,6,0,0,0,1,4,0,1,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,8,22,0,30,0,0,0,7,16,0,7,
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,638,1361,0,1999,0,0,1,263,1171,8,556,
+India,Telangana,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,339,435,0,774,0,0,0,65,293,2,414,
+India,Telangana,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,1040,1465,1,2506,0,0,0,303,845,5,1353,
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,10.00000000000000000000,5.00000000000000000000,0.00000000000000000000,15.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,2.00000000000000000000,3.00000000000000000000,0.00000000000000000000,10.00000000000000000000,
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,2.00000000000000000000,0.00000000000000000000,0.00000000000000000000,0.00000000000000000000,
+India,Tripura,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,2,1,0,3,0,0,0,2,0,0,1,
+India,Tripura,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,0,1,0,1,0,0,0,0,1,0,0,
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,1,88,0,89,0,0,0,13,72,0,4,
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,1579,11232,0,12811,0,0,0,1987,8816,2,2006,
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,4,11,0,15,0,0,0,0,11,0,4,
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,37,96,0,133,0,0,0,35,42,0,56,
+India,West Bengal,"Calendar Year (Jan - Dec), 2017",Scheduled Tribes,56,122,0,178,0,0,0,8,76,0,94,
+India,West Bengal,"Calendar Year (Jan - Dec), 2017",Scheduled Castes,158,138,0,296,0,0,0,18,168,0,110,
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,6,,7,0,,,0,5,,2,0
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,405,,778,0,,,2,264,,405,107
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,2335,,4482,0,,,16,1206,,2445,815
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,0,,1,0,,,1,0,,0,0
+India,Assam,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,1,,1,0,,,0,1,,0,0
+India,Assam,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,4,,7,0,,,0,3,,4,0
+India,Bihar,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,25,,42,0,,,0,22,,17,3
+India,Bihar,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,5701,,9780,0,,,46,5218,,4311,205
+India,Chandigarh,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1,,2,0,,,0,0,,2,0
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,402,,455,0,,,1,393,,59,2
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,243,,301,0,,,2,250,,49,0
+India,Delhi,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,2,,2,0,,,0,0,,2,0
+India,Delhi,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,53,,106,0,,,3,32,,71,0
+India,Goa,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,11,,16,0,,,2,6,,8,0
+India,Goa,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,10,,15,0,,,2,3,,9,1
+India,Gujarat,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,281,,320,4,,,6,237,,66,7
+India,Gujarat,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1321,,1433,13,,,18,1197,,153,52
+India,Haryana,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,639,,726,0,,,4,465,,89,168
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,2,,5,0,,,0,1,,4,0
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,115,,142,0,,,1,84,,31,26
+India,Jharkhand,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,280,,611,0,,,54,170,,367,20
+India,Jharkhand,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,525,,1446,0,,,115,281,,951,99
+India,Karnataka,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,371,,541,0,,,4,301,,186,50
+India,Karnataka,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1866,,2694,0,,,15,1488,,842,349
+India,Kerala,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,182,,323,0,,,17,133,,158,15
+India,Kerala,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,810,,1346,2,,,32,444,,638,230
+India,Lakshadweep,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,1,,1,0,,,0,0,,1,0
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,1823,,1940,0,,,0,1795,,135,10
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,4922,,5166,0,,,2,4611,,503,50
+India,Maharashtra,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,403,,639,0,,,3,396,,185,55
+India,Maharashtra,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1736,,2552,1,,,20,1484,,807,240
+India,Manipur,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,1,,5,0,,,1,1,,3,0
+India,Manipur,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,2,,4,0,,,0,3,,1,0
+India,Odisha,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,681,,1070,0,,,8,617,,391,54
+India,Odisha,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1796,,3088,0,,,42,1432,,1282,332
+India,Puducherry,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,1,,1,0,,,0,0,,1,0
+India,Puducherry,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,2,,3,0,,,0,1,,2,0
+India,Punjab,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,2,,2,0,,,0,0,,2,0
+India,Punjab,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,132,,269,0,,,6,82,,130,51
+India,Rajasthan,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,1195,,1396,0,,,3,538,,159,696
+India,Rajasthan,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,5134,,5866,0,,,11,2391,,521,2943
+India,Sikkim,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1,,1,0,,,0,0,,1,0
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,19,,27,0,,,0,19,,7,1
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1287,,1899,0,,,96,991,,638,174
+India,Telangana,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,375,,635,0,,,8,229,,326,72
+India,Telangana,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,1529,,2485,0,,,75,780,,1350,280
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,2.00000000000000000000,,10.00000000000000000000,0.00000000000000000000,,,1.00000000000000000000,0.00000000000000000000,,9.00000000000000000000,0.00000000000000000000
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,0.00000000000000000000,,2.00000000000000000000,0.00000000000000000000,,,0.00000000000000000000,0.00000000000000000000,,2.00000000000000000000,0.00000000000000000000
+India,Tripura,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,3,,4,0,,,0,1,,3,0
+India,Tripura,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,0,,0,0,,,0,0,,0,0
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,4,,5,0,,,0,4,,1,0
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,10426,,12001,0,,,1624,8387,,1579,411
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,3,,6,0,,,0,3,,3,0
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,65,,89,0,,,10,39,,37,3
+India,West Bengal,"Calendar Year (Jan - Dec), 2016",Scheduled Tribes,,83,,246,0,,,8,136,,102,0
+India,West Bengal,"Calendar Year (Jan - Dec), 2016",Scheduled Castes,,119,,316,0,,,8,127,,180,1
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,3,,7,0,,,1,5,,1,0
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,362,,660,0,,,0,159,,373,128
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,2263,,4105,5,,,3,963,,2147,987
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,1,,1,0,,,0,0,,1,0
+India,Assam,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,5,,6,0,,,3,0,,3,0
+India,Bihar,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,5,,43,0,,,0,21,,17,5
+India,Bihar,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,6293,,9525,0,,,175,4575,,4087,688
+India,Chandigarh,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1,,1,0,,,0,0,,1,0
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,373,,434,0,,,2,376,,55,1
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,216,,293,0,,,3,231,,58,1
+India,Delhi,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,0,,1,0,,,0,1,,0,0
+India,Delhi,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,49,,90,0,,,2,34,,53,1
+India,Goa,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,8,,13,0,,,1,6,,5,1
+India,Goa,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,13,,17,0,,,3,9,,5,0
+India,Gujarat,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,248,,276,2,,,4,226,,39,5
+India,Gujarat,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1009,,1120,12,,,14,949,,112,33
+India,Haryana,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,510,,558,0,,,3,351,,87,117
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,6,,7,0,,,0,4,,3,0
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,91,,127,0,,,0,64,,27,36
+India,Jharkhand,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,266,,599,0,,,65,176,,331,27
+India,Jharkhand,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,736,,1595,0,,,130,409,,921,135
+India,Karnataka,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,386,,499,0,,,4,282,,170,43
+India,Karnataka,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1841,,2433,0,,,20,1340,,828,245
+India,Kerala,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,165,,251,0,,,2,96,,141,12
+India,Kerala,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,695,,1135,0,,,29,376,,536,194
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,1358,,1488,0,,,0,1363,,117,8
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,3546,,3790,1,,,4,3503,,244,38
+India,Maharashtra,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,481,,641,2,,,8,350,,236,45
+India,Maharashtra,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1795,,2466,4,,,37,1376,,816,233
+India,Manipur,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,0,,4,0,,,0,0,,4,0
+India,Manipur,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,0,,2,0,,,0,0,,2,0
+India,Meghalaya,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,0,,1,0,,,0,0,,0,1
+India,Odisha,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,691,,978,0,,,3,506,,389,80
+India,Odisha,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1821,,2963,0,,,23,1424,,1292,224
+India,Puducherry,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,2,,4,0,,,0,2,,2,0
+India,Punjab,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,147,,242,0,,,2,64,,137,39
+India,Rajasthan,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,1409,,1671,0,,,8,525,,201,937
+India,Rajasthan,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,5911,,6799,0,,,35,2420,,732,3612
+India,Sikkim,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,3,,4,0,,,1,3,,0,0
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,25,,35,0,,,1,25,,8,1
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1735,,2420,0,,,105,1334,,612,369
+India,Telangana,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,386,,629,0,,,10,246,,260,113
+India,Telangana,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1292,,2264,0,,,49,893,,956,366
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,3.00000000000000000000,,9.00000000000000000000,0.00000000000000000000,,,0.00000000000000000000,1.00000000000000000000,,8.00000000000000000000,0.00000000000000000000
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,2.00000000000000000000,,2.00000000000000000000,0.00000000000000000000,,,0.00000000000000000000,0.00000000000000000000,,2.00000000000000000000,0.00000000000000000000
+India,Tripura,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,3,,3,0,,,1,1,,1,0
+India,Tripura,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,1,,2,0,,,1,0,,0,1
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,6,,9,0,,,0,8,,1,0
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,8357,,9716,0,,,1215,6526,,1575,400
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,6,,6,0,,,1,2,,3,0
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,80,,85,0,,,10,51,,24,0
+India,West Bengal,"Calendar Year (Jan - Dec), 2015",Scheduled Tribes,,84,,198,0,,,7,28,,163,0
+India,West Bengal,"Calendar Year (Jan - Dec), 2015",Scheduled Castes,,150,,259,0,,,1,61,,197,0
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,6,,7,0,,,0,3,,4,0
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,389,,595,0,,,0,190,,301,104
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,2104,,3762,1,,,38,972,,1896,855
+India,Assam,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1,,4,0,,,4,0,,0,0
+India,Assam,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,2,,8,0,,,0,0,,1,7
+India,Bihar,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,77,,115,0,,,13,48,,38,16
+India,Bihar,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,7874,,10907,0,,,787,6134,,3232,754
+India,Chandigarh,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1,,2,0,,,0,1,,0,1
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,475,,556,0,,,3,490,,61,2
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,359,,432,0,,,8,346,,77,1
+India,Delhi,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,86,,116,0,,,0,74,,41,1
+India,Goa,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,6,,15,0,,,2,6,,5,2
+India,Goa,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,12,,14,0,,,0,9,,4,1
+India,Gujarat,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,223,,247,2,,,6,203,,28,8
+India,Gujarat,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1075,,1161,2,,,21,991,,111,36
+India,Haryana,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,444,,482,0,,,2,312,,50,118
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,3,,3,0,,,0,2,,1,0
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,113,,136,0,,,0,61,,36,39
+India,Jharkhand,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,402,,769,0,,,89,277,,333,70
+India,Jharkhand,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,903,,1763,0,,,181,482,,859,241
+India,Karnataka,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,397,,564,0,,,2,390,,113,59
+India,Karnataka,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1865,,2650,0,,,20,1609,,592,429
+India,Kerala,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,120,,198,0,,,10,86,,86,16
+India,Kerala,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,712,,1094,0,,,80,351,,440,223
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1577,,1720,0,,,3,1573,,130,14
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,3294,,3643,0,,,4,3345,,244,50
+India,Maharashtra,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,443,,608,0,,,10,396,,160,42
+India,Maharashtra,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1763,,2391,0,,,20,1455,,671,245
+India,Manipur,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1,,4,0,,,0,0,,4,0
+India,Manipur,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1,,2,0,,,0,0,,2,0
+India,Meghalaya,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1,,1,0,,,0,0,,1,0
+India,Mizoram,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1,,1,0,,,0,0,,0,1
+India,Odisha,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,533,,901,0,,,5,511,,287,98
+India,Odisha,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1657,,3437,0,,,28,1924,,1142,343
+India,Puducherry,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1,,1,0,,,0,1,,0,0
+India,Puducherry,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,5,,6,0,,,0,4,,2,0
+India,Punjab,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,123,,179,0,,,3,48,,95,33
+India,Rajasthan,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1681,,1953,0,,,3,660,,262,1028
+India,Rajasthan,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,6734,,7722,0,,,23,2794,,888,4017
+India,Sikkim,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1,,1,0,,,0,1,,0,0
+India,Sikkim,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,3,,3,0,,,0,3,,0,0
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,15,,35,0,,,1,20,,10,4
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1486,,2348,0,,,109,1258,,685,296
+India,Telangana,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,333,,552,0,,,12,216,,243,81
+India,Telangana,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1427,,2267,0,,,90,886,,972,319
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,3,,8,0,,,2,0,,6,0
+India,Tripura,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,1,,1,0,,,0,0,,1,0
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,24,,26,0,,,5,18,,3,0
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,8066,,9145,0,,,1197,6123,,1359,466
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,1,,1,0,,,0,1,,0,0
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,60,,70,0,,,21,39,,5,5
+India,West Bengal,"Calendar Year (Jan - Dec), 2014",Scheduled Tribes,,107,,216,0,,,0,96,,114,6
+India,West Bengal,"Calendar Year (Jan - Dec), 2014",Scheduled Castes,,130,,222,0,,,5,106,,109,2
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,1,,6,,,,,4,,1,1
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,393.89344006617484727232,,668.79823677902604276446,,,,,246.76955099383870640126,,250.28645670871526753762,171.74222907647206882558
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,1913.19670889284925817984,,3369.78182580422499548894,,,,,967.14907159105431249900,,1481.20345691551166526362,921.42929729765901772632
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,1,,6,,,,,1,,5,0
+India,Assam,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,0,,61,,,,,0,,18,43
+India,Assam,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,8,,71,,,,,2,,25,44
+India,Bihar,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,91,,135,,,,,62,,37,36
+India,Bihar,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,6721,,9174,,,,,4608,,3198,1368
+India,Chandigarh,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,4,,4,,,,,2,,2,0
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,333,,385,,,,,340,,43,2
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,242,,327,,,,,297,,26,4
+India,Delhi,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,52,,163,,,,,55,,97,11
+India,Goa,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,9,,10,,,,,1,,9,0
+India,Goa,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,11,,18,,,,,15,,1,2
+India,Gujarat,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,224,,252,,,,,220,,28,4
+India,Gujarat,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,1190,,1306,,,,,1108,,139,59
+India,Haryana,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,493,,516,,,,,353,,35,128
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,2,,3,,,,,1,,0,2
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,144,,176,,,,,105,,37,34
+India,Jharkhand,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,396,,659,,,,,186,,367,106
+India,Jharkhand,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,978,,1730,,,,,438,,851,441
+India,Karnataka,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,523,,642,,,,,397,,171,74
+India,Karnataka,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,2555,,3412,,,,,2150,,864,398
+India,Kerala,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,135,,236,,,,,94,,93,49
+India,Kerala,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,756,,1164,,,,,387,,437,340
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,1296,,1380,,,,,1231,,142,7
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,2945,,3149,,,,,2760,,349,40
+India,Maharashtra,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,407,,517,,,,,308,,175,34
+India,Maharashtra,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,1657,,2136,,,,,1290,,644,202
+India,Manipur,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,2,,5,,,,,2,,3,0
+India,Manipur,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,1,,1,,,,,0,,1,0
+India,Nagaland,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,18,,18,,,,,4,,13,1
+India,Odisha,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,790,,1193,,,,,680,,364,149
+India,Odisha,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,2592,,4103,,,,,1741,,1780,582
+India,Puducherry,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,6,,7,,,,,1,,6,0
+India,Punjab,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,126,,166,,,,,66,,61,39
+India,Rajasthan,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,1651,,1773,,,,,613,,277,883
+India,Rajasthan,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,6475,,6977,,,,,2434,,995,3548
+India,Sikkim,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,17,,17,,,,,17,,0,0
+India,Sikkim,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,6,,6,,,,,6,,0,0
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,23,,33,,,,,12,,17,4
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,1844,,2651,,,,,1264,,878,509
+India,Telangana,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,278.10655993382515272768,,472.20176322097395723554,,,,,174.23044900616129359874,,176.71354329128473246238,121.25777092352793117442
+India,Telangana,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,1350.80329110715074182016,,2379.21817419577500451106,,,,,682.85092840894568750100,,1045.79654308448833473638,650.57070270234098227368
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,8.00000000000000000000,,13.00000000000000000000,,,,,1.00000000000000000000,,10.00000000000000000000,2.00000000000000000000
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,1.00000000000000000000,,2.00000000000000000000,,,,,0.00000000000000000000,,1.00000000000000000000,1.00000000000000000000
+India,Tripura,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,24,,35,,,,,33,,1,1
+India,Tripura,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,48,,53,,,,,48,,1,4
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,25,,25,,,,,22,,2,1
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,7078,,7859,,,,,5336,,1079,1444
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,2,,3,,,,,2,,0,1
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,34,,39,,,,,22,,9,8
+India,West Bengal,"Calendar Year (Jan - Dec), 2013",Scheduled Tribes,,122,,190,,,,,69,,109,12
+India,West Bengal,"Calendar Year (Jan - Dec), 2013",Scheduled Castes,,115,,195,,,,,88,,92,15
+India,Andaman and Nicobar Islands,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,4,,6,,,,,0,,5,1
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,390.37653435129828613596,,631.87072677282215083268,,,,,203.39438051036111905282,,274.90479671285119549214,153.57154954960983628772
+India,Andhra Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,1786.58810315729305727088,,3171.07665291369929128460,,,,,871.60646633690773496122,,1456.58511691137573730910,842.88506966541581901428
+India,Arunachal Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,10,,24,,,,,15,,5,4
+India,Assam,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,0,,80,,,,,10,,62,8
+India,Assam,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,4,,96,,,,,16,,63,17
+India,Bihar,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,119,,226,,,,,140,,44,42
+India,Bihar,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,4821,,7964,,,,,4211,,2453,1300
+India,Chandigarh,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,2,,6,,,,,4,,0,2
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,344,,396,,,,,333,,54,9
+India,Chhattisgarh,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,262,,344,,,,,216,,85,43
+India,Delhi,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,44,,140,,,,,23,,111,6
+India,Goa,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,1,,2,,,,,1,,1,0
+India,Goa,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,3,,12,,,,,5,,7,0
+India,Gujarat,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,221,,243,,,,,208,,29,6
+India,Gujarat,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,1026,,1167,,,,,996,,117,54
+India,Haryana,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,252,,333,,,,,214,,23,96
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,3,,9,,,,,4,,1,4
+India,Himachal Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,126,,159,,,,,92,,32,35
+India,Jharkhand,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,287,,493,,,,,157,,263,73
+India,Jharkhand,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,696,,1270,,,,,273,,752,245
+India,Karnataka,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,373,,473,,,,,287,,121,65
+India,Karnataka,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,2594,,3221,,,,,1954,,857,410
+India,Kerala,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,124,,250,,,,,96,,101,53
+India,Kerala,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,810,,1178,,,,,374,,408,396
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,1218,,1319,,,,,1217,,84,18
+India,Madhya Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,2875,,3092,,,,,2833,,206,53
+India,Maharashtra,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,307,,416,,,,,269,,110,37
+India,Maharashtra,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,1086,,1547,,,,,927,,487,133
+India,Manipur,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,2,,4,,,,,1,,3,0
+India,Odisha,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,688,,992,,,,,495,,403,94
+India,Odisha,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,2265,,3359,,,,,1452,,1511,396
+India,Puducherry,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,4,,5,,,,,4,,1,0
+India,Punjab,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,71,,118,,,,,43,,40,35
+India,Rajasthan,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,1351,,1453,,,,,526,,122,805
+India,Rajasthan,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,5559,,5925,,,,,2173,,502,3250
+India,Sikkim,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,4,,4,,,,,4,,0,0
+India,Sikkim,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,5,,8,,,,,8,,0,0
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,27,,47,,,,,34,,10,3
+India,Tamil Nadu,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,1638,,2406,,,,,1174,,807,425
+India,Telangana,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,275.62346564870171386404,,446.12927322717784916732,,,,,143.60561948963888094718,,194.09520328714880450786,108.42845045039016371228
+India,Telangana,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,1261.41189684270694272912,,2238.92334708630070871540,,,,,615.39353366309226503878,,1028.41488308862426269090,595.11493033458418098572
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,4.00000000000000000000,,6.00000000000000000000,,,,,1.00000000000000000000,,5.00000000000000000000,0.00000000000000000000
+India,The Dadra and Nagar Haveli and Daman and Diu,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,1.00000000000000000000,,2.00000000000000000000,,,,,1.00000000000000000000,,1.00000000000000000000,0.00000000000000000000
+India,Tripura,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,29,,40,,,,,26,,11,3
+India,Tripura,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,76,,84,,,,,76,,5,3
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,44,,44,,,,,42,,0,2
+India,Uttar Pradesh,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,6201,,6832,,,,,4674,,781,1377
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,3,,3,,,,,1,,1,1
+India,Uttarakhand,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,33,,36,,,,,14,,5,17
+India,West Bengal,"Calendar Year (Jan - Dec), 2012",Scheduled Tribes,,91,,156,,,,,83,,68,5
+India,West Bengal,"Calendar Year (Jan - Dec), 2012",Scheduled Castes,,85,,189,,,,,105,,80,4

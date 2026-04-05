@@ -1,7 +1,7 @@
 """
 🔗 Interconnection Engine - Multi-Sector Risk Integration
 
-Combines climate, economy, trade, geopolitics, and migration risk data to simulate
+Combines climate, economy, trade, geopolitics, migration, and social risk data to simulate
 cascading effects and calculate global interconnected risk.
 
 Input Files:
@@ -10,15 +10,17 @@ Input Files:
     - data/processed/trade/trade_risk_output.csv (Country level, annual)
     - data/processed/geopolitics/geopolitics_risk_output.csv (Country level)
     - data/processed/migration/migration_risk_output.csv (Country level, annual)
+    - data/processed/social/social_risk_output.csv (State level, monthly)
 
 Output:
     - data/processed/interconnection/interconnected_risk.csv
 
 Key Features:
     - Aggregates climate risk from State/District to Country level
+    - Aggregates social risk from State to Country level
     - Standardizes column names across sectors
     - Merges on Country + Year + Month (inner join)
-    - Applies cascading impact formulas including migration influences
+    - Applies cascading impact formulas including migration and social influences
     - Normalizes all risks to 0-1 scale
 """
 
@@ -39,7 +41,8 @@ INPUT_FILES = {
     'economy': os.path.join(BASE_PATH, "data", "processed", "economy", "economic_risk_final.csv"),
     'trade': os.path.join(BASE_PATH, "data", "processed", "trade", "trade_risk_output.csv"),
     'geopolitics': os.path.join(BASE_PATH, "data", "processed", "geopolitics", "geopolitics_risk_output.csv"),
-    'migration': os.path.join(BASE_PATH, "data", "processed", "migration", "migration_risk_output.csv")
+    'migration': os.path.join(BASE_PATH, "data", "processed", "migration", "migration_risk_output.csv"),
+    'social': os.path.join(BASE_PATH, "data", "processed", "social", "social_risk_output.csv")
 }
 
 OUTPUT_FILE = os.path.join(BASE_PATH, "data", "processed", "interconnection", "interconnected_risk.csv")
@@ -381,12 +384,63 @@ def standardize_migration(df):
     return df_monthly
 
 # ================================================================
-# 🔧 STEP 7: MERGE ALL SECTORS
+# 🔧 STEP 7: STANDARDIZE SOCIAL DATA
 # ================================================================
 
-def merge_all_sectors(climate, economy, trade, geopolitics, migration):
+def standardize_social(df):
     """
-    Merge all 5 sectors on Country + Year + Month using INNER JOIN.
+    Aggregate social risk from State level to Country level.
+    
+    Since social data is for Indian states, we:
+    1. Group by Year + Month
+    2. Calculate MEDIAN risk across all states (robust to outliers)
+    3. Assign Country = 'IND'
+    4. Normalize to [0, 1] using MinMaxScaler
+    
+    Args:
+        df (pd.DataFrame): Social risk output
+        
+    Returns:
+        pd.DataFrame: Standardized social data with Country, Year, Month, social_risk
+    """
+    print("\n" + "="*70)
+    print("👥 STEP 7: STANDARDIZING SOCIAL DATA")
+    print("="*70)
+    
+    print(f"   Original shape: {df.shape}")
+    print(f"   States: {df['State'].nunique()}")
+    
+    # Group by Year + Month and aggregate using MEDIAN (robust to outliers)
+    social_agg = df.groupby(['Year', 'Month'])['predicted_risk'].median().reset_index()
+    social_agg.columns = ['Year', 'Month', 'social_risk']
+    
+    # Add Country column
+    social_agg['Country'] = 'IND'
+    
+    # Reorder columns
+    social_agg = social_agg[['Country', 'Year', 'Month', 'social_risk']]
+    
+    # Normalize to [0, 1] BEFORE merging
+    min_val = social_agg['social_risk'].min()
+    max_val = social_agg['social_risk'].max()
+    if max_val > min_val:
+        social_agg['social_risk'] = (social_agg['social_risk'] - min_val) / (max_val - min_val)
+    
+    print(f"   ✅ Aggregated to country level (using MEDIAN)")
+    print(f"   ✅ Normalized to [0, 1] range")
+    print(f"   Final shape: {social_agg.shape}")
+    print(f"   Date range: {social_agg['Year'].min()}/{social_agg['Month'].min()} - {social_agg['Year'].max()}/{social_agg['Month'].max()}")
+    print(f"   Risk range: [{social_agg['social_risk'].min():.4f}, {social_agg['social_risk'].max():.4f}]")
+    
+    return social_agg
+
+# ================================================================
+# 🔧 STEP 8: MERGE ALL SECTORS
+# ================================================================
+
+def merge_all_sectors(climate, economy, trade, geopolitics, migration, social):
+    """
+    Merge all 6 sectors on Country + Year + Month using INNER JOIN.
     
     This ensures we only keep time periods where ALL sectors have data.
     
@@ -396,12 +450,13 @@ def merge_all_sectors(climate, economy, trade, geopolitics, migration):
         trade (pd.DataFrame): Standardized trade data
         geopolitics (pd.DataFrame): Standardized geopolitics data
         migration (pd.DataFrame): Standardized migration data
+        social (pd.DataFrame): Standardized social data
         
     Returns:
         pd.DataFrame: Merged dataset
     """
     print("\n" + "="*70)
-    print("🔗 STEP 7: MERGING ALL SECTORS")
+    print("🔗 STEP 8: MERGING ALL SECTORS")
     print("="*70)
     
     # Start with climate (smallest dataset - India only)
@@ -424,6 +479,10 @@ def merge_all_sectors(climate, economy, trade, geopolitics, migration):
     merged = merged.merge(migration, on=['Country', 'Year', 'Month'], how='inner')
     print(f"   After merging migration: {len(merged)} rows")
     
+    # Merge social
+    merged = merged.merge(social, on=['Country', 'Year', 'Month'], how='inner')
+    print(f"   After merging social: {len(merged)} rows")
+    
     print(f"\n   ✅ INNER JOIN completed (only common timeline)")
     print(f"   Final shape: {merged.shape}")
     print(f"   Countries: {merged['Country'].unique()}")
@@ -432,20 +491,25 @@ def merge_all_sectors(climate, economy, trade, geopolitics, migration):
     return merged
 
 # ================================================================
-# 🔧 STEP 8: APPLY INTERCONNECTION LOGIC
+# 🔧 STEP 9: APPLY INTERCONNECTION LOGIC
 # ================================================================
 
 def apply_interconnection_logic(df):
     """
-    Apply cascading risk formulas including migration influences:
+    Apply cascading risk formulas including migration and social influences:
     
-    economic_impact = 0.5 * climate_risk + 0.3 * geopolitical_risk + 0.2 * migration_risk
-    trade_impact = 0.4 * economic_risk + 0.3 * geopolitical_risk + 0.3 * migration_risk
-    global_risk = 0.25 * climate_risk + 0.25 * economic_risk + 0.15 * trade_risk + 0.2 * geopolitical_risk + 0.15 * migration_risk
+    economic_impact = 0.4 * climate_risk + 0.25 * geopolitical_risk + 0.2 * migration_risk + 0.15 * social_risk
+    trade_impact = 0.35 * economic_risk + 0.25 * geopolitical_risk + 0.25 * migration_risk + 0.15 * social_risk
+    global_risk = 0.20 * climate_risk + 0.20 * economic_risk + 0.12 * trade_risk + 0.18 * geopolitical_risk + 0.15 * migration_risk + 0.15 * social_risk
     
     Migration influences:
         - migration → trade influence (people movement affects labor, supply chains)
         - migration → global risk (social stability, demographic shifts)
+    
+    Social influences:
+        - social → economic impact (unrest affects productivity, investment)
+        - social → trade impact (protests disrupt logistics, exports)
+        - social → global risk (civil stability indicator)
     
     Args:
         df (pd.DataFrame): Merged dataset
@@ -454,28 +518,29 @@ def apply_interconnection_logic(df):
         pd.DataFrame: Dataset with impact columns added
     """
     print("\n" + "="*70)
-    print("⚡ STEP 8: APPLYING INTERCONNECTION LOGIC")
+    print("⚡ STEP 9: APPLYING INTERCONNECTION LOGIC")
     print("="*70)
     
     df = df.copy()
     
-    # Economic impact (climate + geopolitics + migration affect economy)
-    df['economic_impact'] = 0.5 * df['climate_risk'] + 0.3 * df['geopolitical_risk'] + 0.2 * df['migration_risk']
-    print(f"   ✅ economic_impact = 0.5 × climate + 0.3 × geopolitical + 0.2 × migration")
+    # Economic impact (climate + geopolitics + migration + social affect economy)
+    df['economic_impact'] = 0.4 * df['climate_risk'] + 0.25 * df['geopolitical_risk'] + 0.2 * df['migration_risk'] + 0.15 * df['social_risk']
+    print(f"   ✅ economic_impact = 0.4 × climate + 0.25 × geopolitical + 0.2 × migration + 0.15 × social")
     
-    # Trade impact (economy + geopolitics + migration affect trade)
-    df['trade_impact'] = 0.4 * df['economic_risk'] + 0.3 * df['geopolitical_risk'] + 0.3 * df['migration_risk']
-    print(f"   ✅ trade_impact = 0.4 × economic + 0.3 × geopolitical + 0.3 × migration")
+    # Trade impact (economy + geopolitics + migration + social affect trade)
+    df['trade_impact'] = 0.35 * df['economic_risk'] + 0.25 * df['geopolitical_risk'] + 0.25 * df['migration_risk'] + 0.15 * df['social_risk']
+    print(f"   ✅ trade_impact = 0.35 × economic + 0.25 × geopolitical + 0.25 × migration + 0.15 × social")
     
-    # Global risk (weighted combination of all 5 sectors)
+    # Global risk (weighted combination of all 6 sectors)
     df['global_risk'] = (
-        0.25 * df['climate_risk'] +
-        0.25 * df['economic_risk'] +
-        0.15 * df['trade_risk'] +
-        0.20 * df['geopolitical_risk'] +
-        0.15 * df['migration_risk']
+        0.20 * df['climate_risk'] +
+        0.20 * df['economic_risk'] +
+        0.12 * df['trade_risk'] +
+        0.18 * df['geopolitical_risk'] +
+        0.15 * df['migration_risk'] +
+        0.15 * df['social_risk']
     )
-    print(f"   ✅ global_risk = 0.25×climate + 0.25×economic + 0.15×trade + 0.20×geopolitical + 0.15×migration")
+    print(f"   ✅ global_risk = 0.20×climate + 0.20×economic + 0.12×trade + 0.18×geopolitical + 0.15×migration + 0.15×social")
     
     return df
 
@@ -497,12 +562,12 @@ def validate_normalization(df):
         pd.DataFrame: Same dataset (no changes)
     """
     print("\n" + "="*70)
-    print("📏 STEP 9: VALIDATING NORMALIZATION")
+    print("📏 STEP 10: VALIDATING NORMALIZATION")
     print("="*70)
     
     # Columns to check
     risk_cols = [
-        'climate_risk', 'economic_risk', 'trade_risk', 'geopolitical_risk', 'migration_risk'
+        'climate_risk', 'economic_risk', 'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk'
     ]
     
     print(f"   ✅ All sectors were normalized BEFORE merging")
@@ -517,7 +582,7 @@ def validate_normalization(df):
     return df
 
 # ================================================================
-# 🔧 STEP 10: FINAL OUTPUT
+# 🔧 STEP 11: FINAL OUTPUT
 # ================================================================
 
 def create_final_output(df):
@@ -526,7 +591,7 @@ def create_final_output(df):
     
     Final columns:
         Country, Year, Month,
-        climate_risk, economic_risk, trade_risk, geopolitical_risk, migration_risk,
+        climate_risk, economic_risk, trade_risk, geopolitical_risk, migration_risk, social_risk,
         economic_impact, trade_impact, global_risk
     
     Args:
@@ -536,13 +601,13 @@ def create_final_output(df):
         pd.DataFrame: Final output
     """
     print("\n" + "="*70)
-    print("📋 STEP 10: CREATING FINAL OUTPUT")
+    print("📋 STEP 11: CREATING FINAL OUTPUT")
     print("="*70)
     
     # Define final column order
     final_columns = [
         'Country', 'Year', 'Month',
-        'climate_risk', 'economic_risk', 'trade_risk', 'geopolitical_risk', 'migration_risk',
+        'climate_risk', 'economic_risk', 'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk',
         'economic_impact', 'trade_impact', 'global_risk'
     ]
     
@@ -568,7 +633,7 @@ def create_final_output(df):
     return df_final
 
 # ================================================================
-# 🔧 STEP 11: SAVE OUTPUT
+# 🔧 STEP 12: SAVE OUTPUT
 # ================================================================
 
 def save_output(df, output_path=OUTPUT_FILE):
@@ -616,7 +681,7 @@ def validate_output(df):
         print(f"   ✅ No missing values")
     
     # Check 2: Base risks in [0, 1] (normalized before merge)
-    base_risk_cols = ['climate_risk', 'economic_risk', 'trade_risk', 'geopolitical_risk', 'migration_risk']
+    base_risk_cols = ['climate_risk', 'economic_risk', 'trade_risk', 'geopolitical_risk', 'migration_risk', 'social_risk']
     out_of_range = False
     for col in base_risk_cols:
         if df[col].min() < 0 or df[col].max() > 1:
@@ -670,25 +735,26 @@ def main():
         data = load_all_data()
         
         # Verify all sectors loaded
-        required_sectors = ['climate', 'economy', 'trade', 'geopolitics', 'migration']
+        required_sectors = ['climate', 'economy', 'trade', 'geopolitics', 'migration', 'social']
         missing_sectors = [s for s in required_sectors if s not in data]
         
         if missing_sectors:
             raise ValueError(f"Missing required sectors: {missing_sectors}")
         
         # ========================================
-        # STEPS 2-6: STANDARDIZE EACH SECTOR
+        # STEPS 2-7: STANDARDIZE EACH SECTOR
         # ========================================
         climate_std = standardize_climate(data['climate'])
         economy_std = standardize_economy(data['economy'])
         trade_std = standardize_trade(data['trade'])
         geopolitics_std = standardize_geopolitics(data['geopolitics'])
         migration_std = standardize_migration(data['migration'])
+        social_std = standardize_social(data['social'])
         
         # ========================================
-        # STEP 7: MERGE ALL SECTORS
+        # STEP 8: MERGE ALL SECTORS
         # ========================================
-        merged = merge_all_sectors(climate_std, economy_std, trade_std, geopolitics_std, migration_std)
+        merged = merge_all_sectors(climate_std, economy_std, trade_std, geopolitics_std, migration_std, social_std)
         
         if len(merged) == 0:
             raise ValueError("Merge resulted in empty dataset! Check date ranges.")
@@ -736,11 +802,12 @@ def main():
         print(f"      ✅ Trade Risk (expanded to monthly)")
         print(f"      ✅ Geopolitical Risk")
         print(f"      ✅ Migration Risk (expanded to monthly)")
+        print(f"      ✅ Social Risk (aggregated from State)")
         
         print(f"\n   ⚡ CASCADING EFFECTS CALCULATED:")
-        print(f"      ✅ Economic Impact (climate + geopolitics + migration)")
-        print(f"      ✅ Trade Impact (economy + geopolitics + migration)")
-        print(f"      ✅ Global Risk (all 5 sectors)")
+        print(f"      ✅ Economic Impact (climate + geopolitics + migration + social)")
+        print(f"      ✅ Trade Impact (economy + geopolitics + migration + social)")
+        print(f"      ✅ Global Risk (all 6 sectors)")
         
         print(f"\n   💾 OUTPUT FILE:")
         print(f"      {OUTPUT_FILE}")
