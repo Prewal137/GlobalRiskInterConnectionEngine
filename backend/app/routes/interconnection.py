@@ -4,12 +4,18 @@
 Serves multi-sector cascading risk data combining climate, economy, trade,
 geopolitics, migration, social, and infrastructure risks with calculated impact metrics.
 
-Endpoints:
+EXISTING ENDPOINTS (Static Interconnection):
 1. GET /interconnection/risk/{country}/{year}/{month} - Risk by date
 2. GET /interconnection/latest/{country} - Latest risk snapshot
 3. GET /interconnection/trend/{country} - 12-month trend analysis
 4. GET /interconnection/high-risk/{country} - High-risk months (global_risk > 0.7)
 5. GET /interconnection/summary/{country} - Country risk summary
+
+NEW ENDPOINTS (Dynamic Graph Interconnection):
+6. GET  /interconnection/dynamic - Run learning-based graph cascade simulation
+7. GET  /interconnection/shock/{sector}/{value} - Simulate sector shock
+8. GET  /interconnection/compare - Compare static vs dynamic results
+9. POST /interconnection/custom - Run custom risk scenario simulation
 """
 
 from fastapi import APIRouter, HTTPException
@@ -477,6 +483,203 @@ async def get_summary(country: str):
         return {
             "success": True,
             "summary": summary
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+# ================================================================
+# 🚀 DYNAMIC GRAPH INTERCONNECTION ENDPOINTS
+# ================================================================
+
+@router.get("/dynamic")
+async def dynamic_risk():
+    """
+    Run the complete learning-based dynamic graph interconnection system.
+    
+    This endpoint:
+    1. Loads risk time series data
+    2. Learns edge weights from data (NO fixed weights!)
+    3. Builds interconnection graph
+    4. Runs cascade simulation
+    5. Returns final risk and cascade history
+    
+    Returns:
+        Dynamic graph computation results with cascade steps
+    """
+    try:
+        from backend.app.graph.dynamic_engine import run_dynamic_system
+        
+        result = run_dynamic_system()
+        
+        # Convert non-serializable objects to dict
+        final_risk = result.get("final_risk", {})
+        cascade_history = result.get("cascade_history", [])
+        
+        return {
+            "type": "dynamic_graph",
+            "message": "Multi-step cascading risk computed",
+            "final_risk": final_risk,
+            "steps": cascade_history,
+            "weights_count": len(result.get("weights", {}))
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+@router.get("/shock/{sector}/{value}")
+async def shock_simulation(sector: str, value: float):
+    """
+    Simulate a shock to a specific sector and analyze cascading effects.
+    
+    Args:
+        sector: Sector to shock (e.g., 'climate', 'economy', 'trade')
+        value: Shock value between 0 and 1
+        
+    Returns:
+        Impact analysis comparing baseline vs shocked scenario
+    """
+    try:
+        if value < 0 or value > 1:
+            raise HTTPException(
+                status_code=400,
+                detail="Shock value must be between 0 and 1"
+            )
+        
+        from backend.app.graph.dynamic_engine import run_dynamic_system
+        from backend.app.graph.shock_simulator import simulate_shock
+        
+        # First run the dynamic system to get graph and risk data
+        system_result = run_dynamic_system()
+        
+        graph = system_result.get("graph")
+        risk_dict = system_result.get("initial_risk", {})
+        
+        if graph is None or not risk_dict:
+            raise HTTPException(
+                status_code=500,
+                detail="Failed to initialize graph system"
+            )
+        
+        # Validate sector
+        if sector not in risk_dict:
+            available_sectors = list(risk_dict.keys())
+            raise HTTPException(
+                status_code=400,
+                detail=f"Sector '{sector}' not found. Available sectors: {available_sectors}"
+            )
+        
+        # Run shock simulation
+        result = simulate_shock(graph, risk_dict, sector, value)
+        
+        return {
+            "type": "shock_simulation",
+            "sector": sector,
+            "shock_value": value,
+            "impact": result.get("impact_metrics", {}),
+            "total_system_impact": result.get("total_system_impact", 0.0)
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+@router.get("/compare")
+async def compare_static_dynamic():
+    """
+    Compare static interconnection results vs dynamic learned graph results.
+    
+    Returns:
+        Comparison between latest static risk and dynamic cascade final risk
+    """
+    try:
+        # Load static data
+        static_df = pd.read_csv(INTERCONNECTED_RISK_FILE)
+        static_latest = static_df.tail(1).to_dict(orient="records")[0] if not static_df.empty else {}
+        
+        # Run dynamic system
+        from backend.app.graph.dynamic_engine import run_dynamic_system
+        dynamic_result = run_dynamic_system()
+        dynamic_final = dynamic_result.get("final_risk", {})
+        
+        return {
+            "static_latest": static_latest,
+            "dynamic_final": dynamic_final,
+            "comparison_note": "Static uses fixed weights, Dynamic uses learned weights from data"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+@router.post("/custom")
+async def custom_input(data: dict):
+    """
+    Run cascade simulation with custom input risk values.
+    
+    This allows testing with unseen/custom risk scenarios.
+    
+    Example input:
+    {
+        "climate": 0.9,
+        "economy": 0.3,
+        "trade": 0.2,
+        "geopolitics": 0.4,
+        "migration": 0.3,
+        "social": 0.2,
+        "infrastructure": 0.3
+    }
+    
+    Args:
+        data: Dictionary with sector risk values (0-1 scale)
+        
+    Returns:
+        Custom simulation results with cascade history
+    """
+    try:
+        from backend.app.graph.dynamic_engine import run_dynamic_system
+        from backend.app.graph.cascade_engine import run_cascade
+        
+        # Validate input data
+        valid_sectors = ['climate', 'economy', 'trade', 'geopolitics', 
+                        'migration', 'social', 'infrastructure']
+        
+        for sector, value in data.items():
+            if not (0 <= value <= 1):
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Risk value for '{sector}' must be between 0 and 1"
+                )
+        
+        # Run dynamic system to get the learned graph
+        system_result = run_dynamic_system()
+        graph = system_result.get("graph")
+        
+        if graph is None:
+            raise HTTPException(
+                status_code=500,
+                detail="Failed to initialize graph system"
+            )
+        
+        # Run cascade with custom input
+        cascade_history = run_cascade(graph, data, steps=5)
+        
+        return {
+            "type": "custom_simulation",
+            "input": data,
+            "final_risk": cascade_history[-1] if cascade_history else {},
+            "steps": cascade_history,
+            "total_steps": len(cascade_history)
         }
         
     except HTTPException:

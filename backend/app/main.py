@@ -65,6 +65,10 @@ def root():
             "trend_analysis": "/interconnection/trend/{country}",
             "high_risk_months": "/interconnection/high-risk/{country}",
             "country_summary": "/interconnection/summary/{country}",
+            "dynamic_graph": "/interconnection/dynamic",  # 🆕 LEARNING-BASED GRAPH
+            "shock_simulation": "/interconnection/shock/{sector}/{value}",  # 🆕 SHOCK TEST
+            "compare_models": "/interconnection/compare",  # 🆕 STATIC vs DYNAMIC
+            "custom_scenario": "/interconnection/custom (POST)",  # 🆕 CUSTOM INPUT
             "sectors": ["climate", "economy", "trade", "geopolitics", "migration", "social", "infrastructure"]
         },
         "migration_endpoints": {  # 🌍 MIGRATION RISK
