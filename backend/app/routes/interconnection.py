@@ -686,3 +686,64 @@ async def custom_input(data: dict):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+# ================================================================
+# 🚀 LIVE AI PIPELINE ENDPOINT
+# ================================================================
+
+@router.post("/live")
+async def live_simulation():
+    """
+    Complete live AI pipeline:
+    1. Fetch live data from APIs
+    2. Map to model features
+    3. Predict risk using trained models
+    4. Build interconnection graph
+    5. Run cascade simulation
+    6. Return final risk with history
+    
+    Returns:
+        Complete live risk assessment with cascade effects
+    """
+    try:
+        from backend.app.live.live_processor import process_live_data
+        from backend.app.graph.graph_builder import build_graph
+        from backend.app.graph.cascade_engine import run_cascade
+        
+        # Step 1: Live data → Model predictions → Risk scores
+        print("\n🔄 Running live AI pipeline...")
+        risk_dict = process_live_data()
+        
+        # Step 2: Build interconnection graph from learned weights
+        print("\n🕸️  Building graph...")
+        from backend.app.graph.risk_loader import load_risk_timeseries
+        from backend.app.graph.weight_learner import learn_weights
+        
+        # Load historical data and learn weights
+        df = load_risk_timeseries()
+        weights = learn_weights(df, method='regression')
+        graph = build_graph(weights)
+        
+        # Step 3: Run cascade simulation
+        print("\n🌊 Running cascade simulation...")
+        final_risk, history = run_cascade(graph, risk_dict, steps=5, damping=0.8)
+        
+        # Convert history to serializable format
+        serializable_history = []
+        for step in history:
+            serializable_history.append({k: float(v) for k, v in step.items()})
+        
+        return {
+            "mode": "live_ai_pipeline",
+            "message": "Live data processed through ML models and graph cascade",
+            "initial_risk": {k: float(v) for k, v in risk_dict.items()},
+            "final_risk": {k: float(v) for k, v in final_risk.items()},
+            "steps": serializable_history,
+            "total_steps": len(serializable_history)
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
