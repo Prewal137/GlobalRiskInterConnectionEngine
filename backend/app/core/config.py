@@ -5,6 +5,10 @@ Centralized configuration for file paths, constants, and model hyperparameters.
 """
 
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ================================================================
 # 📂 BASE PATHS
@@ -107,6 +111,19 @@ API_DESCRIPTION = "REST API for accessing multi-sector risk predictions"
 # Default query limits
 DEFAULT_LIMIT = 100
 MAX_LIMIT = 1000
+
+# ================================================================
+# 🔑 LIVE DATA API KEYS
+# ================================================================
+
+# API keys loaded from environment variables (.env file)
+NEWS_API_KEY = os.getenv("NEWS_API_KEY", "")
+ACLED_API_KEY = os.getenv("ACLED_API_KEY", "")
+
+# Future API keys (add as needed)
+# OPEN_METEO_API_KEY = os.getenv("OPEN_METEO_API_KEY", "")
+# WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "")
+# ALPHA_VANTAGE_API_KEY = os.getenv("ALPHA_VANTAGE_API_KEY", "")
 
 # ================================================================
 # 📝 VALIDATION
