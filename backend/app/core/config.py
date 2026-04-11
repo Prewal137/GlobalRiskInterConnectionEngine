@@ -117,8 +117,12 @@ MAX_LIMIT = 1000
 # ================================================================
 
 # API keys loaded from environment variables (.env file)
+# Reload .env to ensure we have the latest values
+load_dotenv(override=True)
+
 NEWS_API_KEY = os.getenv("NEWS_API_KEY", "")
-ACLED_API_KEY = os.getenv("ACLED_API_KEY", "")
+ACLED_EMAIL = os.getenv("ACLED_EMAIL", "")
+ACLED_PASSWORD = os.getenv("ACLED_PASSWORD", "")
 
 # Future API keys (add as needed)
 # OPEN_METEO_API_KEY = os.getenv("OPEN_METEO_API_KEY", "")
