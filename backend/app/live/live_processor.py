@@ -23,6 +23,7 @@ if PROJECT_ROOT not in sys.path:
 
 from backend.app.live.live_fetcher import fetch_all_live_data
 from backend.app.live.feature_mapper import map_to_model_features
+from backend.app.live.data_store import init_db, save_live_data, load_recent_data
 
 
 # ================================================================
@@ -98,10 +99,12 @@ def process_live_data() -> Dict[str, float]:
     Process live data through complete ML pipeline.
     
     Pipeline:
-    1. Fetch real-time data from all sectors
-    2. Map raw data to model-ready features
-    3. Run predictions using trained models
-    4. Normalize risk scores to 0-1 range
+    1. Initialize database and fetch live data
+    2. Save current data to build history
+    3. Load historical data for feature engineering
+    4. Map to model features (with lag/rolling stats)
+    5. Run predictions using trained models
+    6. Normalize risk scores to 0-1 range
     
     Returns:
         Dictionary with risk scores per sector (0-1 normalized)
@@ -110,16 +113,31 @@ def process_live_data() -> Dict[str, float]:
     print("⚡ PROCESSING LIVE DATA THROUGH ML PIPELINE")
     print("="*70)
     
+    # Step 0: Initialize database
+    init_db()
+    
     # Step 1: Fetch live data from all sectors
     print("\n📡 Step 1: Fetching live data...")
     raw_data = fetch_all_live_data()
     
-    # Step 2: Map to model features
-    print("\n🔄 Step 2: Mapping to model features...")
-    features = map_to_model_features(raw_data)
+    # Step 2: Save current data to build history
+    print("\n💾 Step 2: Saving to historical database...")
+    save_live_data(raw_data)
     
-    # Step 3: Run model predictions
-    print("\n🤖 Step 3: Running model predictions...")
+    # Step 3: Load historical data
+    print("\n📚 Step 3: Loading historical data...")
+    history = {}
+    for sector in raw_data.keys():
+        history[sector] = load_recent_data(sector, limit=10)
+        count = len(history[sector])
+        print(f"   {sector}: {count} records in history")
+    
+    # Step 4: Map to model features (with history)
+    print("\n🔄 Step 4: Mapping to model features with lag/rolling stats...")
+    features = map_to_model_features(raw_data, history)
+    
+    # Step 5: Run model predictions
+    print("\n🤖 Step 5: Running model predictions...")
     risk_output = {}
     
     # Climate
@@ -220,12 +238,18 @@ def process_live_data() -> Dict[str, float]:
         print(f"   ❌ Infrastructure prediction error: {e}")
         risk_output["infrastructure"] = 0.5
     
-    # Step 4: Normalize to 0-1 range
-    print("\n📊 Step 4: Normalizing risk scores...")
+    # Step 6: Normalize to 0-1 range
+    print("\n📊 Step 6: Normalizing risk scores...")
     for key in risk_output:
         risk_output[key] = max(0.0, min(1.0, risk_output[key]))
     
     print("\n✅ Live data processing complete!")
     print(f"   Risk scores generated: {len(risk_output)}")
+    
+    # Show which sectors used real predictions vs fallback
+    real_predictions = sum(1 for v in risk_output.values() if v != 0.5)
+    fallbacks = sum(1 for v in risk_output.values() if v == 0.5)
+    print(f"   Real predictions: {real_predictions}")
+    print(f"   Fallbacks (0.5): {fallbacks}")
     
     return risk_output
