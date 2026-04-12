@@ -1,424 +1,88 @@
-# ================================================================
-# 🐍 PYTHON
-# ================================================================
-
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
 *.egg
-MANIFEST
-
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# PEP 582
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
+*.egg-info/
+dist/
+build/
+*.egg-info
+.Python
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# Virtual Environment
+.venv/
+venv/
+ENV/
 
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# ================================================================
-# 🤖 MACHINE LEARNING & MODELS
-# ================================================================
-
-# Trained models - KEEP SMALL MODELS, IGNORE LARGE CHECKPOINTS
-# For deployment, commit essential models (< 50MB)
-!models/trained/*.pkl
-!models/trained/*.joblib
-
-# Ignore large/deep learning models
-models/trained/*.h5
-models/trained/*.pth
-models/trained/*.pt
-models/trained/*.keras
-
-# Model checkpoints (always ignore)
-models/checkpoints/
-models/evaluation/*.csv
-
-# Model weights and parameters
-*.weights
-*.params
-
-# TensorBoard logs
-logs/
-events.out.tfevents*
-
-# MLflow
-mlruns/
-.mlflow/
-
-# ================================================================
-# 📊 DATA FILES
-# ================================================================
-
-# Raw data (never commit - too large)
-data/raw/*
-!data/raw/.gitkeep
-
-# Large processed files (regeneratable, don't commit)
-data/processed/climate/climate_features.csv
-data/processed/climate/final_climate.csv
-data/processed/trade/cleaned_trade.csv
-data/processed/trade/final_trade.csv
-data/processed/trade/trade_features.csv
-
-# Intermediate processing files
-data/external/
-data/intermediate/
-
-# Essential small processed/output files (COMMIT THESE - needed for API)
-!data/processed/climate/climate_risk_district.csv
-!data/processed/climate/climate_risk_state.csv
-!data/processed/climate/climate_risk_output.csv
-!data/processed/trade/trade_features_clean.csv
-!data/processed/trade/trade_risk_country.csv
-!data/processed/trade/trade_risk_output.csv
-!data/processed/trade/trade_risk_top.csv
-!data/processed/interconnection/global_risk.csv
-!data/processed/interconnection/interconnected_risk.csv
-
-# Keep dataset summary
-!data/processed/dataset_summary.csv
-
-# Large datasets
-*.parquet
-*.feather
-*.h5
-*.hdf5
-
-# Keep only small sample files if needed
-!data/sample_*.csv
-
-# ================================================================
-# 🚀 FASTAPI & WEB
-# ================================================================
-
-# Static files (if generated)
-static/
-
-# Media uploads
-media/
-uploads/
-
-# Database files (SQLite)
-*.db
-*.sqlite
-*.sqlite3
-backend/live_data.db
-
-# Redis dump
-dump.rdb
-
-# ================================================================
-# 📝 LOGS
-# ================================================================
-
-# Application logs
-*.log
-logs/
-pipeline/logs/
-
-# System logs
-syslog
-SystemLog
-
-# ================================================================
-# 💻 IDE & EDITORS
-# ================================================================
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
-# JetBrains IDEs (PyCharm, IntelliJ, etc.)
+# IDE
+.vscode/
 .idea/
-*.iml
-*.ipr
-*.iws
-
-# Sublime Text
-*.sublime-workspace
-*.sublime-project
-
-# Vim
 *.swp
 *.swo
 *~
-.netrwhist
 
-# Emacs
-*~
-\#*\#
-/.emacs.desktop
-/.emacs.desktop.lock
-
-# Atom
-.atom/
-
-# Eclipse
-.project
-.settings/
-.classpath
-
-# ================================================================
-# 🖥️ OS FILES
-# ================================================================
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-Icon
-._*
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-@eaDir/
-
-# Linux
-*~
-.fuse_hidden*
-.Trash-*
-.nfs*
-
-# ================================================================
-# 🔧 CONFIGURATION & SECRETS
-# ================================================================
-
-# Environment variables
+# Environment Variables
 .env
 .env.local
 .env.*.local
 
-# Secrets and credentials
-credentials
-*.pem
-*.key
-secrets/
-config/secrets/
+# Database
+*.db
+*.sqlite
+*.sqlite3
 
-# AWS
-.aws/credentials
+# Logs
+*.log
+logs/
 
-# Azure
-azure.json
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# GCP
-service-account.json
-*-service-account.json
+# Raw Data (too large for Git)
+data/raw/
+!data/raw/.gitkeep
 
-# ================================================================
-# 📦 PACKAGE MANAGER FILES
-# ================================================================
+# Large CSV files (>100MB)
+*.large.csv
 
-# Node.js (if using frontend)
-node_modules/
-npm-debug.log
-yarn-error.log
-
-# Ruby
-Gemfile.lock
-
-# Java
-*.jar
-*.war
-*.nar
-*.ear
-
-# ================================================================
-# 🧪 TESTING
-# ================================================================
-
-# Test coverage
-.coverage
-htmlcov/
-.tox/
-nosetests.xml
-coverage.xml
-*.cover
-
-# Hypothesis
-.hypothesis/
-
-# ================================================================
-# 📄 DOCUMENTATION
-# ================================================================
-
-# Built documentation
-docs/_build/
-site/
-
-# Jupyter
+# Jupyter Notebook Checkpoints
 .ipynb_checkpoints
 
-# ================================================================
-# 🗑️ TEMPORARY FILES
-# ================================================================
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# Node.js (frontend)
+node_modules/
+frontend/node_modules/
+frontend/build/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+test_*.py
+*_test.py
+tests/
 
 # Temporary files
 tmp/
 temp/
 *.tmp
+
+# Backup files
 *.bak
 *.backup
-
-# Cache files
-.cache/
-*.cache
-
-# ================================================================
-# ✅ WHAT TO KEEP (Explicit includes)
-# ================================================================
-
-# Keep these directories but ignore contents
-data/raw/.gitkeep
-data/processed/.gitkeep
-data/processed/climate/.gitkeep
-data/processed/economy/.gitkeep
-data/processed/geopolitics/.gitkeep
-data/processed/infrastructure/.gitkeep
-data/processed/migration/.gitkeep
-data/processed/social/.gitkeep
-data/processed/trade/.gitkeep
-
-models/trained/.gitkeep
-models/checkpoints/.gitkeep
-models/evaluation/.gitkeep
-
-pipeline/logs/.gitkeep
-
-# Keep README files in data folders
-!data/**/README.md
-
-# ================================================================
-# 🎯 SPECIAL EXCEPTIONS
-# ================================================================
-
-# Allow specific config files
-!.vscode/settings.json
-!.vscode/extensions.json
-
-# Allow sample data files
-!data/sample*.csv
-!data/example*.csv
-
-# Allow small lookup tables (< 1MB)
-!data/lookup*.csv
-!data/metadata*.csv
