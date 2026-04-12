@@ -90,12 +90,12 @@ The Global Risk Interconnection Platform is a comprehensive system that analyzes
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     FRONTEND (React)                         │
-│  ┌────────────┐ ┌────────────┐ ┌──────────┐ ┌────────────┐ │
-│  │   Live     │ │ Historical │ │  State   │ │  What-If   │ │
-│  │ Dashboard  │ │  Analysis  │ │ Analysis │ │ Simulation │ │
-│  └────────────┘ └────────────┘ └──────────┘ └────────────┘ │
-│         │              │              │             │        │
+│                     FRONTEND (React)                        │
+│  ┌────────────┐ ┌────────────┐ ┌──────────┐ ┌────────────┐  │
+│  │   Live     │ │ Historical │ │  State   │ │  What-If   │  │
+│  │ Dashboard  │ │  Analysis  │ │ Analysis │ │ Simulation │  │
+│  └────────────┘ └────────────┘ └──────────┘ └────────────┘  │
+│         │              │              │             │       │
 │  ┌──────┴──────────────┴──────────────┴─────────────┴──────┐│
 │  │           Visualization Layer                           ││
 │  │  Force Graph │ India Map │ Charts │ Risk Cards          ││
@@ -103,30 +103,30 @@ The Global Risk Interconnection Platform is a comprehensive system that analyzes
 └──────────────────────────┬──────────────────────────────────┘
                            │ HTTP/REST API
 ┌──────────────────────────▼──────────────────────────────────┐
-│                     BACKEND (FastAPI)                        │
+│                     BACKEND (FastAPI)                       │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │           API Routes (8 modules)                     │   │
 │  │  Climate │ Trade │ Economy │ Geopolitics │ etc.      │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                           │                                  │
+│                           │                                 │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │          Live Data Pipeline                          │   │
-│  │  Fetcher → Feature Mapper → ML Models → Risk Scores │   │
+│  │  Fetcher → Feature Mapper → ML Models → Risk Scores  │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                           │                                  │
+│                           │                                 │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │          Graph Cascade Engine                        │   │
-│  │  Risk Loader → Weight Learner → Graph Builder       │   │
+│  │  Risk Loader → Weight Learner → Graph Builder        │   │
 │  │       → Cascade Simulator → Results                  │   │
 │  └──────────────────────────────────────────────────────┘   │
 └──────────────────────────┬──────────────────────────────────┘
                            │
 ┌──────────────────────────▼──────────────────────────────────┐
-│                     DATA LAYER                               │
-│  ┌────────────┐ ┌────────────┐ ┌────────────────────────┐  │
-│  │  Raw Data  │ │ Processed  │ │   SQLite (Live DB)     │  │
-│  │  (CSV)     │ │  (CSV)     │ │   Historical Cache     │  │
-│  └────────────┘ └────────────┘ └────────────────────────┘  │
+│                     DATA LAYER                              │
+│  ┌────────────┐ ┌────────────┐ ┌────────────────────────┐   │
+│  │  Raw Data  │ │ Processed  │ │   SQLite (Live DB)     │   │
+│  │  (CSV)     │ │  (CSV)     │ │   Historical Cache     │   │
+│  └────────────┘ └────────────┘ └────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
