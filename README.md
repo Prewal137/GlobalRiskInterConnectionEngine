@@ -724,8 +724,3 @@ If you use this platform in your research, please cite:
 
 ---
 
-**⭐ If this project helps your research, please give it a star!**
-
-**Last Updated:** April 2026  
-**Version:** 1.0.0  
-**Status:** ✅ Research-Grade System (Publishable)
