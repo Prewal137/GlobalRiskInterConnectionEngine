@@ -275,17 +275,50 @@ def map_economy_features(current: dict, history: list) -> Optional[dict]:
 
 
 def map_trade_features(current: dict, history: list) -> Optional[dict]:
-    """Map trade data to model features."""
-    # Trade data still placeholder - return None
-    return None
+    """Map World Bank trade data to model features (10 features required)."""
+    if not current or current.get("exports") is None:
+        return None
+    
+    # Extract trade indicators
+    exports = current.get("exports", 0) or 0
+    imports = current.get("imports", 0) or 0
+    trade_balance = current.get("trade_balance", 0) or 0
+    total_trade = current.get("total_trade", 0) or 0
+    growth = current.get("growth", 0) or 0
+    rolling_mean_3 = current.get("rolling_mean_3", 0) or 0
+    volatility_3 = current.get("volatility_3", 0) or 0
+    export_growth = current.get("export_growth", 0) or 0
+    import_growth = current.get("import_growth", 0) or 0
+    export_share = current.get("export_share", 0) or 0
+    import_share = current.get("import_share", 0) or 0
+    
+    # Build feature dict (10 features matching model)
+    # Model trained on: Export, Import, Trade_Balance, Total_Trade, Growth, 
+    #                   Rolling_Mean_3, Volatility_3, Export_Growth, Export_Share, Import_Share
+    features = {
+        "Export": exports,
+        "Import": imports,
+        "Trade_Balance": trade_balance,
+        "Total_Trade": total_trade,
+        "Growth": growth,
+        "Rolling_Mean_3": rolling_mean_3,
+        "Volatility_3": volatility_3,
+        "Export_Growth": export_growth,
+        "Export_Share": export_share,
+        "Import_Share": import_share
+    }
+    
+    print(f"   ✅ Trade: {len(features)} features from World Bank data")
+    return features
 
 
 def map_geopolitics_features(current: dict, history: list) -> Optional[dict]:
-    """Map ACLED conflict data to model features (36 features required)."""
+    """Map ACLED conflict data to model features (32 features required)."""
     if not current or current.get("conflict_count") is None:
         return None
     
     import math
+    import datetime
     
     # Extract ACLED conflict indicators
     conflict_count = current.get("conflict_count", 0) or 0
@@ -296,7 +329,6 @@ def map_geopolitics_features(current: dict, history: list) -> Optional[dict]:
     global_uncertainty = current.get("global_uncertainty", 0) or 0
     
     # Temporal features
-    import datetime
     now = datetime.datetime.now()
     month = now.month
     month_sin = math.sin(2 * math.pi * month / 12)
@@ -316,7 +348,7 @@ def map_geopolitics_features(current: dict, history: list) -> Optional[dict]:
     fatalities_roll_3 = fatalities
     uncertainty_roll_6 = global_uncertainty
     
-    # Standard deviation
+    # Standard deviation and changes
     conflict_std_3 = 0.0
     conflict_change = 0.0
     fatalities_change = 0.0
@@ -326,7 +358,7 @@ def map_geopolitics_features(current: dict, history: list) -> Optional[dict]:
     conflict_present = 1 if conflict_count > 0 else 0
     shock = 1 if conflict_intensity > 1.0 else 0
     
-    # Normalized features (simple 0-1 scaling)
+    # Normalized features
     conflict_count_norm = min(conflict_count / 100, 1.0)
     fatalities_sum_norm = min(fatalities / 50, 1.0)
     deaths_total_norm = min(deaths_total / 50, 1.0)
@@ -336,11 +368,12 @@ def map_geopolitics_features(current: dict, history: list) -> Optional[dict]:
     
     # Composite scores
     instability_score = (conflict_count_norm + fatalities_sum_norm + conflict_intensity_norm) / 3
-    geopolitical_risk_raw = instability_score
+    geopolitical_risk = instability_score
     conflict_uncertainty = (policy_uncertainty_norm + global_uncertainty_norm) / 2
     fatality_intensity = fatalities_sum_norm * conflict_intensity_norm
     
-    # Build complete feature dict (36 features)
+    # Build complete feature dict (32 features)
+    # Based on model training: 6 base + temporal + lags + rolling + stats + composites
     features = {
         "conflict_count": conflict_count,
         "fatalities_sum": fatalities,
@@ -373,12 +406,7 @@ def map_geopolitics_features(current: dict, history: list) -> Optional[dict]:
         "policy_uncertainty_norm": policy_uncertainty_norm,
         "global_uncertainty_norm": global_uncertainty_norm,
         "instability_score": instability_score,
-        "geopolitical_risk": geopolitical_risk_raw,
-        "geopolitical_risk_raw": geopolitical_risk_raw,
-        "future_risk_3m": geopolitical_risk_raw,
-        "future_risk_6m": geopolitical_risk_raw,
-        "conflict_uncertainty": conflict_uncertainty,
-        "fatality_intensity": fatality_intensity
+        "geopolitical_risk": geopolitical_risk
     }
     
     print(f"   ✅ Geopolitics: {len(features)} features from ACLED data")

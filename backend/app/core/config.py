@@ -123,6 +123,8 @@ load_dotenv(override=True)
 NEWS_API_KEY = os.getenv("NEWS_API_KEY", "")
 ACLED_EMAIL = os.getenv("ACLED_EMAIL", "")
 ACLED_PASSWORD = os.getenv("ACLED_PASSWORD", "")
+COMTRADE_PRIMARY_KEY = os.getenv("COMTRADE_PRIMARY_KEY", "")
+COMTRADE_SECONDARY_KEY = os.getenv("COMTRADE_SECONDARY_KEY", "")
 
 # Future API keys (add as needed)
 # OPEN_METEO_API_KEY = os.getenv("OPEN_METEO_API_KEY", "")
