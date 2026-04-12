@@ -191,9 +191,9 @@ def map_economy_features(current: dict, history: list) -> Optional[dict]:
     vix_lag_1 = prev1.get("vix", vix) or vix
     
     # Rolling statistics
-    nifty_values = [prev2.get("nifty", nifty), prev1.get("nifty", nifty), nifty]
-    vix_values = [prev2.get("vix", vix), prev1.get("vix", vix), vix]
-    inflation_values = [prev2.get("inflation", inflation), prev1.get("inflation", inflation), inflation]
+    nifty_values = [prev2.get("nifty") or nifty, prev1.get("nifty") or nifty, nifty]
+    vix_values = [prev2.get("vix") or vix, prev1.get("vix") or vix, vix]
+    inflation_values = [prev2.get("inflation") or inflation, prev1.get("inflation") or inflation, inflation]
     
     nifty_roll_3 = sum(nifty_values) / 3
     vix_roll_3 = sum(vix_values) / 3
@@ -510,14 +510,14 @@ def map_infrastructure_features(current: dict, history: list) -> Optional[dict]:
         "urban_population": urban_population,
         "electricity_access": electricity_access,
         "roads_paved": roads_paved,
-        "water_access_lag_1": prev1.get("water_access", water_access),
-        "urban_pop_lag_1": prev1.get("urban_population", urban_population),
-        "electricity_lag_1": prev1.get("electricity_access", electricity_access),
-        "roads_lag_1": prev1.get("roads_paved", roads_paved),
-        "water_change": water_access - prev1.get("water_access", water_access),
-        "urban_change": urban_population - prev1.get("urban_population", urban_population),
-        "water_roll_2": (water_access + prev1.get("water_access", water_access)) / 2,
-        "urban_roll_2": (urban_population + prev1.get("urban_population", urban_population)) / 2,
+        "water_access_lag_1": prev1.get("water_access") or water_access,
+        "urban_pop_lag_1": prev1.get("urban_population") or urban_population,
+        "electricity_lag_1": prev1.get("electricity_access") or electricity_access,
+        "roads_lag_1": prev1.get("roads_paved") or roads_paved,
+        "water_change": water_access - (prev1.get("water_access") or water_access),
+        "urban_change": urban_population - (prev1.get("urban_population") or urban_population),
+        "water_roll_2": (water_access + (prev1.get("water_access") or water_access)) / 2,
+        "urban_roll_2": (urban_population + (prev1.get("urban_population") or urban_population)) / 2,
         "infra_score": (water_access + electricity_access + roads_paved) / 3,
         "development_index": (urban_population + electricity_access) / 2,
         "access_gap": electricity_access - water_access
