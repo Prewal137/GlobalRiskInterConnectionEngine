@@ -11,11 +11,18 @@ EXISTING ENDPOINTS (Static Interconnection):
 4. GET /interconnection/high-risk/{country} - High-risk months (global_risk > 0.7)
 5. GET /interconnection/summary/{country} - Country risk summary
 
-NEW ENDPOINTS (Dynamic Graph Interconnection):
+DYNAMIC GRAPH ENDPOINTS:
 6. GET  /interconnection/dynamic - Run learning-based graph cascade simulation
 7. GET  /interconnection/shock/{sector}/{value} - Simulate sector shock
 8. GET  /interconnection/compare - Compare static vs dynamic results
 9. POST /interconnection/custom - Run custom risk scenario simulation
+10. POST /interconnection/live - Live AI pipeline with real-time data
+
+ADVANCED ENDPOINTS (NEW):
+11. GET  /interconnection/history/{year} - Historical risk data by year
+12. GET  /interconnection/state/{state} - State-level climate risk
+13. GET  /interconnection/state-impact/{state} - Cascade impact simulation
+14. POST /interconnection/what-if - Custom what-if scenario simulation
 """
 
 from fastapi import APIRouter, HTTPException
@@ -747,3 +754,209 @@ async def live_simulation():
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+# ================================================================
+# 🆕 ADVANCED APIs - Historical, State, What-If Simulations
+# ================================================================
+
+@router.get("/history/{year}")
+async def get_historical_risk(year: int):
+    """
+    Get historical risk data for a specific year.
+    
+    Args:
+        year: Year to query (e.g., 2023, 2024)
+    
+    Returns:
+        Historical risk data for the specified year
+    """
+    try:
+        df = pd.read_csv(INTERCONNECTED_RISK_FILE)
+        
+        if "Year" not in df.columns:
+            return {"error": "Year column missing in dataset"}
+        
+        df_year = df[df["Year"] == year]
+        
+        if df_year.empty:
+            return {"error": f"No data available for year {year}"}
+        
+        return {
+            "mode": "historical",
+            "year": year,
+            "record_count": len(df_year),
+            "data": df_year.to_dict(orient="records")
+        }
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching historical data: {str(e)}")
+
+
+@router.get("/state/{state}")
+async def get_state_risk(state: str):
+    """
+    Get climate risk data for a specific Indian state.
+    
+    Args:
+        state: State name (e.g., "Maharashtra", "Karnataka")
+    
+    Returns:
+        Climate risk data for the specified state
+    """
+    try:
+        climate_risk_file = os.path.join(BASE_DIR, "data", "processed", "climate", "climate_risk_state.csv")
+        
+        if not os.path.exists(climate_risk_file):
+            raise HTTPException(status_code=404, detail="Climate risk state data not found")
+        
+        df = pd.read_csv(climate_risk_file)
+        
+        if "State" not in df.columns:
+            return {"error": "State column missing"}
+        
+        state_data = df[df["State"].str.lower() == state.lower()]
+        
+        if state_data.empty:
+            return {"error": f"No data for state {state}"}
+        
+        return {
+            "mode": "state",
+            "state": state,
+            "data": state_data.to_dict(orient="records")
+        }
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching state data: {str(e)}")
+
+
+@router.get("/state-impact/{state}")
+async def state_impact(state: str):
+    """
+    Simulate cascading impact when a specific state/sector experiences high risk.
+    
+    Args:
+        state: State or sector name to apply shock
+    
+    Returns:
+        Cascade simulation showing risk propagation
+    """
+    try:
+        from app.graph.graph_builder import build_graph
+        from app.graph.cascade_engine import run_cascade
+        from app.graph.risk_loader import load_risk_timeseries
+        from app.graph.weight_learner import learn_weights
+        
+        # Build graph with learned weights
+        df = load_risk_timeseries()
+        weights = learn_weights(df, method='regression')
+        graph = build_graph(weights)
+        
+        # Initialize all nodes with low baseline risk
+        risk = {node: 0.3 for node in graph.nodes()}
+        
+        # Apply shock to selected state/sector
+        if state not in risk:
+            # Try case-insensitive match
+            matched_node = None
+            for node in graph.nodes():
+                if node.lower() == state.lower():
+                    matched_node = node
+                    break
+            
+            if matched_node:
+                risk[matched_node] = 0.9
+            else:
+                return {"error": f"{state} not found in graph. Available: {list(graph.nodes())}"}
+        else:
+            risk[state] = 0.9
+        
+        # Run cascade simulation
+        final_risk, history = run_cascade(graph, risk, steps=5, damping=0.8)
+        
+        # Convert to serializable format
+        serializable_history = []
+        for step in history:
+            serializable_history.append({k: round(float(v), 4) for k, v in step.items()})
+        
+        return {
+            "mode": "state-impact",
+            "state": state,
+            "initial": {k: round(float(v), 4) for k, v in risk.items()},
+            "final": {k: round(float(v), 4) for k, v in final_risk.items()},
+            "steps": serializable_history,
+            "total_steps": len(serializable_history)
+        }
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error running state impact simulation: {str(e)}")
+
+
+@router.post("/what-if")
+async def what_if_simulation(payload: dict):
+    """
+    Run what-if scenario simulation with custom risk inputs.
+    
+    Example input:
+    {
+        "climate": 0.9,
+        "economy": 0.8
+    }
+    
+    Args:
+        payload: Dictionary of sector risks to override
+    
+    Returns:
+        Cascade simulation with custom inputs
+    """
+    try:
+        from app.graph.graph_builder import build_graph
+        from app.graph.cascade_engine import run_cascade
+        from app.graph.risk_loader import load_risk_timeseries
+        from app.graph.weight_learner import learn_weights
+        
+        # Build graph with learned weights
+        df = load_risk_timeseries()
+        weights = learn_weights(df, method='regression')
+        graph = build_graph(weights)
+        
+        # Default baseline risk for all sectors
+        risk = {node: 0.3 for node in graph.nodes()}
+        
+        # Override with user inputs
+        for key, value in payload.items():
+            # Try exact match first
+            if key in risk:
+                risk[key] = float(value)
+            else:
+                # Try case-insensitive match
+                for node in graph.nodes():
+                    if node.lower() == key.lower():
+                        risk[node] = float(value)
+                        break
+        
+        # Run cascade simulation
+        final_risk, history = run_cascade(graph, risk, steps=5, damping=0.8)
+        
+        # Convert to serializable format
+        serializable_history = []
+        for step in history:
+            serializable_history.append({k: round(float(v), 4) for k, v in step.items()})
+        
+        return {
+            "mode": "what-if",
+            "input": payload,
+            "initial": {k: round(float(v), 4) for k, v in risk.items()},
+            "final": {k: round(float(v), 4) for k, v in final_risk.items()},
+            "steps": serializable_history,
+            "total_steps": len(serializable_history)
+        }
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error running what-if simulation: {str(e)}")
