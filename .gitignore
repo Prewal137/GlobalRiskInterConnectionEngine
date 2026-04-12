@@ -214,6 +214,7 @@ uploads/
 *.db
 *.sqlite
 *.sqlite3
+backend/live_data.db
 
 # Redis dump
 dump.rdb
