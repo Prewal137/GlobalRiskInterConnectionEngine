@@ -1,10 +1,20 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routes import climate, trade, interconnection, geopolitics, economy, migration, social, infrastructure
 
 app = FastAPI(
     title="Global Risk Interconnection Platform API",
     description="REST API for accessing geopolitical, climate, and trade risk predictions across countries and regions",
     version="1.0.0"
+)
+
+# CORS Configuration - Allow frontend to access backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Include routers
