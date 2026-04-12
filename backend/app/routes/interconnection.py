@@ -518,7 +518,7 @@ async def dynamic_risk():
         Dynamic graph computation results with cascade steps
     """
     try:
-        from backend.app.graph.dynamic_engine import run_dynamic_system
+        from app.graph.dynamic_engine import run_dynamic_system
         
         result = run_dynamic_system()
         
@@ -559,8 +559,8 @@ async def shock_simulation(sector: str, value: float):
                 detail="Shock value must be between 0 and 1"
             )
         
-        from backend.app.graph.dynamic_engine import run_dynamic_system
-        from backend.app.graph.shock_simulator import simulate_shock
+        from app.graph.dynamic_engine import run_dynamic_system
+        from app.graph.shock_simulator import simulate_shock
         
         # First run the dynamic system to get graph and risk data
         system_result = run_dynamic_system()
@@ -613,7 +613,7 @@ async def compare_static_dynamic():
         static_latest = static_df.tail(1).to_dict(orient="records")[0] if not static_df.empty else {}
         
         # Run dynamic system
-        from backend.app.graph.dynamic_engine import run_dynamic_system
+        from app.graph.dynamic_engine import run_dynamic_system
         dynamic_result = run_dynamic_system()
         dynamic_final = dynamic_result.get("final_risk", {})
         
@@ -654,8 +654,8 @@ async def custom_input(data: dict):
         Custom simulation results with cascade history
     """
     try:
-        from backend.app.graph.dynamic_engine import run_dynamic_system
-        from backend.app.graph.cascade_engine import run_cascade
+        from app.graph.dynamic_engine import run_dynamic_system
+        from app.graph.cascade_engine import run_cascade
         
         # Validate input data
         valid_sectors = ['climate', 'economy', 'trade', 'geopolitics', 
@@ -714,9 +714,9 @@ async def live_simulation():
         Complete live risk assessment with cascade effects
     """
     try:
-        from backend.app.live.live_processor import process_live_data
-        from backend.app.graph.graph_builder import build_graph
-        from backend.app.graph.cascade_engine import run_cascade
+        from app.live.live_processor import process_live_data
+        from app.graph.graph_builder import build_graph
+        from app.graph.cascade_engine import run_cascade
         
         # Step 1: Live data → Model predictions → Risk scores
         print("\n🔄 Running live AI pipeline...")
