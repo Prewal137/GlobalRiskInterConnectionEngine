@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import climate, trade, interconnection, geopolitics, economy, migration, social, infrastructure
+from app.routes import climate, trade, interconnection, geopolitics, economy, migration, social, infrastructure,live
 
 app = FastAPI(
     title="Global Risk Interconnection Platform API",
@@ -26,6 +26,7 @@ app.include_router(economy.router)
 app.include_router(migration.router)
 app.include_router(social.router)
 app.include_router(infrastructure.router)
+app.include_router(live.router)
 
 @app.get("/")
 def root():
@@ -41,9 +42,11 @@ def root():
             "geopolitics_risk": "/geopolitics-risk/",
             "economy_risk": "/economy/",
             "social_risk": "/social/",
-            "infrastructure_risk": "/infrastructure-risk/",  # NEW!
+            "infrastructure_risk": "/infrastructure-risk/",  
             "global_risk": "/global-risk/",
-            "docs": "/docs"
+            "docs": "/docs",
+            "live_data": "/live/",                 
+            "live_risk": "/live/risk", 
         },
         "economy_endpoints": {
             "risk_by_date": "/economy/risk/{country}/{year}/{month}",
@@ -106,5 +109,16 @@ def root():
             "top_states": "/global-risk/top",
             "state_risk": "/global-risk/state/{state}",
             "all_states": "/global-risk/all"
-        }
+        },
+                "live_endpoints": {
+            "all_live_data": "/live/",
+            "climate": "/live/climate?location=delhi&days=30",
+            "economy": "/live/economy",
+            "trade": "/live/trade",
+            "geopolitics": "/live/geopolitics",
+            "migration": "/live/migration?country=IN",
+            "social": "/live/social",
+            "infrastructure": "/live/infrastructure?country=IN",
+            "live_risk_ml": "/live/risk"
+        },
     }
