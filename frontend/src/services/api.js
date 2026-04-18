@@ -1,34 +1,35 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8000';
+
 
 const api = axios.create({
-  baseURL: API_BASE,
-  timeout: 120000, // 2 minutes for heavy computations
+  baseURL: 'http://localhost:8000',
+  timeout: 60000, // reduce timeout (2 min → 60 sec)
   headers: {
     'Content-Type': 'application/json',
   },
 });
+
 
 // ============================================================
 // LIVE DASHBOARD APIs
 // ============================================================
 
 export const getLiveRisk = async () => {
-  const response = await api.post('/interconnection/live');
-  return response.data;
+  try {
+    const response = await api.get('/live/risk');
+    return response.data;
+  } catch (error) {
+    console.error('Live Risk API Error:', error);
+    throw error;
+  }
 };
 
-export const getLatestRisk = async (country = 'IND') => {
-  const response = await api.get(`/interconnection/latest/${country}`);
+// OPTIONAL: faster (no ML, just raw data)
+export const getLiveData = async () => {
+  const response = await api.get('/live/');
   return response.data;
 };
-
-export const getRiskSummary = async (country = 'IND') => {
-  const response = await api.get(`/interconnection/summary/${country}`);
-  return response.data;
-};
-
 // ============================================================
 // HISTORICAL APIs
 // ============================================================
@@ -96,3 +97,4 @@ export const compareStaticDynamic = async () => {
 };
 
 export default api;
+
