@@ -1,100 +1,148 @@
-import axios from 'axios';
-
-
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000',
-  timeout: 120000, // reduce timeout (2 min → 60 sec)
+  baseURL: "http://localhost:8000",
+  timeout: 60000,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
+// ==========================
+// LIVE APIs
+// ==========================
+export const getLiveRisk = async () => (await api.get("/live/risk")).data;
+export const getLiveData = async () => (await api.get("/live/")).data;
+export const getLiveClimate = async () => (await api.get("/live/climate")).data;
+export const getLiveEconomy = async () => (await api.get("/live/economy")).data;
+export const getLiveTrade = async () => (await api.get("/live/trade")).data;
+export const getLiveGeopolitics = async () => (await api.get("/live/geopolitics")).data;
+export const getLiveMigration = async () => (await api.get("/live/migration")).data;
+export const getLiveSocial = async () => (await api.get("/live/social")).data;
+export const getLiveInfrastructure = async () => (await api.get("/live/infrastructure")).data;
 
-// ============================================================
-// LIVE DASHBOARD APIs
-// ============================================================
+// ==========================
+// INTERCONNECTION (GLOBAL)
+// ==========================
+export const getHistoricalRisk = async (year) =>
+  (await api.get(`/interconnection/history/${year}`)).data;
 
-export const getLiveRisk = async () => {
-  try {
-    const response = await api.get('/live/risk');
-    return response.data;
-  } catch (error) {
-    console.error('Live Risk API Error:', error);
-    throw error;
-  }
-};
+export const getGlobalTrend = async (country = "IND") =>
+  (await api.get(`/interconnection/trend/${country}`)).data;
 
-// OPTIONAL: faster (no ML, just raw data)
-export const getLiveData = async () => {
-  const response = await api.get('/live/');
-  return response.data;
-};
-// ============================================================
-// HISTORICAL APIs
-// ============================================================
+export const getLatestGlobal = async (country = "IND") =>
+  (await api.get(`/interconnection/latest/${country}`)).data;
 
-export const getHistoricalRisk = async (year) => {
-  const response = await api.get(`/interconnection/history/${year}`);
-  return response.data;
-};
+export const getHighRiskMonths = async (country = "IND") =>
+  (await api.get(`/interconnection/high-risk/${country}`)).data;
 
-export const getTrendData = async (country = 'IND') => {
-  const response = await api.get(`/interconnection/trend/${country}`);
-  return response.data;
-};
+export const getGlobalSummary = async (country = "IND") =>
+  (await api.get(`/interconnection/summary/${country}`)).data;
 
-export const getHighRiskMonths = async (country = 'IND') => {
-  const response = await api.get(`/interconnection/high-risk/${country}`);
-  return response.data;
-};
+export const getStateRisk = async (state) =>
+  (await api.get(`/interconnection/state/${state}`)).data;
 
-// ============================================================
-// STATE ANALYSIS APIs
-// ============================================================
+export const getStateImpact = async (state) =>
+  (await api.get(`/interconnection/state-impact/${state}`)).data;
 
-export const getStateRisk = async (state) => {
-  const response = await api.get(`/interconnection/state/${state}`);
-  return response.data;
-};
+// ==========================
+// ECONOMY
+// ==========================
+export const getEconomyTrend = async (country = "IND") =>
+  (await api.get(`/economy/trend/${country}`)).data;
 
-export const getStateImpact = async (state) => {
-  const response = await api.get(`/interconnection/state-impact/${state}`);
-  return response.data;
-};
+export const getEconomyLatest = async (country = "IND") =>
+  (await api.get(`/economy/latest/${country}`)).data;
 
-// ============================================================
-// WHAT-IF SIMULATION APIs
-// ============================================================
+export const getEconomySummary = async (country = "IND") =>
+  (await api.get(`/economy/summary/${country}`)).data;
 
+// ==========================
+// SOCIAL
+// ==========================
+export const getSocialTrend = async (state = "Karnataka") =>
+  (await api.get(`/social/trend/${state}`)).data;
+
+export const getSocialLatest = async (state = "Karnataka") =>
+  (await api.get(`/social/latest/${state}`)).data;
+
+export const getSocialSummary = async (state = "Karnataka") =>
+  (await api.get(`/social/summary/${state}`)).data;
+
+// ==========================
+// MIGRATION
+// ==========================
+export const getMigrationTrend = async (country = "IND") =>
+  (await api.get(`/migration/trend/${country}`)).data;
+
+export const getMigrationLatest = async (country = "IND") =>
+  (await api.get(`/migration/latest/${country}`)).data;
+
+export const getMigrationSummary = async (country = "IND") =>
+  (await api.get(`/migration/summary/${country}`)).data;
+
+// ==========================
+// TRADE
+// ==========================
+export const getTradeCountry = async (country = "IND") =>
+  (await api.get(`/trade-risk/country/${country}`)).data;
+
+export const getTradeTop = async () =>
+  (await api.get(`/trade-risk/top`)).data;
+
+export const getTradeSummary = async () =>
+  (await api.get(`/trade-risk/summary`)).data;
+
+// ==========================
+// CLIMATE
+// ==========================
+export const getClimateState = async (state) =>
+  (await api.get(`/climate-risk/climate-risk/state/${state}`)).data;
+
+export const getClimateTopStates = async () =>
+  (await api.get(`/climate-risk/climate-risk/top-states`)).data;
+
+export const getInterconnectionSummary = async () =>
+  (await api.get(`/climate-risk/interconnection/summary`)).data;
+
+// ==========================
+// GEOPOLITICS
+// ==========================
+export const getGeopoliticsCountry = async (country = "IND") =>
+  (await api.get(`/geopolitics-risk/country/${country}`)).data;
+
+export const getGeopoliticsTop = async () =>
+  (await api.get(`/geopolitics-risk/top-countries`)).data;
+
+export const getGeopoliticsGlobalSummary = async () =>
+  (await api.get(`/geopolitics-risk/global-summary`)).data;
+
+// ==========================
+// INFRASTRUCTURE
+// ==========================
+export const getInfraStateYear = async (state, year) =>
+  (await api.get(`/infrastructure-risk/state/${state}/${year}`)).data;
+
+export const getInfraLatest = async (state) =>
+  (await api.get(`/infrastructure-risk/latest/${state}`)).data;
+
+export const getInfraTrend = async (state) =>
+  (await api.get(`/infrastructure-risk/trend/${state}`)).data;
+
+export const getInfraSummary = async () =>
+  (await api.get(`/infrastructure-risk/summary`)).data;
+
+// ==========================
+// SIMULATION / OTHER
+// ==========================
 export const runWhatIfSimulation = async (payload) => {
-  const response = await api.post('/interconnection/what-if', payload);
-  return response.data;
-};
-
-export const runCustomSimulation = async (payload) => {
-  const response = await api.post('/interconnection/custom', payload);
-  return response.data;
+  const res = await api.post("/interconnection/what-if", payload);
+  return res.data;
 };
 
 export const simulateShock = async (sector, value) => {
-  const response = await api.get(`/interconnection/shock/${sector}/${value}`);
-  return response.data;
+  const res = await api.get(`/interconnection/shock/${sector}/${value}`);
+  return res.data;
 };
 
-// ============================================================
-// DYNAMIC GRAPH APIs
-// ============================================================
-
-export const getDynamicRisk = async () => {
-  const response = await api.get('/interconnection/dynamic');
-  return response.data;
-};
-
-export const compareStaticDynamic = async () => {
-  const response = await api.get('/interconnection/compare');
-  return response.data;
-};
-
-export default api;
-
+export default api;
