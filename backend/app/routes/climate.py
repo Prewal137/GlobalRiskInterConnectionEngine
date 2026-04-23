@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
 import pandas as pd
 import os
+router = APIRouter(prefix="/climate-risk")
 
-router = APIRouter()
 
 # ================================================================
 # 📂 LOAD DATA (ON START)
@@ -58,7 +58,7 @@ def get_risk_level(score):
 # 🏛️ STATE ENDPOINT
 # ================================================================
 
-@router.get("/climate-risk/state/{state}")
+@router.get("/state/{state}")
 def get_state_risk(state: str):
     """
     Get climate risk information for a specific state.
@@ -90,7 +90,7 @@ def get_state_risk(state: str):
 # 🗺️ DISTRICT ENDPOINT
 # ================================================================
 
-@router.get("/climate-risk/district/{district}")
+@router.get("/district/{district}")
 def get_district_risk(district: str):
     """
     Get climate risk information for a specific district.
@@ -123,7 +123,7 @@ def get_district_risk(district: str):
 # 🏆 TOP STATES ENDPOINT
 # ================================================================
 
-@router.get("/climate-risk/top-states")
+@router.get("/top-states")
 def get_top_states():
     """
     Get top 5 states with highest climate risk.
@@ -139,7 +139,7 @@ def get_top_states():
 # 🏆 TOP DISTRICTS ENDPOINT
 # ================================================================
 
-@router.get("/climate-risk/top-districts")
+@router.get("/top-districts")
 def get_top_districts():
     """
     Get top 5 districts with highest climate risk.
@@ -155,7 +155,7 @@ def get_top_districts():
 # 📊 ALL STATES ENDPOINT
 # ================================================================
 
-@router.get("/climate-risk/states")
+@router.get("/states")
 def get_all_states():
     """
     Get climate risk data for all states.
@@ -178,7 +178,7 @@ def get_all_states():
 # 📊 ALL DISTRICTS ENDPOINT
 # ================================================================
 
-@router.get("/climate-risk/districts")
+@router.get("/districts")
 def get_all_districts():
     """
     Get climate risk data for all districts.

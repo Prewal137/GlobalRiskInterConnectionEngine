@@ -9,14 +9,16 @@ import WhatIfPage from './pages/WhatIfPage';
 function App() {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <div className="App">
+      <div className="min-h-screen bg-[#050505] text-white">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<LiveDashboard />} />
-          <Route path="/history" element={<HistoricalPage />} />
-          <Route path="/state" element={<StateAnalysis />} />
-          <Route path="/whatif" element={<WhatIfPage />} />
-        </Routes>
+        <main className="mx-auto max-w-7xl px-6 py-8">
+          <Routes>
+            <Route path="/" element={<LiveDashboard />} />
+            <Route path="/history" element={<HistoricalPage />} />
+            <Route path="/state" element={<StateAnalysis />} />
+            <Route path="/whatif" element={<WhatIfPage />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );

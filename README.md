@@ -539,16 +539,37 @@ pydantic>=2.0.0
 ### Frontend (Node.js)
 
 ```json
-{
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "react-router-dom": "^6.20.0",
-  "axios": "^1.6.2",
-  "react-force-graph-2d": "^1.25.0",
-  "react-simple-maps": "^3.0.0",
-  "recharts": "^2.10.3",
-  "styled-components": "^6.1.2"
-}
+    "@tailwindcss/vite": "^4.2.1",
+    "axios": "^1.6.7",
+    "clsx": "^2.1.1",
+    "d3": "^7.9.0",
+    "d3-geo": "^3.1.1",
+    "lucide-react": "^0.577.0",
+    "papaparse": "^5.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.22.3",
+    "react-force-graph-2d": "^1.29.1",
+    "react-is": "^18.3.1",
+    "react-simple-maps": "^3.0.0",
+    "react-tooltip": "^5.30.0",
+    "recharts": "^3.8.0",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
+  }
 ```
 
 Install with:
@@ -629,7 +650,7 @@ uvicorn app.main:app --reload --port 8000
 
 # 3. Start frontend (Terminal 2)
 cd frontend
-npm start
+npm run dev
 
 # 4. Make changes and test
 # Frontend: Auto-reloads on save
