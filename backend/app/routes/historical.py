@@ -93,9 +93,13 @@ def get_historical_data(
                 df = df[df[state_col].astype(str).str.upper() == state.upper()]
 
         if year:
-            year_col = next((c for c in df.columns if c.lower() == 'year'), None)
-            if year_col:
-                df = df[df[year_col].astype(int) == int(year)]
+            try:
+                year_val = int(year)
+                year_col = next((c for c in df.columns if c.lower() == 'year'), None)
+                if year_col:
+                    df = df[df[year_col].astype(int) == year_val]
+            except ValueError:
+                raise HTTPException(status_code=400, detail="Year must be an integer")
         
         if df.empty:
             return {"success": True, "sector": sector, "data": []}
