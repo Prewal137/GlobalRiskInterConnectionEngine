@@ -126,8 +126,8 @@ def standardize_climate(df):
     if max_val > min_val:
         climate_agg['climate_risk'] = (climate_agg['climate_risk'] - min_val) / (max_val - min_val)
     
-    print(f"   ✅ Aggregated to country level (using MEDIAN)")
-    print(f"   ✅ Normalized to [0, 1] range")
+    print(f"   [OK] Aggregated to country level (using MEDIAN)")
+    print(f"   [OK] Normalized to [0, 1] range")
     print(f"   Final shape: {climate_agg.shape}")
     print(f"   Date range: {climate_agg['Year'].min()}/{climate_agg['Month'].min()} - {climate_agg['Year'].max()}/{climate_agg['Month'].max()}")
     print(f"   Risk range: [{climate_agg['climate_risk'].min():.4f}, {climate_agg['climate_risk'].max():.4f}]")
@@ -148,9 +148,7 @@ def standardize_economy(df):
     Returns:
         pd.DataFrame: Standardized economy data with normalized risks
     """
-    print("\n" + "="*70)
-    print("💰 STEP 3: STANDARDIZING ECONOMY DATA")
-    print("="*70)
+    print("STEP 3: STANDARDIZING ECONOMY DATA")
     
     print(f"   Original shape: {df.shape}")
     
@@ -192,9 +190,7 @@ def standardize_trade(df):
     Returns:
         pd.DataFrame: Standardized trade data with monthly frequency
     """
-    print("\n" + "="*70)
-    print("🚢 STEP 4: STANDARDIZING TRADE DATA")
-    print("="*70)
+    print("STEP 4: STANDARDIZING TRADE DATA")
     
     print(f"   Original shape: {df.shape}")
     print(f"   Countries: {df['Country'].nunique()}")
@@ -269,9 +265,7 @@ def standardize_geopolitics(df):
     Returns:
         pd.DataFrame: Standardized geopolitics data with normalized risks
     """
-    print("\n" + "="*70)
-    print("🌐 STEP 5: STANDARDIZING GEOPOLITICS DATA")
-    print("="*70)
+    print("STEP 5: STANDARDIZING GEOPOLITICS DATA")
     
     print(f"   Original shape: {df.shape}")
     
@@ -325,9 +319,7 @@ def standardize_migration(df):
     Returns:
         pd.DataFrame: Standardized migration data with monthly frequency
     """
-    print("\n" + "="*70)
-    print("🚶 STEP 6: STANDARDIZING MIGRATION DATA")
-    print("="*70)
+    print("STEP 6: STANDARDIZING MIGRATION DATA")
     
     print(f"   Original shape: {df.shape}")
     print(f"   Countries: {df['Country'].nunique()}")
@@ -406,9 +398,7 @@ def standardize_social(df):
     Returns:
         pd.DataFrame: Standardized social data with Country, Year, Month, social_risk
     """
-    print("\n" + "="*70)
-    print("👥 STEP 7: STANDARDIZING SOCIAL DATA")
-    print("="*70)
+    print("STEP 7: STANDARDIZING SOCIAL DATA")
     
     print(f"   Original shape: {df.shape}")
     print(f"   States: {df['State'].nunique()}")
@@ -458,9 +448,7 @@ def standardize_infrastructure(df):
     Returns:
         pd.DataFrame: Standardized infrastructure data with Country, Year, Month, infrastructure_risk
     """
-    print("\n" + "="*70)
-    print("🏗️  STEP 8: STANDARDIZING INFRASTRUCTURE DATA")
-    print("="*70)
+    print("STEP 8: STANDARDIZING INFRASTRUCTURE DATA")
     
     print(f"   Original shape: {df.shape}")
     print(f"   States: {df['state'].nunique()}")
@@ -484,9 +472,9 @@ def standardize_infrastructure(df):
     if max_val > min_val:
         infra_agg['infrastructure_risk'] = (infra_agg['infrastructure_risk'] - min_val) / (max_val - min_val)
     
-    print(f"   ✅ Aggregated to country level (using MEDIAN)")
-    print(f"   ✅ Added Month column (default = 1)")
-    print(f"   ✅ Normalized to [0, 1] range")
+    print(f"   [OK] Aggregated to country level (using MEDIAN)")
+    print(f"   [OK] Added Month column (default = 1)")
+    print(f"   [OK] Normalized to [0, 1] range")
     print(f"   Final shape: {infra_agg.shape}")
     print(f"   Year range: {infra_agg['Year'].min()} - {infra_agg['Year'].max()}")
     print(f"   Risk range: [{infra_agg['infrastructure_risk'].min():.4f}, {infra_agg['infrastructure_risk'].max():.4f}]")
@@ -515,9 +503,7 @@ def merge_all_sectors(climate, economy, trade, geopolitics, migration, social, i
     Returns:
         pd.DataFrame: Merged dataset
     """
-    print("\n" + "="*70)
-    print("🔗 STEP 9: MERGING ALL SECTORS")
-    print("="*70)
+    print("STEP 9: MERGING ALL SECTORS")
     
     # Start with climate (smallest dataset - India only)
     merged = climate.copy()
@@ -586,9 +572,7 @@ def apply_interconnection_logic(df):
     Returns:
         pd.DataFrame: Dataset with impact columns added
     """
-    print("\n" + "="*70)
-    print("⚡ STEP 10: APPLYING INTERCONNECTION LOGIC")
-    print("="*70)
+    print("STEP 10: APPLYING INTERCONNECTION LOGIC")
     
     df = df.copy()
     
@@ -643,9 +627,7 @@ def validate_normalization(df):
     Returns:
         pd.DataFrame: Same dataset (no changes)
     """
-    print("\n" + "="*70)
-    print("📏 STEP 11: VALIDATING NORMALIZATION")
-    print("="*70)
+    print("STEP 11: VALIDATING NORMALIZATION")
     
     # Columns to check
     risk_cols = [
@@ -683,9 +665,7 @@ def create_final_output(df):
     Returns:
         pd.DataFrame: Final output
     """
-    print("\n" + "="*70)
-    print("📋 STEP 12: CREATING FINAL OUTPUT")
-    print("="*70)
+    print("STEP 12: CREATING FINAL OUTPUT")
     
     # Define final column order
     final_columns = [
@@ -727,9 +707,7 @@ def save_output(df, output_path=OUTPUT_FILE):
         df (pd.DataFrame): Final dataset
         output_path (str): Output file path
     """
-    print("\n" + "="*70)
-    print("💾 STEP 11: SAVING OUTPUT")
-    print("="*70)
+    print("STEP 13: SAVING OUTPUT")
     
     df.to_csv(output_path, index=False, encoding='utf-8')
     
@@ -750,9 +728,7 @@ def validate_output(df):
     Args:
         df (pd.DataFrame): Final dataset
     """
-    print("\n" + "="*70)
-    print("✅ VALIDATION & QUALITY CHECKS")
-    print("="*70)
+    print("VALIDATION & QUALITY CHECKS")
     
     issues = []
     
@@ -807,9 +783,7 @@ def validate_output(df):
 def main():
     """Main execution function."""
     
-    print("\n" + "="*70)
-    print("🔗 INTERCONNECTION ENGINE - MULTI-SECTOR RISK INTEGRATION")
-    print("="*70)
+    print("INTERCONNECTION ENGINE - MULTI-SECTOR RISK INTEGRATION")
     
     try:
         # ========================================
@@ -871,16 +845,14 @@ def main():
         # ========================================
         # FINAL SUMMARY
         # ========================================
-        print("\n" + "="*70)
-        print("✅ INTERCONNECTION ENGINE COMPLETE")
-        print("="*70)
+        print("INTERCONNECTION ENGINE COMPLETE")
         
-        print(f"\n   📊 FINAL SUMMARY:")
+        print(f"\n   FINAL SUMMARY:")
         print(f"      Total records: {len(df_final):,}")
         print(f"      Countries: {df_final['Country'].nunique()}")
         print(f"      Date range: {df_final['Year'].min()}/{df_final['Month'].min()} - {df_final['Year'].max()}/{df_final['Month'].max()}")
         
-        print(f"\n   📋 SECTORS INTEGRATED:")
+        print("SECTORS INTEGRATED:")
         print(f"      ✅ Climate Risk (aggregated from State/District)")
         print(f"      ✅ Economic Risk")
         print(f"      ✅ Trade Risk (expanded to monthly)")
@@ -889,17 +861,15 @@ def main():
         print(f"      ✅ Social Risk (aggregated from State)")
         print(f"      ✅ Infrastructure Risk (aggregated from State)")
         
-        print(f"\n   ⚡ CASCADING EFFECTS CALCULATED:")
+        print("CASCADING EFFECTS CALCULATED:")
         print(f"      ✅ Economic Impact (climate + geopolitics + migration + social + infrastructure)")
         print(f"      ✅ Trade Impact (economy + geopolitics + migration + social + infrastructure)")
         print(f"      ✅ Global Risk (all 7 sectors)")
         
-        print(f"\n   💾 OUTPUT FILE:")
+        print("OUTPUT FILE:")
         print(f"      {OUTPUT_FILE}")
         
-        print("\n" + "="*70)
-        print("🎯 INTERCONNECTED RISK READY FOR ANALYSIS")
-        print("="*70)
+        print("INTERCONNECTED RISK READY FOR ANALYSIS")
         
     except Exception as e:
         print(f"\n❌ ERROR: {e}")
@@ -910,3 +880,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
