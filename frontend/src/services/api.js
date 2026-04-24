@@ -186,6 +186,11 @@ export const simulateShock = async (sector, value) => {
 // ==========================
 // UNIFIED HISTORICAL API
 // ==========================
+/**
+ * Fetch historical data for a specific sector with optional filters
+ * @param {string} sector - The risk sector (climate, economy, etc.)
+ * @param {object} params - Query parameters (country, state, year)
+ */
 export const getHistoricalSector = (sector, params) =>
   api.get(`/historical/${sector}`, { params });
 
