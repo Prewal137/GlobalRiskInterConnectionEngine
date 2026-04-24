@@ -57,6 +57,9 @@ export const getEconomyLatest = async (country = "IND") =>
 export const getEconomySummary = async (country = "IND") =>
   (await api.get(`/economy/summary/${country}`)).data;
 
+export const getEconomyCountries = async () =>
+  (await api.get(`/economy/countries`)).data;
+
 // ==========================
 // SOCIAL
 // ==========================
@@ -68,6 +71,9 @@ export const getSocialLatest = async (state = "Karnataka") =>
 
 export const getSocialSummary = async (state = "Karnataka") =>
   (await api.get(`/social/summary/${state}`)).data;
+
+export const getSocialStates = async () =>
+  (await api.get(`/social/states`)).data;
 
 // ==========================
 // MIGRATION
@@ -93,14 +99,35 @@ export const getTradeTop = async () =>
 export const getTradeSummary = async () =>
   (await api.get(`/trade-risk/summary`)).data;
 
+export const getTradeAll = async () =>
+  (await api.get(`/trade-risk/all`)).data;
+
 // ==========================
 // CLIMATE
 // ==========================
 export const getClimateState = async (state) =>
-  (await api.get(`/climate-risk/climate-risk/state/${state}`)).data;
+  (await api.get(`/climate-risk/state/${state}`)).data;
+
+export const getClimateDistrict = async (district) =>
+  (await api.get(`/climate-risk/district/${district}`)).data;
 
 export const getClimateTopStates = async () =>
-  (await api.get(`/climate-risk/climate-risk/top-states`)).data;
+  (await api.get(`/climate-risk/top-states`)).data;
+
+export const getClimateTopDistricts = async () =>
+  (await api.get(`/climate-risk/top-districts`)).data;
+
+export const getClimateAllStates = async () =>
+  (await api.get(`/climate-risk/states`)).data;
+
+export const getClimateAllDistricts = async () =>
+  (await api.get(`/climate-risk/districts`)).data;
+
+export const getInterconnectionDistrict = async (district) =>
+  (await api.get(`/climate-risk/interconnection/district/${district}`)).data;
+
+export const getInterconnectionTopDistricts = async () =>
+  (await api.get(`/climate-risk/interconnection/top-districts`)).data;
 
 export const getInterconnectionSummary = async () =>
   (await api.get(`/climate-risk/interconnection/summary`)).data;
@@ -117,6 +144,11 @@ export const getGeopoliticsTop = async () =>
 export const getGeopoliticsGlobalSummary = async () =>
   (await api.get(`/geopolitics-risk/global-summary`)).data;
 
+export const getGeopoliticsCountries = async () => {
+    const res = await api.get(`/geopolitics-risk/top-countries?top_n=250`);
+    return res.data.countries.map(c => c.country).sort();
+};
+
 // ==========================
 // INFRASTRUCTURE
 // ==========================
@@ -132,6 +164,12 @@ export const getInfraTrend = async (state) =>
 export const getInfraSummary = async () =>
   (await api.get(`/infrastructure-risk/summary`)).data;
 
+export const getInfraTopStates = async () =>
+  (await api.get(`/infrastructure-risk/top-states`)).data;
+
+export const getInfraAvailableStates = async () =>
+  (await api.get(`/infrastructure-risk/states`)).data;
+
 // ==========================
 // SIMULATION / OTHER
 // ==========================
@@ -145,4 +183,5 @@ export const simulateShock = async (sector, value) => {
   return res.data;
 };
 
-export default api;
+export default api;
+
