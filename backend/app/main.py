@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import climate, trade, interconnection, geopolitics, economy, migration, social, infrastructure,live
+from app.routes import climate, trade, interconnection, geopolitics, economy, migration, social, infrastructure, live, historical
 
 app = FastAPI(
     title="Global Risk Interconnection Platform API",
@@ -27,6 +27,7 @@ app.include_router(migration.router)
 app.include_router(social.router)
 app.include_router(infrastructure.router)
 app.include_router(live.router)
+app.include_router(historical.router)
 
 @app.get("/")
 def root():
