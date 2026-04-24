@@ -922,7 +922,7 @@ async def what_if_simulation(payload: dict):
         # Build graph with learned weights
         df = load_risk_timeseries()
         weights = learn_weights(df, method='regression')
-        graph = build_graph(weights)
+        graph = build_graph(weights, threshold=0.1)
         
         # Default baseline risk for all sectors
         risk = {node: 0.3 for node in graph.nodes()}
@@ -947,6 +947,7 @@ async def what_if_simulation(payload: dict):
         for step in history:
             serializable_history.append({k: round(float(v), 4) for k, v in step.items()})
         
+        print(serializable_history)
         return {
             "mode": "what-if",
             "input": payload,

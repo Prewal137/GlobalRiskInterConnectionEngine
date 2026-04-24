@@ -9,6 +9,11 @@ import {
   getTradeCountry,
   getClimateState,
   getGeopoliticsCountry,
+  getGeopoliticsCountries,
+  getClimateAllStates,
+  getEconomyCountries,
+  getSocialStates,
+  getInfraAvailableStates,
 } from "../services/api";
 
 import {
@@ -62,8 +67,44 @@ export default function HistoricalPage() {
   
   const [trendData, setTrendData] = useState([]);
   const [historicalData, setHistoricalData] = useState([]);
+  const [availableStates, setAvailableStates] = useState([]);
+  const [availableCountries, setAvailableCountries] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeDataPoint, setActiveDataPoint] = useState(null);
+
+  useEffect(() => {
+    fetchAvailableEntities();
+  }, []);
+
+  const fetchAvailableEntities = async () => {
+    try {
+      const [statesRes, infraStatesRes, socialStatesRes, economyCountriesRes, geopoliticsCountriesRes] = await Promise.all([
+        getClimateAllStates(),
+        getInfraAvailableStates(),
+        getSocialStates(),
+        getEconomyCountries(),
+        getGeopoliticsCountries()
+      ]);
+
+      const allStates = [...new Set([
+        ...(statesRes?.map(s => s.state) || []),
+        ...(infraStatesRes?.states || []),
+        ...(socialStatesRes?.states || [])
+      ])].sort();
+
+      const allCountries = [...new Set([
+        "IND", "USA", "CHN", "GBR", "FRA", "DEU", "JPN",
+        ...(economyCountriesRes?.countries || []),
+        ...(geopoliticsCountriesRes || [])
+      ])].sort();
+
+      setAvailableStates(allStates);
+      setAvailableCountries(allCountries);
+    } catch (err) {
+      console.error("Failed to fetch entities:", err);
+    }
+  };
 
   useEffect(() => {
     fetchData();
@@ -98,28 +139,27 @@ export default function HistoricalPage() {
         }
         case "migration": {
           const res = await getMigrationTrend(country);
-          data = Array.isArray(res) ? res : (res.data || res.trend || []);
+          data = res.data || res.trend || (Array.isArray(res) ? res : []);
           break;
         }
         case "infrastructure": {
           const res = await getInfraTrend(state);
-          data = Array.isArray(res) ? res : (res.data || res.trend || []);
+          data = res.data || res.trend || (Array.isArray(res) ? res : []);
           break;
         }
         case "trade": {
           const res = await getTradeCountry(country);
-          // Trade might not have a trend endpoint, so we use the country summary data for visualization
-          data = res.historical || res.data || [];
+          data = res.data || res.historical || (Array.isArray(res) ? res : []);
           break;
         }
         case "climate": {
           const res = await getClimateState(state);
-          data = res.historical || res.data || [];
+          data = res.historical || res.data || (Array.isArray(res) ? res : []);
           break;
         }
         case "geopolitics": {
           const res = await getGeopoliticsCountry(country);
-          data = res.historical || res.data || [];
+          data = res.time_series || res.data || res.historical || [];
           break;
         }
         default:
@@ -154,12 +194,19 @@ export default function HistoricalPage() {
       social: [{ key: "predicted_risk", name: "Social Risk", color: "#f59e0b" }],
       migration: [{ key: "migration_risk", name: "Migration Risk", color: "#10b981" }],
       infrastructure: [{ key: "infrastructure_risk", name: "Infra Risk", color: "#60a5fa" }],
-      trade: [{ key: "trade_risk", name: "Trade Risk", color: "#c084fc" }],
-      climate: [{ key: "climate_risk", name: "Climate Risk", color: "#2dd4bf" }],
+      trade: [{ key: "Trade_Risk", name: "Trade Risk", color: "#c084fc" }],
+      climate: [{ key: "climate_risk_score", name: "Climate Risk", color: "#2dd4bf" }],
       geopolitics: [{ key: "risk_score", name: "Geopolitical Risk", color: "#fb7185" }],
     };
 
     return config[selectedSector] || [];
+  };
+
+  const getActiveRiskScore = (row) => {
+    if (!row) return 0;
+    const lines = getLines();
+    const activeKey = lines[0]?.key;
+    return row[activeKey] ?? row.global_risk ?? row.risk_score ?? row.predicted_risk ?? 0;
   };
 
   return (
@@ -176,22 +223,38 @@ export default function HistoricalPage() {
             </p>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col">
+              <span className="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-1">Country</span>
+              <select 
+                value={country} 
+                onChange={(e) => setCountry(e.target.value)}
+                className="bg-slate-900 border border-slate-800 text-white text-xs font-bold rounded-xl px-4 py-2 opacity-80 hover:opacity-100 transition-opacity focus:outline-none focus:border-indigo-500"
+              >
+                {availableCountries.map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
+
+            <div className="flex flex-col">
+              <span className="text-[10px] font-black text-cyan-400 uppercase tracking-widest mb-1">Region / State</span>
+              <select 
+                value={state} 
+                onChange={(e) => setState(e.target.value)}
+                className="bg-slate-900 border border-slate-800 text-white text-xs font-bold rounded-xl px-4 py-2 opacity-80 hover:opacity-100 transition-opacity focus:outline-none focus:border-cyan-500"
+              >
+                {availableStates.map(s => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+
+            <div className="h-10 w-[1px] bg-slate-800 mx-2 hidden md:block"></div>
+
             <button 
               onClick={fetchData}
-              className="p-2.5 rounded-xl bg-slate-800/50 border border-slate-700 hover:bg-slate-700 transition-all text-slate-300"
-              title="Refresh Data"
+              className="p-3 rounded-xl bg-indigo-500 text-white hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/20"
+              title="Sync Intelligence"
             >
               <RefreshCw className={`w-5 h-5 ${loading ? "animate-spin" : ""}`} />
             </button>
-            <div className="h-10 w-[1px] bg-slate-800 mx-2 hidden md:block"></div>
-            <div className="flex flex-col">
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Context</span>
-              <div className="flex gap-2 text-sm font-medium">
-                 <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">{country}</span>
-                 <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">{state}</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -255,7 +318,7 @@ export default function HistoricalPage() {
               <div className="flex items-center justify-between mb-10 relative">
                 <div>
                   <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    {currentSectorConfig.label} Trend Analysis
+                    {currentSectorConfig?.label || "Sector"} Trend Analysis
                     <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 uppercase">
                       Predictive
                     </span>
@@ -283,8 +346,15 @@ export default function HistoricalPage() {
                   No trend data available for this configuration.
                 </div>
               ) : (
-                <ResponsiveContainer width="100%" height="90%">
-                  <AreaChart data={trendData}>
+                <ResponsiveContainer width="100%" height="90%" minHeight={400}>
+                  <AreaChart 
+                    data={trendData}
+                    onClick={(data) => {
+                      if (data && data.activePayload) {
+                        setActiveDataPoint(data.activePayload[0].payload);
+                      }
+                    }}
+                  >
                     <defs>
                       {getLines().map((line) => (
                         <linearGradient key={`grad-${line.key}`} id={`color-${line.key}`} x1="0" y1="0" x2="0" y2="1">
@@ -337,24 +407,38 @@ export default function HistoricalPage() {
               )}
             </div>
 
-            {/* QUICK STATS */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-               <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800/60">
-                  <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Yearly Focus</p>
-                  <p className="text-2xl font-black text-white">{selectedYear}</p>
-               </div>
-               <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800/60">
-                  <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Active Sector</p>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: currentSectorConfig.color }}></span>
-                    <p className="text-2xl font-black text-white">{currentSectorConfig.label}</p>
+            {/* QUICK STATS - Placeholder or removal of extra div */}
+            
+
+            {/* DETAIL PANEL (SHOWS ON CLICK) */}
+            {activeDataPoint && (
+              <div className="bg-gradient-to-r from-indigo-500 to-cyan-500 p-[1px] rounded-3xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <div className="bg-[#030712] p-8 rounded-[23px] flex flex-col md:flex-row items-center justify-between gap-8">
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-black text-indigo-400 uppercase tracking-widest">Temporal Point Analysis</h4>
+                    <p className="text-4xl font-black text-white">Year: {activeDataPoint.year || activeDataPoint.Year}</p>
+                    <p className="text-slate-400">Granular metrics for the selected timestamp in {country}/{state}.</p>
                   </div>
-               </div>
-               <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800/60">
-                  <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Data Points</p>
-                  <p className="text-2xl font-black text-white">{trendData.length + historicalData.length}</p>
-               </div>
-            </div>
+
+                  <div className="flex flex-wrap gap-4">
+                    {getLines().map(line => (
+                      <div key={line.key} className="bg-slate-900 border border-slate-800 p-4 rounded-2xl min-w-[140px]">
+                        <p className="text-[10px] font-bold text-slate-500 uppercase mb-1">{line.name}</p>
+                        <p className="text-2xl font-black text-white">
+                          {((activeDataPoint[line.key] || 0) * 100).toFixed(2)}%
+                        </p>
+                      </div>
+                    ))}
+                    <button 
+                      onClick={() => setActiveDataPoint(null)}
+                      className="px-6 py-2 bg-white text-black font-black rounded-xl text-xs hover:bg-slate-200 transition-colors"
+                    >
+                      CLEAR
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* TABLE AREA */}
@@ -390,13 +474,13 @@ export default function HistoricalPage() {
                               <div 
                                 className="h-full rounded-full transition-all duration-1000" 
                                 style={{ 
-                                  width: `${(row.global_risk || row.risk_score || 0) * 100}%`,
-                                  backgroundColor: (row.global_risk || 0) > 0.7 ? "#ef4444" : (row.global_risk || 0) > 0.4 ? "#f59e0b" : "#10b981"
+                                  width: `${getActiveRiskScore(row) * 100}%`,
+                                  backgroundColor: getActiveRiskScore(row) > 0.7 ? "#ef4444" : getActiveRiskScore(row) > 0.4 ? "#f59e0b" : "#10b981"
                                 }}
                               ></div>
                             </div>
                             <span className="text-sm font-mono font-bold text-white">
-                              {((row.global_risk || row.risk_score || 0) * 100).toFixed(1)}%
+                              {(getActiveRiskScore(row) * 100).toFixed(1)}%
                             </span>
                           </div>
                         </td>
@@ -425,7 +509,7 @@ export default function HistoricalPage() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
         }

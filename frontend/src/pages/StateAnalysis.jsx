@@ -1,21 +1,14 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { getStateRisk, getStateImpact } from "../services/api";
+import { getStateImpact, getClimateAllDistricts } from "../services/api";
 import IndiaMap from "../components/IndiaMap";
-import EnhancedCascadingNetwork from "../components/EnhancedCascadingNetwork";
 
 import {
-  LineChart,
-  Line,
-  ResponsiveContainer,
-  Tooltip,
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-} from "recharts";
+  MapPin,
+  AlertCircle,
+  RefreshCw,
+  LayoutGrid,
+} from "lucide-react";
 
-import { MapPin, Activity, Zap, Shield, AlertCircle, RefreshCw, ChevronRight } from "lucide-react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -26,267 +19,230 @@ function cn(...inputs) {
 export default function StateAnalysis() {
   const [selectedState, setSelectedState] = useState("Karnataka");
   const [impactData, setImpactData] = useState(null);
+  const [districts, setDistricts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     handleStateClick("Karnataka");
+    fetchDistricts();
   }, []);
+
+  const fetchDistricts = async () => {
+    try {
+      const data = await getClimateAllDistricts();
+      setDistricts(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // ✅ FIXED CRASH
+  const currentDistricts = useMemo(() => {
+    return districts
+      .filter(
+        (d) =>
+          d?.state &&
+          d.state.toLowerCase() === selectedState.toLowerCase()
+      )
+      .sort((a, b) => b.climate_risk_score - a.climate_risk_score);
+  }, [districts, selectedState]);
 
   const handleStateClick = async (stateName) => {
     setSelectedState(stateName);
     setLoading(true);
-    setError(null);
 
     try {
-      // We only use getStateImpact as it provides the most comprehensive data for the visualization
       const impact = await getStateImpact(stateName);
       setImpactData(impact);
     } catch (err) {
-      console.error("State Fetch Error:", err);
-      setError("Failed to fetch regional intelligence.");
+      console.error(err);
     } finally {
       setLoading(false);
     }
   };
 
-  const chartData = useMemo(() => {
-    if (!impactData?.final) return [];
-    return Object.entries(impactData.final).map(([key, val]) => ({
-      name: key,
-      risk: val,
-    }));
-  }, [impactData]);
-
-  const networkData = useMemo(() => {
-    if (!impactData?.final) return { nodes: [], links: [] };
-    return {
-      nodes: Object.keys(impactData.final).map((id) => ({
-        id,
-        name: id,
-        baseRisk: impactData.initial?.[id] || 0.5,
-      })),
-      links: [],
-    };
-  }, [impactData]);
-
   return (
-    <div className="space-y-10 pb-20">
-      {/* HEADER SECTION */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-black p-6 space-y-10">
+
+      {/* HEADER */}
+      <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-4xl font-black tracking-tight text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-emerald-400">
+          <h1 className="text-4xl font-black text-white">
             Regional Analysis
           </h1>
-          <p className="text-slate-400 max-w-xl">
-             Deep-dive into localized risk vectors and systemic dependencies across the Indian subcontinent.
+          <p className="text-slate-400 text-sm mt-1">
+            Interactive risk intelligence dashboard
           </p>
         </div>
-        
-        <div className="flex items-center gap-4 bg-slate-900/50 p-2 pl-4 rounded-2xl border border-slate-800">
-           <div className="flex flex-col">
-              <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none mb-1">Active Region</span>
-              <span className="text-lg font-bold text-white">{selectedState}</span>
-           </div>
-           <button 
-             onClick={() => handleStateClick(selectedState)}
-             className="p-3 rounded-xl bg-indigo-500 text-white hover:bg-indigo-600 transition-colors"
-           >
-             <RefreshCw className={cn("w-4 h-4", loading && "animate-spin")} />
-           </button>
+
+        <div className="flex items-center gap-3 bg-slate-900/60 border border-white/10 px-4 py-2 rounded-xl">
+          <div>
+            <p className="text-xs text-slate-400">Active</p>
+            <p className="text-white font-bold">{selectedState}</p>
+          </div>
+
+          <button
+            onClick={() => handleStateClick(selectedState)}
+            className="p-2 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition"
+          >
+            <RefreshCw
+              className={cn("w-4 h-4 text-white", loading && "animate-spin")}
+            />
+          </button>
         </div>
       </div>
 
-      {/* TOP SECTION: MAP & NETWORK */}
-      <div className="grid lg:grid-cols-2 gap-8">
-        {/* GEOSPATIAL MAP */}
-        <div className="bg-slate-900/40 backdrop-blur-md rounded-[2.5rem] border border-slate-800/60 p-8 flex flex-col h-[600px] group transition-all hover:bg-slate-900/60">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-xl font-bold text-white flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400">
-                <MapPin size={20} />
-              </div>
-              Geospatial Risk Mapping
+      {/* 🔥 MAIN GRID */}
+      <div className="grid lg:grid-cols-3 gap-8">
+
+        {/* MAP (MAIN HERO) */}
+        <div className="lg:col-span-2 bg-slate-900/60 border border-white/10 rounded-2xl p-4 shadow-xl">
+
+          <div className="flex justify-between mb-3">
+            <h2 className="text-white font-bold flex gap-2 items-center">
+              <MapPin className="text-indigo-400" size={18} />
+              Risk Map
             </h2>
-            <div className="flex gap-2">
-               <span className="flex items-center gap-1.5 text-[10px] font-black uppercase text-slate-500">
-                 <div className="h-2 w-2 rounded-full bg-red-500" /> High 
-               </span>
-               <span className="flex items-center gap-1.5 text-[10px] font-black uppercase text-slate-500">
-                 <div className="h-2 w-2 rounded-full bg-emerald-500" /> Low
-               </span>
-            </div>
+            <span className="text-xs text-slate-400">
+              Click to explore
+            </span>
           </div>
 
-          <div className="flex-1 relative rounded-3xl overflow-hidden bg-black/20 p-4">
+          <div className="h-[500px] rounded-xl overflow-hidden">
             <IndiaMap
+              selectedState={selectedState}
               onStateClick={handleStateClick}
               stateRiskData={impactData?.final || {}}
             />
-            
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/60 backdrop-blur-md border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
-               <p className="text-xs text-slate-400">Interactive: Click on any state to switch intelligence context.</p>
-            </div>
           </div>
         </div>
 
-        {/* CASCADE NETWORK */}
-        <div className="bg-slate-900/40 backdrop-blur-md rounded-[2.5rem] border border-slate-800/60 p-8 flex flex-col h-[600px] overflow-hidden group">
-          <div className="flex items-center justify-between mb-8">
-             <h2 className="text-xl font-bold text-white flex items-center gap-3">
-               <div className="p-2 rounded-lg bg-amber-500/10 text-amber-500">
-                 <Zap size={20} />
-               </div>
-               Propagation Engine
-             </h2>
-             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-slate-500">
-                <Shield size={16} />
-             </div>
-          </div>
+        {/* RIGHT PANEL */}
+        <div className="bg-slate-900/60 border border-white/10 rounded-2xl p-6 flex flex-col gap-6">
 
-          <div className="flex-1 relative bg-black/20 rounded-3xl">
-            {loading ? (
-              <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
-                <div className="w-10 h-10 border-4 border-indigo-500/10 border-t-indigo-500 rounded-full animate-spin"></div>
-                <p className="text-slate-500 text-xs animate-pulse">Recalculating Cascade...</p>
-              </div>
-            ) : (
-              <EnhancedCascadingNetwork
-                graphData={networkData}
-                riskScores={Object.fromEntries(
-                  Object.entries(impactData?.final || {}).map(([k, v]) => [
-                    k,
-                    { score: v },
-                  ])
-                )}
-              />
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* MID SECTION: SUMMARY CARDS */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-        {impactData?.final && Object.entries(impactData.final).map(([sector, value]) => (
-          <div key={sector} className="group relative bg-slate-900/40 p-5 rounded-3xl border border-slate-800/60 hover:border-indigo-500/30 transition-all overflow-hidden">
-            <div className={cn(
-              "absolute -right-2 -top-2 w-12 h-12 rounded-full opacity-10",
-              value > 0.7 ? "bg-red-500" : value > 0.4 ? "bg-amber-500" : "bg-emerald-500"
-            )} />
-            <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 group-hover:text-slate-300">{sector}</p>
-            <h2 className="text-2xl font-black text-white">
-              {(value * 100).toFixed(1)}%
+          <div>
+            <p className="text-xs text-indigo-400 uppercase">
+              Selected
+            </p>
+            <h2 className="text-2xl font-bold text-white">
+              {selectedState}
             </h2>
-            <div className="mt-3 h-1 w-full bg-slate-800 rounded-full overflow-hidden">
-               <div 
-                 className={cn("h-full transition-all duration-1000", value > 0.7 ? "bg-red-500" : value > 0.4 ? "bg-amber-500" : "bg-emerald-500")}
-                 style={{ width: `${value * 100}%` }}
-               />
-            </div>
           </div>
-        ))}
+
+          {/* TOP SECTORS */}
+          <div className="space-y-3">
+            {impactData?.final &&
+              Object.entries(impactData.final)
+                .slice(0, 5)
+                .map(([sector, value]) => (
+                  <div key={sector}>
+                    <div className="flex justify-between text-xs text-slate-400 mb-1">
+                      <span>{sector}</span>
+                      <span>{(value * 100).toFixed(0)}%</span>
+                    </div>
+
+                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className="h-full transition-all duration-500"
+                        style={{
+                          width: `${value * 100}%`,
+                          background:
+                            value > 0.7
+                              ? "#ef4444"
+                              : value > 0.4
+                                ? "#f59e0b"
+                                : "#10b981",
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+          </div>
+        </div>
       </div>
 
-      {/* BOTTOM SECTION: ANALYTICS GRID */}
-      <div className="grid lg:grid-cols-3 gap-8">
-        {/* SECTOR COMPARISON CHART */}
-        <div className="lg:col-span-2 bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-slate-800/60">
-           <div className="flex items-center justify-between mb-8">
-             <h2 className="text-xl font-bold text-white flex items-center gap-3">
-               <Activity size={20} className="text-indigo-400" />
-               Impact Spectrum
-             </h2>
-           </div>
+      {/* DISTRICT SECTION */}
+      <div className="bg-slate-900/60 border border-white/10 rounded-2xl p-6">
 
-           <div className="h-[350px]">
-             {impactData && (
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={chartData}>
-                    <defs>
-                      <linearGradient id="colorRisk" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#6366f1" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                    <XAxis 
-                      dataKey="name" 
-                      stroke="#475569" 
-                      fontSize={10} 
-                      tickLine={false} 
-                      axisLine={false}
-                      interval={0}
-                      tick={{ fill: "#94a3b8", fontWeight: 700 }}
-                    />
-                    <YAxis 
-                      stroke="#475569" 
-                      fontSize={10} 
-                      tickLine={false} 
-                      axisLine={false}
-                      tickFormatter={(val) => (val * 100).toFixed(0) + "%"}
-                    />
-                    <Tooltip 
-                      contentStyle={{ 
-                        backgroundColor: "#0f172a", 
-                        border: "1px solid #1e293b",
-                        borderRadius: "16px",
-                      }}
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="risk"
-                      stroke="#6366f1"
-                      strokeWidth={4}
-                      fillOpacity={1}
-                      fill="url(#colorRisk)"
-                      animationDuration={1500}
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
-             )}
-           </div>
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl font-bold text-white flex gap-2 items-center">
+            <LayoutGrid className="text-emerald-400" />
+            Districts: {selectedState}
+          </h2>
+
+          <span className="text-xs text-emerald-400">
+            {currentDistricts.length} active
+          </span>
         </div>
 
-        {/* INSIGHT PANEL */}
-        <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-[2.5rem] text-white flex flex-col justify-between shadow-xl shadow-indigo-500/20">
-           <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 rounded-xl bg-white/20">
-                   <AlertCircle size={24} />
-                </div>
-                <h2 className="text-2xl font-black italic tracking-tighter">INTELLIGENCE</h2>
-              </div>
-              
-              <div className="space-y-6">
-                <div className="bg-black/20 backdrop-blur-md p-6 rounded-2xl border border-white/10">
-                   <p className="text-[10px] font-black uppercase text-indigo-200 mb-2 opacity-60">Critical Path Detected</p>
-                   <p className="text-xl font-bold capitalize">
-                     {impactData?.final && Object.entries(impactData.final).sort((a,b) => b[1]-a[1])[0][0]} Sector
-                   </p>
-                   <p className="text-sm text-indigo-100/70 mt-1 leading-relaxed">
-                     Shows the highest susceptibility to recursive failures in {selectedState}.
-                   </p>
-                </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
 
-                <div className="bg-black/20 backdrop-blur-md p-6 rounded-2xl border border-white/10">
-                   <p className="text-[10px] font-black uppercase text-indigo-200 mb-2 opacity-60">Stability Zone</p>
-                   <p className="text-xl font-bold capitalize">
-                     {impactData?.final && Object.entries(impactData.final).sort((a,b) => a[1]-b[1])[0][0]} Sector
-                   </p>
-                   <p className="text-sm text-indigo-100/70 mt-1 leading-relaxed">
-                     Demonstrates highest resilience against systemic shocks.
-                   </p>
-                </div>
-              </div>
-           </div>
+          {currentDistricts.map((d, i) => (
+            <div
+              key={i}
+              className="bg-black/40 border border-white/10 rounded-xl p-4 hover:border-indigo-500/30 transition"
+            >
+              <p className="text-xs text-slate-400">{d.district}</p>
 
-           <button className="mt-8 group w-full flex items-center justify-between p-4 bg-white rounded-2xl text-black font-black transition-all hover:bg-slate-100">
-              DOWNLOAD REPORT
-              <div className="h-8 w-8 rounded-lg bg-indigo-500 flex items-center justify-center transition-transform group-hover:translate-x-1">
-                 <ChevronRight className="text-white" size={18} />
+              <div className="mt-2 flex justify-between text-sm">
+                <span className="text-white font-bold">
+                  {(d.climate_risk_score * 100).toFixed(1)}%
+                </span>
+
+                <span
+                  className={cn(
+                    "text-xs font-bold",
+                    d.risk_level === "VERY HIGH"
+                      ? "text-red-500"
+                      : d.risk_level === "HIGH"
+                        ? "text-orange-400"
+                        : "text-emerald-400"
+                  )}
+                >
+                  {d.risk_level}
+                </span>
               </div>
-           </button>
+
+              <div className="mt-2 h-1 bg-white/10 rounded-full">
+                <div
+                  className="h-full"
+                  style={{
+                    width: `${d.climate_risk_score * 100}%`,
+                    background:
+                      d.risk_level === "VERY HIGH"
+                        ? "#ef4444"
+                        : d.risk_level === "HIGH"
+                          ? "#f59e0b"
+                          : "#10b981",
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+
+          {currentDistricts.length === 0 && (
+            <div className="col-span-full text-center py-10 text-slate-500">
+              <AlertCircle className="mx-auto mb-2" />
+              No district data
+            </div>
+          )}
         </div>
+      </div>
+
+      {/* SECTOR SUMMARY */}
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+        {impactData?.final &&
+          Object.entries(impactData.final).map(([sector, value]) => (
+            <div
+              key={sector}
+              className="bg-slate-900/60 border border-white/10 rounded-xl p-4 text-center"
+            >
+              <p className="text-xs text-slate-400">{sector}</p>
+              <p className="text-lg font-bold text-white">
+                {(value * 100).toFixed(1)}%
+              </p>
+            </div>
+          ))}
       </div>
     </div>
   );

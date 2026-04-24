@@ -131,7 +131,7 @@ def learn_weights_regression(df: pd.DataFrame, use_temporal: bool = True) -> Dic
         print(f"      Training samples: {len(X_valid)}")
         
         for i, source_sector in enumerate(source_sectors):
-            weight = abs(model.coef_[i])  # Use absolute value for edge weight
+            weight = model.coef_[i]  # Use absolute value for edge weight
             weights[(source_sector, target_sector)] = weight
             
             if abs(model.coef_[i]) > 0.01:  # Only print significant weights

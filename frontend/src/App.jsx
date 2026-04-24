@@ -5,6 +5,7 @@ import LiveDashboard from './pages/LiveDashboard';
 import HistoricalPage from './pages/HistoricalPage';
 import StateAnalysis from './pages/StateAnalysis';
 import WhatIfPage from './pages/WhatIfPage';
+import SystemAudit from './pages/SystemAudit';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <main className="mx-auto max-w-7xl px-6 py-8">
           <Routes>
             <Route path="/" element={<LiveDashboard />} />
+            <Route path="/audit" element={<SystemAudit />} />
             <Route path="/history" element={<HistoricalPage />} />
             <Route path="/state" element={<StateAnalysis />} />
             <Route path="/whatif" element={<WhatIfPage />} />
@@ -23,5 +25,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
