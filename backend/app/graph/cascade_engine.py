@@ -72,10 +72,8 @@ def run_cascade(graph: nx.DiGraph,
                     new_risk[target] += risk_transfer
         
         # Normalize to prevent unbounded growth
-        max_risk = max(new_risk.values())
-        if max_risk > 1.0:
-            for sector in new_risk:
-                new_risk[sector] /= max_risk
+        for sector in new_risk:
+            new_risk[sector] = min(new_risk[sector], 1.0)
         
         # Ensure non-negative
         for sector in new_risk:
