@@ -102,7 +102,7 @@ async def get_country_risk(
 
 @router.get("/top-countries")
 async def get_top_risk_countries(
-    top_n: int = Query(10, ge=1, le=50, description="Number of top countries to return"),
+    top_n: int = Query(10, ge=1, le=300, description="Number of top countries to return"),
     min_year: Optional[int] = Query(None, description="Filter by minimum year")
 ):
     """

@@ -112,7 +112,7 @@ export const getClimateDistrict = async (district) =>
   (await api.get(`/climate-risk/district/${district}`)).data;
 
 export const getClimateTopStates = async () =>
-  (await api.get(`/climate-risk/top-states`)).data;
+    (await api.get(`/climate-risk/top-states`)).data;
 
 export const getClimateTopDistricts = async () =>
   (await api.get(`/climate-risk/top-districts`)).data;
@@ -183,5 +183,16 @@ export const simulateShock = async (sector, value) => {
   return res.data;
 };
 
+// ==========================
+// UNIFIED HISTORICAL API
+// ==========================
+/**
+ * Fetch historical data for a specific sector with optional filters
+ * @param {string} sector - The risk sector (climate, economy, etc.)
+ * @param {object} params - Query parameters (country, state, year)
+ */
+export const getHistoricalSector = (sector, params) =>
+  api.get(`/historical/${sector}`, { params });
+
 export default api;
-
+

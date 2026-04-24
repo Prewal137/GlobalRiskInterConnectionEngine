@@ -1,19 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
 import {
-  getHistoricalRisk,
-  getGlobalTrend,
-  getEconomyTrend,
-  getSocialTrend,
-  getMigrationTrend,
-  getInfraTrend,
-  getTradeCountry,
-  getClimateState,
-  getGeopoliticsCountry,
-  getGeopoliticsCountries,
+  getHistoricalSector,
   getClimateAllStates,
   getEconomyCountries,
   getSocialStates,
   getInfraAvailableStates,
+  getGeopoliticsCountries,
 } from "../services/api";
 
 import {
@@ -115,56 +107,20 @@ export default function HistoricalPage() {
       setLoading(true);
       setError(null);
 
-      // Fetch historical breakdown for the selected year (Global Interconnection context)
-      const historicalRes = await getHistoricalRisk(selectedYear);
-      setHistoricalData(Array.isArray(historicalRes?.data) ? historicalRes.data : []);
+      // Fetch historical breakdown for the selected year and sector (for the table)
+      const historicalRes = await getHistoricalSector(selectedSector, {
+        country,
+        state,
+        year: selectedYear
+      });
+      setHistoricalData(Array.isArray(historicalRes.data.data) ? historicalRes.data.data : []);
 
-      let data = [];
-      
-      switch (selectedSector) {
-        case "global": {
-          const res = await getGlobalTrend(country);
-          data = res.trend || res.data || (Array.isArray(res) ? res : []);
-          break;
-        }
-        case "economy": {
-          const res = await getEconomyTrend(country);
-          data = Array.isArray(res) ? res : (res.data || res.trend || []);
-          break;
-        }
-        case "social": {
-          const res = await getSocialTrend(state);
-          data = Array.isArray(res) ? res : (res.data || res.trend || []);
-          break;
-        }
-        case "migration": {
-          const res = await getMigrationTrend(country);
-          data = res.data || res.trend || (Array.isArray(res) ? res : []);
-          break;
-        }
-        case "infrastructure": {
-          const res = await getInfraTrend(state);
-          data = res.data || res.trend || (Array.isArray(res) ? res : []);
-          break;
-        }
-        case "trade": {
-          const res = await getTradeCountry(country);
-          data = res.data || res.historical || (Array.isArray(res) ? res : []);
-          break;
-        }
-        case "climate": {
-          const res = await getClimateState(state);
-          data = res.historical || res.data || (Array.isArray(res) ? res : []);
-          break;
-        }
-        case "geopolitics": {
-          const res = await getGeopoliticsCountry(country);
-          data = res.time_series || res.data || res.historical || [];
-          break;
-        }
-        default:
-          data = [];
-      }
+      // Fetch full trend for the chart
+      const trendRes = await getHistoricalSector(selectedSector, {
+        country,
+        state
+      });
+      const data = Array.isArray(trendRes.data.data) ? trendRes.data.data : [];
 
       // Ensure data is always an array to prevent "slice is not a function" errors in Recharts
       setTrendData(Array.isArray(data) ? data : []);
@@ -184,29 +140,27 @@ export default function HistoricalPage() {
   );
 
   const getLines = () => {
-    const config = {
-      global: [
-        { key: "global_risk", name: "Combined Risk", color: "#6366f1" },
-        { key: "economic_risk", name: "Economic", color: "#ef4444" },
-        { key: "social_risk", name: "Social", color: "#f59e0b" },
-      ],
-      economy: [{ key: "predicted_risk", name: "Economy Risk", color: "#ef4444" }],
-      social: [{ key: "predicted_risk", name: "Social Risk", color: "#f59e0b" }],
-      migration: [{ key: "migration_risk", name: "Migration Risk", color: "#10b981" }],
-      infrastructure: [{ key: "infrastructure_risk", name: "Infra Risk", color: "#60a5fa" }],
-      trade: [{ key: "Trade_Risk", name: "Trade Risk", color: "#c084fc" }],
-      climate: [{ key: "climate_risk_score", name: "Climate Risk", color: "#2dd4bf" }],
-      geopolitics: [{ key: "risk_score", name: "Geopolitical Risk", color: "#fb7185" }],
+    const colorMap = {
+      global: "#6366f1",
+      economy: "#ef4444",
+      social: "#f59e0b",
+      migration: "#10b981",
+      infrastructure: "#60a5fa",
+      trade: "#c084fc",
+      climate: "#2dd4bf",
+      geopolitics: "#fb7185",
     };
 
-    return config[selectedSector] || [];
+    return [{ 
+      key: "risk_score", 
+      name: `${selectedSector.charAt(0).toUpperCase() + selectedSector.slice(1)} Risk`, 
+      color: colorMap[selectedSector] || "#818cf8" 
+    }];
   };
 
   const getActiveRiskScore = (row) => {
     if (!row) return 0;
-    const lines = getLines();
-    const activeKey = lines[0]?.key;
-    return row[activeKey] ?? row.global_risk ?? row.risk_score ?? row.predicted_risk ?? 0;
+    return row.risk_score || 0;
   };
 
   return (
@@ -464,8 +418,8 @@ export default function HistoricalPage() {
                       <tr key={i} className="hover:bg-slate-800/30 transition-colors group">
                         <td className="px-8 py-4">
                           <div className="flex flex-col">
-                            <span className="text-white font-bold">{row.Month || "N/A"}</span>
-                            <span className="text-xs text-slate-500">{row.Year}</span>
+                            <span className="text-white font-bold">{row.month || "N/A"}</span>
+                            <span className="text-xs text-slate-500">{row.year}</span>
                           </div>
                         </td>
                         <td className="px-8 py-4">
@@ -489,11 +443,12 @@ export default function HistoricalPage() {
                   </tbody>
                 </table>
               ) : (
-                <div className="h-full flex flex-col items-center justify-center p-10 text-center">
-                   <div className="p-4 rounded-3xl bg-slate-800 text-slate-600 mb-4">
+                <div className="h-full flex flex-col items-center justify-center p-10 text-center animate-in fade-in duration-700">
+                   <div className="p-4 rounded-3xl bg-slate-800 text-slate-600 mb-4 group-hover:text-indigo-400 transition-colors">
                      <Calendar className="w-8 h-8" />
                    </div>
-                   <p className="text-slate-500 text-sm">Select a timeline with available historical data.</p>
+                   <p className="text-slate-500 text-sm font-medium">Synchronizing with intelligence repositories...</p>
+                   <p className="text-slate-600 text-xs mt-1">Select a timeline to view granular risk distributions.</p>
                 </div>
               )}
             </div>
