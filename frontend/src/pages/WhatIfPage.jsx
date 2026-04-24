@@ -371,7 +371,7 @@ export default function WhatIfPage() {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
