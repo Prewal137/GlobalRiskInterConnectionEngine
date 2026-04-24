@@ -7,7 +7,8 @@ router = APIRouter(prefix="/historical", tags=["Historical Risk"])
 
 BASE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../"))
 
-# Map sectors to their data files and column mappings
+# Configuration for each sector's data file and the specific column that contains the risk value
+# These are mapped to a standardized 'risk_score' field in the API response
 SECTOR_CONFIG = {
     "climate": {
         "file": "data/processed/climate/climate_risk_output.csv",
@@ -54,9 +55,13 @@ def get_historical_data(
     Unified endpoint to fetch historical risk data for any sector.
     Normalizes different data structures into a consistent format.
     """
-    # Sector name mapping if needed (e.g., 'global' -> 'interconnection')
+    # Normalize sector name and handle common aliases
+    sector = sector.lower().replace("-risk", "")
+    
     if sector == "interconnection":
         sector = "global"
+    elif sector == "geopolitical":
+        sector = "geopolitics"
         
     if sector not in SECTOR_CONFIG:
         # Check if it matches any of the config keys case-insensitively
