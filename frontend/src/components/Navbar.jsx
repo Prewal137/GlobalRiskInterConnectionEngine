@@ -9,10 +9,11 @@ function cn(...inputs) {
 }
 
 const navItems = [
-  { name: "Dashboard", path: "/", icon: BarChart3 },
+  { name: "Live Stream", path: "/", icon: BarChart3 },
+  // { name: "System Audit", path: "/audit", icon: Shield },
   { name: "History", path: "/history", icon: History },
-  { name: "State Analysis", path: "/state", icon: Map },
-  { name: "What-If Simulator", path: "/whatif", icon: Zap },
+  { name: "Regional Lab", path: "/state", icon: Map },
+  { name: "What-If Lab", path: "/whatif", icon: Zap },
 ];
 
 export default function Navbar() {
@@ -55,7 +56,7 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
           <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/5 bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white">
             <Settings className="h-5 w-5" />
           </button>
@@ -66,7 +67,7 @@ export default function Navbar() {
               className="h-full w-full rounded-full"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
