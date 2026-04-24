@@ -50,6 +50,10 @@ def get_historical_data(
     state: Optional[str] = Query(None),
     year: Optional[int] = Query(None)
 ):
+    """
+    Unified endpoint to fetch historical risk data for any sector.
+    Normalizes different data structures into a consistent format.
+    """
     # Sector name mapping if needed (e.g., 'global' -> 'interconnection')
     if sector == "interconnection":
         sector = "global"
