@@ -443,11 +443,12 @@ export default function HistoricalPage() {
                   </tbody>
                 </table>
               ) : (
-                <div className="h-full flex flex-col items-center justify-center p-10 text-center">
-                   <div className="p-4 rounded-3xl bg-slate-800 text-slate-600 mb-4">
+                <div className="h-full flex flex-col items-center justify-center p-10 text-center animate-in fade-in duration-700">
+                   <div className="p-4 rounded-3xl bg-slate-800 text-slate-600 mb-4 group-hover:text-indigo-400 transition-colors">
                      <Calendar className="w-8 h-8" />
                    </div>
-                   <p className="text-slate-500 text-sm">Select a timeline with available historical data.</p>
+                   <p className="text-slate-500 text-sm font-medium">Synchronizing with intelligence repositories...</p>
+                   <p className="text-slate-600 text-xs mt-1">Select a timeline to view granular risk distributions.</p>
                 </div>
               )}
             </div>
