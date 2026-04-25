@@ -728,7 +728,7 @@ If you use this platform in your research, please cite:
 - 📖 **API Documentation**: `http://localhost:8000/docs`
 - 🐛 **Bug Reports**: [GitHub Issues](https://github.com/yourusername/global-risk-interconnection-platform/issues)
 - 💬 **Questions**: [Discussions](https://github.com/yourusername/global-risk-interconnection-platform/discussions)
-- 📧 **Contact**: [your-email@example.com]
+- 📧 **Contact**: prewal.ai23@sahyadri.edu.in, navaneeth.ai23@sahyadri.edu.in, saathwik.ai23@sahyadri.edi.in, vivek.ai23@sahyadri.edu.in
 
 ---
 
