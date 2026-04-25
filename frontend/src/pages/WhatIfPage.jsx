@@ -39,6 +39,17 @@ const SECTORS_LIST = [
   "social",
   "infrastructure",
 ];
+const SYSTEM_LINKS = [
+  { source: "climate", target: "migration" },
+  { source: "climate", target: "infrastructure" },
+  { source: "geopolitics", target: "trade" },
+  { source: "geopolitics", target: "economy" },
+  { source: "trade", target: "economy" },
+  { source: "economy", target: "social" },
+  { source: "infrastructure", target: "economy" },
+  { source: "social", target: "geopolitics" },
+  { source: "migration", target: "social" },
+];
 
 export default function WhatIfPage() {
   const [sliders, setSliders] = useState(
@@ -99,14 +110,24 @@ export default function WhatIfPage() {
   }, [results]);
 
   const networkData = useMemo(() => {
-    if (!results?.final) return { nodes: [], links: [] };
+    // We use results.final or the default SECTORS_LIST to ensure nodes exist even before simulation
+    const currentData = results?.final || Object.fromEntries(SECTORS_LIST.map(s => [s, 0.3]));
+    
     return {
-      nodes: Object.keys(results.final).map((id) => ({
+      nodes: Object.keys(currentData).map((id) => ({
         id,
-        name: id,
-        baseRisk: results.initial?.[id] || 0.5,
+        name: id.toUpperCase(),
+        val: currentData[id], // Pass the risk value as node magnitude
+        baseRisk: results?.initial?.[id] || 0.3,
       })),
-      links: [],
+      // Map the static links but only include them if both nodes exist in our sector list
+      links: SYSTEM_LINKS.filter(
+        link => currentData[link.source] !== undefined && currentData[link.target] !== undefined
+      ).map(link => ({
+        ...link,
+        // Optional: you can scale link strength based on the source's risk level
+        value: currentData[link.source] > 0.6 ? 2 : 1 
+      })),
     };
   }, [results]);
 
@@ -214,36 +235,29 @@ export default function WhatIfPage() {
         {/* RESULTS INTERFACE */}
         <div className="xl:col-span-3 space-y-8">
            <div className="grid lg:grid-cols-2 gap-8 h-[550px]">
-              {/* PROPAGATION GRAPH */}
+              {/* PROPAGATION GRAPH - Updated to pass links */}
               <div className="bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-slate-800/60 flex flex-col group">
-                 <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-8">
                     <h2 className="text-xl font-bold text-white flex items-center gap-3">
                       <Activity size={20} className="text-emerald-400" />
-                      Ripple Visualization
+                      Systemic Interconnections
                     </h2>
-                 </div>
-                 <div className="flex-1 relative bg-black/20 rounded-[2rem] overflow-hidden">
-                   {loading ? (
-                     <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
-                        <div className="w-12 h-12 border-4 border-amber-500/10 border-t-amber-500 rounded-full animate-spin"></div>
-                        <p className="text-amber-500 text-xs font-black animate-pulse">RECURSION ENGINE ACTIVE...</p>
-                     </div>
-                   ) : results ? (
-                     <EnhancedCascadingNetwork
-                       graphData={networkData}
-                       riskScores={Object.fromEntries(
-                         Object.entries(results.final).map(([k, v]) => [k, { score: v }])
-                       )}
-                     />
-                   ) : (
-                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-12">
-                        <div className="p-5 rounded-3xl bg-slate-800/50 text-slate-600 mb-4">
-                           <Play size={32} />
-                        </div>
-                        <p className="text-slate-500 font-bold">Initiate simulation to witness systemic cascade effects.</p>
-                     </div>
-                   )}
-                 </div>
+                  </div>
+                  <div className="flex-1 relative bg-black/20 rounded-[2rem] overflow-hidden">
+                    {loading ? (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
+                         <div className="w-12 h-12 border-4 border-amber-500/10 border-t-amber-500 rounded-full animate-spin"></div>
+                         <p className="text-amber-500 text-xs font-black animate-pulse">RECURSION ENGINE ACTIVE...</p>
+                      </div>
+                    ) : (
+                      <EnhancedCascadingNetwork
+                        graphData={networkData} // Now contains 'links'
+                        riskScores={results?.final ? Object.fromEntries(
+                          Object.entries(results.final).map(([k, v]) => [k, { score: v }])
+                        ) : {}}
+                      />
+                    )}
+                  </div>
               </div>
 
               {/* MAGNITUDE CHART */}
