@@ -56,12 +56,15 @@ export default function EnhancedCascadingNetwork({ graphData=null, riskScores = 
   }, []);
 
   const processedData = useMemo(() => {
-    // If external graphData is provided (like in What-If), we use its nodes but our systemic links
+    // If external graphData is provided (like in What-If), we use its nodes
     const nodesRaw = graphData?.nodes || sectorNodes;
     
     const nodes = nodesRaw.map(node => {
+        // Find matching base node to get its curated color
+        const baseNode = sectorNodes.find(n => n.id.toLowerCase() === node.id.toLowerCase());
         const score = riskScores[node.id]?.score || node.baseRisk || (Math.random() * 0.4 + 0.2);
-        const baseColor = sectorNodes.find(n => n.id === node.id)?.color || "#6366f1";
+        const baseColor = baseNode?.color || "#6366f1";
+        
         return {
             ...node,
             score,
@@ -69,9 +72,28 @@ export default function EnhancedCascadingNetwork({ graphData=null, riskScores = 
         };
     });
 
-    const links = systemicLinks.filter(l => 
-        nodes.find(n => n.id === l.source) && nodes.find(n => n.id === l.target)
-    ).map(l => ({ ...l }));
+    // Use links from graphData if available, otherwise fallback to systemicLinks
+    const linksRaw = graphData?.links || systemicLinks;
+
+    const links = linksRaw.filter(l => {
+        const sourceId = typeof l.source === 'object' ? l.source.id : l.source;
+        const targetId = typeof l.target === 'object' ? l.target.id : l.target;
+        return nodes.find(n => n.id.toLowerCase() === sourceId.toLowerCase()) && 
+               nodes.find(n => n.id.toLowerCase() === targetId.toLowerCase());
+    }).map(l => {
+        const sourceId = typeof l.source === 'object' ? l.source.id : l.source;
+        const targetId = typeof l.target === 'object' ? l.target.id : l.target;
+        
+        // Find the actual node IDs from our 'nodes' list to ensure matching
+        const sourceNode = nodes.find(n => n.id.toLowerCase() === sourceId.toLowerCase());
+        const targetNode = nodes.find(n => n.id.toLowerCase() === targetId.toLowerCase());
+        
+        return { 
+            ...l, 
+            source: sourceNode.id, 
+            target: targetNode.id 
+        };
+    });
 
     return { nodes, links };
   }, [graphData, riskScores]);
@@ -155,6 +177,13 @@ export default function EnhancedCascadingNetwork({ graphData=null, riskScores = 
     ctx.strokeStyle = "#fff";
     ctx.lineWidth = 2 / globalScale;
     
+    // Safety check for coordinates
+    if (typeof link.source !== 'object' || typeof link.target !== 'object' || 
+        link.source.x === undefined || link.target.x === undefined) {
+      ctx.restore();
+      return;
+    }
+
     // Draw the line
     ctx.beginPath();
     ctx.moveTo(link.source.x, link.source.y);
