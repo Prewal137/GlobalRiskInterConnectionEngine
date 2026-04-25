@@ -1,4 +1,4 @@
-# 🌍 Global Risk Interconnection Platform
+# 🌍 Global Risk Interconnection Intelligence Platform
 
 **A research-grade multi-sector risk assessment system with ML predictions, graph-based cascade simulation, and interactive visualization dashboard.**
 
