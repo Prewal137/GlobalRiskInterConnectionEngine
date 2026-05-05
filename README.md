@@ -7,13 +7,13 @@
 ## 📊 System Architecture
 
 <p align="center">
-  <img src="docs/images/1.jpeg" width="45%" />
-  <img src="docs/images/2.jpeg" width="45%" />
+  <img src="docs/images/3.jpeg" width="45%" />
+  <img src="docs/images/4.jpeg" width="45%" />
 </p>
 
 <p align="center">
-  <img src="docs/images/3.jpeg" width="45%" />
-  <img src="docs/images/4.jpeg" width="45%" />
+  <img src="docs/images/1.jpeg" width="45%" />
+  <img src="docs/images/2.jpeg" width="45%" />
 </p>
 
 <p align="center">
