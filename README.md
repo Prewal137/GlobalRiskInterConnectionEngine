@@ -2,7 +2,25 @@
 
 **A research-grade multi-sector risk assessment system with ML predictions, graph-based cascade simulation, and interactive visualization dashboard.**
 
-![System Architecture](docs/images/feature_correlations_enhanced.png)
+---
+
+## 📊 System Architecture
+
+<p align="center">
+  <img src="docs/images/1.jpeg" width="45%" />
+  <img src="docs/images/2.jpeg" width="45%" />
+</p>
+
+<p align="center">
+  <img src="docs/images/3.jpeg" width="45%" />
+  <img src="docs/images/4.jpeg" width="45%" />
+</p>
+
+<p align="center">
+  <img src="docs/images/5.jpeg" width="45%" />
+</p>
+
+---
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com)
