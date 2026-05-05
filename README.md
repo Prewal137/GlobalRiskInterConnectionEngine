@@ -3,17 +3,19 @@
 **A research-grade multi-sector risk assessment system with ML predictions, graph-based cascade simulation, and interactive visualization dashboard.**
 
 ---
-## 📊 System Visualizations
-
 <p align="center">
-  <img src="docs/images/3.jpeg" width="30%" />
-  <img src="docs/images/4.jpeg" width="30%" />
-  <img src="docs/images/1.jpeg" width="30%" />
+  <img src="docs/images/3.jpeg" width="45%" />
+  <img src="docs/images/4.jpeg" width="45%" />
+  
 </p>
 
 <p align="center">
-  <img src="docs/images/2.jpeg" width="30%" />
-  <img src="docs/images/5.jpeg" width="30%" />
+  <img src="docs/images/1.jpeg" width="45%" />
+  <img src="docs/images/2.jpeg" width="45%" />
+</p>
+
+<p align="center">
+  <img src="docs/images/5.jpeg" width="45%" />
 </p>
 
 ---
