@@ -28,3 +28,8 @@ python-dotenv>=1.0.0
 # Utilities
 python-dateutil>=2.8.2
 pytz>=2023.3
+
+# Statistical Analysis & Monte Carlo
+scipy>=1.10.0
+statsmodels>=0.14.0
+diptest>=0.6.0

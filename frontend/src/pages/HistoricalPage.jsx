@@ -6,6 +6,7 @@ import {
   getSocialStates,
   getInfraAvailableStates,
   getGeopoliticsCountries,
+  getTradeCountries,
 } from "../services/api";
 
 import {
@@ -71,12 +72,13 @@ export default function HistoricalPage() {
 
   const fetchAvailableEntities = async () => {
     try {
-      const [statesRes, infraStatesRes, socialStatesRes, economyCountriesRes, geopoliticsCountriesRes] = await Promise.all([
+      const [statesRes, infraStatesRes, socialStatesRes, economyCountriesRes, geopoliticsCountriesRes, tradeCountriesRes] = await Promise.all([
         getClimateAllStates(),
         getInfraAvailableStates(),
         getSocialStates(),
         getEconomyCountries(),
-        getGeopoliticsCountries()
+        getGeopoliticsCountries(),
+        getTradeCountries()
       ]);
 
       const allStates = [...new Set([
@@ -88,7 +90,8 @@ export default function HistoricalPage() {
       const allCountries = [...new Set([
         "IND", "USA", "CHN", "GBR", "FRA", "DEU", "JPN",
         ...(economyCountriesRes?.countries || []),
-        ...(geopoliticsCountriesRes || [])
+        ...(geopoliticsCountriesRes || []),
+        ...(tradeCountriesRes?.countries || [])
       ])].sort();
 
       setAvailableStates(allStates);
