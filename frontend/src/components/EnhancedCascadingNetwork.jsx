@@ -98,9 +98,20 @@ export default function EnhancedCascadingNetwork({ graphData=null, riskScores = 
     return { nodes, links };
   }, [graphData, riskScores]);
 
-  const handleEngineStop = () => {
+  // Configure Forces once mounted
+  useEffect(() => {
     if (fgRef.current) {
-      fgRef.current.zoomToFit(400, 100);
+      fgRef.current.d3Force('charge').strength(-800);
+      fgRef.current.d3Force('link').distance(200);
+      fgRef.current.d3Force('collide', d3.forceCollide().radius(d => (Math.max(14, (d.score || 0.5) * 40)) + 20));
+    }
+  }, [dimensions.width]);
+
+  const [hasZoomed, setHasZoomed] = useState(false);
+  const handleEngineStop = () => {
+    if (fgRef.current && !hasZoomed) {
+      fgRef.current.zoomToFit(400, 50);
+      setHasZoomed(true);
     }
   };
 
@@ -209,30 +220,32 @@ export default function EnhancedCascadingNetwork({ graphData=null, riskScores = 
       ref={containerRef}
       className="w-full h-full bg-[#050505] rounded-3xl border border-slate-800/40 relative overflow-hidden"
     >
-      <ForceGraph2D
-        ref={fgRef}
-        width={dimensions.width}
-        height={dimensions.height}
-        graphData={processedData}
-        nodeCanvasObject={drawNode}
-        onNodeHover={handleNodeHover}
-        onEngineStop={handleEngineStop}
-        backgroundColor="rgba(0,0,0,0)"
-        
-        // Link Visualization
-        linkCanvasObject={drawLink}
-        linkDirectionalParticles={node => (highlightNodes.has(node.source.id) ? 8 : 2)}
-        linkDirectionalParticleSpeed={0.005}
-        linkDirectionalParticleWidth={2}
-        linkDirectionalParticleColor={() => "#fff"}
-        linkDirectionalArrowLength={6}
-        linkDirectionalArrowRelPos={1}
-        
-        // Forces
-        d3VelocityDecay={0.4}
-        d3AlphaDecay={0.02}
-        cooldownTicks={150}
-      />
+      {dimensions.width > 0 && (
+        <ForceGraph2D
+          ref={fgRef}
+          width={dimensions.width}
+          height={dimensions.height}
+          graphData={processedData}
+          nodeCanvasObject={drawNode}
+          onNodeHover={handleNodeHover}
+          onEngineStop={handleEngineStop}
+          backgroundColor="rgba(0,0,0,0)"
+          
+          // Link Visualization
+          linkCanvasObject={drawLink}
+          linkDirectionalParticles={node => (highlightNodes.has(node.source.id) ? 8 : 2)}
+          linkDirectionalParticleSpeed={0.005}
+          linkDirectionalParticleWidth={2}
+          linkDirectionalParticleColor={() => "#fff"}
+          linkDirectionalArrowLength={6}
+          linkDirectionalArrowRelPos={1}
+          
+          // Forces
+          d3VelocityDecay={0.4}
+          d3AlphaDecay={0.02}
+          cooldownTicks={150}
+        />
+      )}
     </div>
   );
 }
