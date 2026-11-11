@@ -27,83 +27,110 @@ import os
 # Add project root to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../.."))
 
+import requests
+import numpy as np
 
 def fetch_trade() -> dict:
     """
-    Fetch live trade data from World Bank API.
-    
-    Uses World Bank open data API (no key required).
-    Fetches India's latest trade statistics.
-    
-    Returns:
-        Dictionary with trade indicators
+    Fetch live trade data from World Bank API (India).
+    Uses multiple years to calculate meaningful metrics.
     """
-    # World Bank API endpoints (FREE, no key needed)
-    # NE.EXP.GNFS.ZS = Exports of goods and services (% of GDP)
-    # NE.IMP.GNFS.ZS = Imports of goods and services (% of GDP)
-    # NE.TRD.GNFS.ZS = Trade (% of GDP)
-    
+
     indicators = {
         "exports": "NE.EXP.GNFS.ZS",
         "imports": "NE.IMP.GNFS.ZS",
         "trade": "NE.TRD.GNFS.ZS"
     }
-    
+
     results = {}
-    
+
     try:
         for key, indicator in indicators.items():
             url = f"https://api.worldbank.org/v2/country/IND/indicator/{indicator}"
             params = {
                 "date": "2020:2024",
                 "format": "json",
-                "per_page": 5
+                "per_page": 10
             }
-            
+
             response = requests.get(url, params=params, timeout=10)
             response.raise_for_status()
             data = response.json()
-            
-            # World Bank returns [metadata, data_list]
+
             if len(data) >= 2 and data[1]:
-                # Get latest available year
-                latest = data[1][0]
-                value = latest.get("value")
-                if value is not None:
-                    results[key] = float(value)
-                    results[f"{key}_year"] = latest.get("date")
+                # Extract valid values (ignore None)
+                values = [d["value"] for d in data[1] if d["value"] is not None]
+
+                if len(values) > 0:
+                    results[key] = float(values[0])  # latest value
+
+                    # Store full series for calculations
+                    results[f"{key}_series"] = values
                 else:
                     results[key] = 0
+                    results[f"{key}_series"] = []
             else:
                 results[key] = 0
-        
-        # Calculate derived metrics
+                results[f"{key}_series"] = []
+
+        # -------------------------
+        # BASIC VALUES
+        # -------------------------
         exports = results.get("exports", 0)
         imports = results.get("imports", 0)
-        trade = results.get("trade", 0)
-        
+
+        export_series = results.get("exports_series", [])
+        import_series = results.get("imports_series", [])
+
         trade_balance = exports - imports
         total_trade = exports + imports
-        
-        # Growth rates (placeholder until we have multiple years)
-        growth = 0.0
-        export_growth = 0.0
-        import_growth = 0.0
-        
-        # Rolling statistics
-        rolling_mean_3 = total_trade
-        volatility_3 = 0.0
-        
-        # Trade shares
+
+        # -------------------------
+        # GROWTH CALCULATION
+        # -------------------------
+        def calc_growth(series):
+            if len(series) >= 2 and series[-1] != 0:
+                return (series[0] - series[-1]) / abs(series[-1])
+            return 0
+
+        growth = calc_growth(export_series) + calc_growth(import_series)
+        export_growth = calc_growth(export_series)
+        import_growth = calc_growth(import_series)
+
+        # -------------------------
+        # VOLATILITY (STD DEV)
+        # -------------------------
+        def calc_volatility(series):
+            if len(series) >= 3:
+                return float(np.std(series[:3]))
+            return 0
+
+        volatility_3 = calc_volatility(export_series) + calc_volatility(import_series)
+
+        # -------------------------
+        # ROLLING MEAN
+        # -------------------------
+        rolling_mean_3 = (
+            np.mean(export_series[:3]) + np.mean(import_series[:3])
+            if len(export_series) >= 3 and len(import_series) >= 3
+            else total_trade
+        )
+
+        # -------------------------
+        # RATIOS
+        # -------------------------
         export_share = exports / total_trade if total_trade > 0 else 0
         import_share = imports / total_trade if total_trade > 0 else 0
-        
-        # Balance ratio
         balance_ratio = trade_balance / total_trade if total_trade > 0 else 0
-        
-        # Shock indicator
+
+        # -------------------------
+        # SHOCK DETECTION
+        # -------------------------
         shock = 1 if abs(balance_ratio) > 0.3 else 0
-        
+
+        # -------------------------
+        # FINAL RESULT
+        # -------------------------
         result = {
             "exports": exports,
             "imports": imports,
@@ -120,13 +147,16 @@ def fetch_trade() -> dict:
             "shock": shock,
             "timestamp": None
         }
-        
-        print(f"✅ World Bank trade data fetched")
-        print(f"   Exports: {exports:.2f}% of GDP")
-        print(f"   Imports: {imports:.2f}% of GDP")
-        print(f"   Trade balance: {trade_balance:.2f}% of GDP")
-        
+
+        print("✅ Trade data fetched (fixed)")
+        print(f"Exports: {exports:.2f}, Imports: {imports:.2f}")
+        print(f"Growth: {growth:.4f}, Volatility: {volatility_3:.4f}")
+
         return result
+
+    except Exception as e:
+        print("❌ Error fetching trade data:", str(e))
+        return {}
         
     except requests.exceptions.RequestException as e:
         print(f"❌ Error fetching trade data: {e}")

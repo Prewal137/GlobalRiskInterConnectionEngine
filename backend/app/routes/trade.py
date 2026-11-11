@@ -165,3 +165,15 @@ async def get_trade_risk_summary():
         raise HTTPException(status_code=500, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@router.get("/countries")
+async def get_trade_countries():
+    try:
+        df = load_data(OUTPUT_FILE)
+        countries = sorted(df['Country'].unique().tolist())
+        return {
+            "success": True,
+            "countries": countries
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

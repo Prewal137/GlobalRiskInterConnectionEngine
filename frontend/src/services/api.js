@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:8000",
   timeout: 120000,
   headers: {
     "Content-Type": "application/json",
@@ -101,6 +101,9 @@ export const getTradeSummary = async () =>
 
 export const getTradeAll = async () =>
   (await api.get(`/trade-risk/all`)).data;
+
+export const getTradeCountries = async () =>
+  (await api.get(`/trade-risk/countries`)).data;
 
 // ==========================
 // CLIMATE
